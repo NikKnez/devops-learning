@@ -1,0 +1,75 @@
+mkdir ~/devops-learning
+cd ~/devops-learning
+mkdir ~/grasshopper
+cd ~/grasshopper
+rm -rf grasshopper
+cd ..
+rm -rf grasshopper
+cd ~/devops-learning
+mkdir grasshopper
+cd grasshopper
+echo "Hello LabEx"
+date
+cal
+sudo apt install ncal
+cal
+cal 2025
+expr 5 + 3
+expr 5+3
+expr 2025 - 2024
+expr 24 * 7
+expr 60 / 5
+figlet "Nikola"
+sudo snap install figlet # version 2.2.5+git24.202a0a8
+figlet "Nikola"
+figlet -f slant "I love Linux"
+clear
+figlet "LabEx"
+man figlet
+pwd
+ls
+touch hello.txt
+ls
+echo "Hello, Linux" > hello.txt
+cat hello.txt
+touch file1.txt file2.txt file3.txt
+ls *.txt
+touch note_{1..5}.txt
+ls note*
+cp hello.txt hello_copy.txt
+mv hello_copy.txt ..
+rm file1.txt
+ls
+ls ..
+tail -f /dev/null
+ls --help
+man ls
+man cp
+pwd
+la -a
+ls -l
+ls -r
+ls -la
+touch mysuperduperfile
+ls -l mysuperduperfile
+touch mysuperduperfile
+ls -l mysuperduperfile
+touch -r file1.txt file2.txt
+ls
+touch file1.txt
+touch -r file1.txt file2.txt
+touch -d "2023-01-01 12:30:00" mysuperduperfile
+ls -l mysuperduperfile
+file banana.jpg
+touch banana.jpeg
+-r banana.jpeg
+-rm -rf banana.jpeg
+-rf banana.jpeg
+ls
+file banana.jpeg
+rm banana.jpeg
+ls
+cat > newfile.txt
+cat newfile.txt
+history
+history -w linux
