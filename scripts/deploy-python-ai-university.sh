@@ -8,7 +8,9 @@
 set -e # Exit one any error
 
 # Variables
-REPO_URL="https://github.com/NikKnez/Python_AI_University.git"
+# REPO_URL='https://github.com/NikKnez/Python_AI_University.git'
+# Allow custom repository URL
+REPO_URL="${1:-https://github.com/NikKnez/Python_AI_University.git}"
 PROJECT_NAME="Python_AI_University"
 TEMP_DIR="/tmp/$PROJECT_NAME"
 WEB_ROOT="/var/www/html"
