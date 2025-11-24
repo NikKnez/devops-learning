@@ -1,0 +1,6 @@
+
+t is a test file for editing practice.
+Delete this entire line.
+Change this word to something else.
+Copy this line and paste it below.
+This needs correction: wrng speling here.

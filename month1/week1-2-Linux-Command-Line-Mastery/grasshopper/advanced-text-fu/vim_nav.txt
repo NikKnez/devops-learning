@@ -1,0 +1,10 @@
+Line 1: Navigation practice
+Line 2: Move around using keys
+Line 3: h = left, j = down, k = up, l = right
+Line 4: w = next word, b = previous word
+Line 5: 0 = start of line, $ = end of line
+Line 6: gg = top of file, G = bottom of file
+Line 7: Practice these movements
+Line 8: Speed comes with practice
+Line 9: Don't use arrow keys
+Line 10: Use hjkl instead
