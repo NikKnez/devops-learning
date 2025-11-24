@@ -13,3 +13,10 @@
 11. Emacs Buffer Navigation
 12. Emacs Editing
 13. Emacs Exiting and Help
+
+Practice done:
+
+## Regex
+- Practiced email extraction: 'grep -E pattern'
+- Learned phone number matching
+- Used -o flag for exact matches
