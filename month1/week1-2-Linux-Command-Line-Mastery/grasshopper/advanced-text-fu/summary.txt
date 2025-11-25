@@ -1,0 +1,4 @@
+=== Log Summary ===
+Total lines: 8
+ERROR count: 4
+INFO count: 4

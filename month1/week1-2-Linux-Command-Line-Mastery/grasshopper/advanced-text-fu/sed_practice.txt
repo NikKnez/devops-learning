@@ -1,0 +1,4 @@
+Hello World
+Linux is awesome
+DevOps automation
+Cloud computing

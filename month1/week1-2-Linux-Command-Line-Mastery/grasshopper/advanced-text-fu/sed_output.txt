@@ -1,0 +1,3 @@
+Hello World
+Linux is great
+DevOps automation
