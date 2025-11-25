@@ -1,0 +1,4 @@
+=== My User Info===
+nikola
+uid=1000(nikola) gid=1001(nikola) groups=1001(nikola),27(sudo)
+nikola sudo
