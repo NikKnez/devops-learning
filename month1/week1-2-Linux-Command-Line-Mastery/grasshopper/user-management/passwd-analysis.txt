@@ -1,0 +1,9 @@
+=== /etc/passwd Analysis ===
+Total Users:
+Human users (UID >= 1000):
+System users (UID < 1000):
+Users with bash shell:
+Users with no login:
+Total Users: 28
+Human users: 2
+System users: 26
