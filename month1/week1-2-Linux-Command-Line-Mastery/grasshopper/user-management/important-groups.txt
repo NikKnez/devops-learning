@@ -1,0 +1,7 @@
+=== Important Linux Groups ===
+
+sudo - Can use sudo command (administrative access)
+adm - Can read system logs
+www-data - Web server group
+docker - Can use Docker (when installed)
+systemd-journal - Can read system journals
