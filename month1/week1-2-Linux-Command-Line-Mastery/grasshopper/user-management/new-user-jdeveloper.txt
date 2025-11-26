@@ -1,0 +1,7 @@
+New User Created: jdeveloper
+Full Name: John Developer
+UID: 1001
+Groups: jdeveloper : jdeveloper sudo www-data
+Home: /home/jdeveloper
+Shell: /bin/bash
+Created: Wed Nov 26 22:32:07 CET 2025 
