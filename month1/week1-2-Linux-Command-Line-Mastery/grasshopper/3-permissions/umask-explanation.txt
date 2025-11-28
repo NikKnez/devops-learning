@@ -1,0 +1,19 @@
+=== How Umask Works ===
+
+Default maximum permissions:
+- Files: 666 (rw-rw-rw-)
+- Directories: 777 (rwxrwxrwx)
+
+umask SUBTRACTS from these defaults.
+
+Example with umask 0022:
+Files: 666 - 022 = 644 (rw-r--r--)
+Directories: 777 - 022 = 755 (rwxr-xr-x)
+
+Example with umask 0002:
+Files: 666 - 022 = 644 (rw-r--r--)
+Directories: 777 - 002 = 775 (rwxrwxr-x)
+
+Example with umask 0077:
+Files: 666 - 077 = 600 (rw-------)
+Directories: 777 - 077 = 700 (rwx------)
