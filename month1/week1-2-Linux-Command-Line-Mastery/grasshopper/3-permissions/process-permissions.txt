@@ -1,0 +1,16 @@
+=== Process Permissions ===
+
+Every process runs with:
+1. Real UID/GID - actual user who started process
+2. Effective UID/GID - permissions used for access checks
+
+Normal case: Real UID = Effective UID
+
+Special case (setuid) = Real UID = you, Effective UID = file owner
+
+Example: passwd command
+- You run it (Real UID = nikola)
+- Runs as root (Effective UID = 0)
+- Can modify /etc/shadow (root-only file)
+
+Security: Process can only access files that Effective UID can access
