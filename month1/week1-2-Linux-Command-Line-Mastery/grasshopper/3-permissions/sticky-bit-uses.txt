@@ -1,0 +1,23 @@
+=== Sticky Bit Use Cases ===
+
+1. /tmp directory
+   - Everyone can create temp files
+   - Users can't delete each other's files
+   - chmod 1777 /tmp
+
+2. Shared upload directory
+   - Users upload files
+   - Only uploader can delete their files
+   - chmod 1777 /uploads
+
+3. Public directories with user content
+   - Forums, wikis, shared workspaces
+   - Protection against accidental/malicous deletion
+
+Notation:
+Symbolic: drwxrwxrwt (t at end)
+Numeric: 1777 (1 = sticky bit)
+
+Captal T vs lowercase t:
+- t = sticky + execute permission
+- T = sticky but NO execute (broken)
