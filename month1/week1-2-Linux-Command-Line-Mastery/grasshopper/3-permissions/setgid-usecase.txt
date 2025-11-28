@@ -1,0 +1,16 @@
+=== setgid Directory Use Case ===
+
+Problem: Multiple users working in same directory
+Solution: setgid on directory
+
+Benefits:
+1. All files inherit directory's group
+2. Group members can modify each other's files
+3. No manual chgrp needed for each file
+
+Setup:
+mkdir shared-dir
+chgrp teamname shared-dir
+chmod 2775 shared-dir
+
+Result: All files created inside automatically get 'teamname' group
