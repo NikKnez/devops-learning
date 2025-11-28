@@ -1,0 +1,18 @@
+=== setuid Security ===
+
+What it does:
+- File executes with permissions of FILE OWNER, not user who runs it
+- Example: /usr/bin/passwd owned by root, runs as root
+
+Why it's dangerous:
+- If misconfigured, users could run commands as root
+- Security vulnerabilities in setuid programs are critical
+- Never create setuid scripts in production
+
+Notation:
+Symbolic: -rwsr-xr-x (s in owner execute)
+Numeric: 4755 (4 = setuid bit)
+
+Capital S vs lowercase s:
+- s = setuid + execute permission
+- S = setuid but NO execute (broken/useless)
