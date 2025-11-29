@@ -1,0 +1,9 @@
+=== Permission Setup Verification ===
+
+total 0
+-rw------- 1 nikola nikola 0 Nov 29 22:54 diary.txt
+total 0
+-rw-rw-r-- 1 nikola nikola 0 Nov 29 22:56 team-doc.txt
+-rw-rw-r-- 1 nikola nikola 0 Nov 28 21:00 test-file.txt
+total 0
+-rwxr-xr-x 1 nikola nikola 0 Nov 29 22:56 utility.sh
