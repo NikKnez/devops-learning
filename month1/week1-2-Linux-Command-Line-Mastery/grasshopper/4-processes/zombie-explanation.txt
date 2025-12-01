@@ -1,0 +1,23 @@
+=== Zombie Processes ===
+
+What is a zombie?
+- Process that finished executing
+- Exit status not yet collected by parent
+- Shows as "Z" or "<defunct>" in ps
+
+Why do they exist?
+- Parent needs to read child's exit status
+- Until parent calls wait(), child remains zombie
+
+How to identify:
+ps aux | grep 'Z'
+
+How to fix:
+1. Parent process calls wait() → zombie cleaned up
+2. Kill parent process → init adopts and cleans zombies
+3. Cannot kill zombie directly (already dead)
+
+Are they harmful?
+- Use minimal resources (just PID table entry)
+- Too many zombies can exhaust PID space
+- Usually indicates buggy parent process
