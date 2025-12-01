@@ -1,0 +1,65 @@
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  0 16:24 ?        00:00:01 /sbin/init
+root         2     1  0 16:24 ?        00:00:00 /init
+root         6     2  0 16:24 ?        00:00:00 plan9 --control-socket 7 --log-level 4 --server-fd 8 --pipe-fd 10 --log-truncate
+root        66     1  0 16:24 ?        00:00:00 /lib/systemd/systemd-journald
+root        88     1  0 16:24 ?        00:00:07 /lib/systemd/systemd-udevd
+root       111     1  0 16:24 ?        00:00:00 snapfuse /var/lib/snapd/snaps/core18_2959.snap /snap/core18/2959 -o ro,nodev,allow_other,suid
+root       112     1  0 16:24 ?        00:00:00 snapfuse /var/lib/snapd/snaps/figlet_36.snap /snap/figlet/36 -o ro,nodev,allow_other,suid
+root       113     1  0 16:24 ?        00:00:00 snapfuse /var/lib/snapd/snaps/bare_5.snap /snap/bare/5 -o ro,nodev,allow_other,suid
+root       115     1  0 16:24 ?        00:00:00 snapfuse /var/lib/snapd/snaps/core18_2976.snap /snap/core18/2976 -o ro,nodev,allow_other,suid
+root       121     1  0 16:24 ?        00:00:00 snapfuse /var/lib/snapd/snaps/core22_2139.snap /snap/core22/2139 -o ro,nodev,allow_other,suid
+root       122     1  0 16:24 ?        00:00:00 snapfuse /var/lib/snapd/snaps/firefox_7423.snap /snap/firefox/7423 -o ro,nodev,allow_other,suid
+root       125     1  0 16:24 ?        00:00:01 snapfuse /var/lib/snapd/snaps/core22_2163.snap /snap/core22/2163 -o ro,nodev,allow_other,suid
+root       138     1  0 16:24 ?        00:00:00 snapfuse /var/lib/snapd/snaps/gnome-42-2204_226.snap /snap/gnome-42-2204/226 -o ro,nodev,allow_other,suid
+root       144     1  0 16:24 ?        00:00:00 snapfuse /var/lib/snapd/snaps/gtk-common-themes_1535.snap /snap/gtk-common-themes/1535 -o ro,nodev,allow_other,suid
+root       152     1  0 16:24 ?        00:00:00 snapfuse /var/lib/snapd/snaps/snapd_25202.snap /snap/snapd/25202 -o ro,nodev,allow_other,suid
+root       156     1  0 16:24 ?        00:00:00 snapfuse /var/lib/snapd/snaps/snapd_25577.snap /snap/snapd/25577 -o ro,nodev,allow_other,suid
+root       157     1  0 16:24 ?        00:00:00 snapfuse /var/lib/snapd/snaps/ubuntu-desktop-installer_1284.snap /snap/ubuntu-desktop-installer/1284 -o ro,nodev,allow_other,suid
+root       164     1  0 16:24 ?        00:00:01 snapfuse /var/lib/snapd/snaps/ubuntu-desktop-installer_1286.snap /snap/ubuntu-desktop-installer/1286 -o ro,nodev,allow_other,suid
+systemd+   245     1  0 16:24 ?        00:00:00 /lib/systemd/systemd-resolved
+systemd+   249     1  0 16:24 ?        00:00:00 /lib/systemd/systemd-timesyncd
+root       268     1  0 16:24 ?        00:00:00 /usr/sbin/cron -f -P
+message+   270     1  0 16:24 ?        00:00:00 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root       275     1  0 16:24 ?        00:00:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+syslog     276     1  0 16:24 ?        00:00:00 /usr/sbin/rsyslogd -n -iNONE
+root       278     1  0 16:24 ?        00:00:05 /usr/lib/snapd/snapd
+root       279     1  0 16:24 ?        00:00:00 /lib/systemd/systemd-logind
+root       280     1  0 16:24 ?        00:00:00 /usr/libexec/udisks2/udisksd
+root       283     1  0 16:24 ?        00:00:00 /bin/bash /snap/ubuntu-desktop-installer/1286/bin/subiquity-server
+root       288     1  0 16:24 ?        00:00:00 /sbin/agetty -o -p -- \u --noclear --keep-baud console 115200,38400,9600 vt220
+root       297     1  0 16:24 tty1     00:00:00 /sbin/agetty -o -p -- \u --noclear tty1 linux
+root       325     1  0 16:24 ?        00:00:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root       329     1  0 16:24 ?        00:00:00 /usr/libexec/polkitd --no-debug
+root       369     1  0 16:24 ?        00:00:00 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+www-data   370   369  0 16:24 ?        00:00:00 nginx: worker process
+www-data   371   369  0 16:24 ?        00:00:00 nginx: worker process
+www-data   372   369  0 16:24 ?        00:00:00 nginx: worker process
+www-data   373   369  0 16:24 ?        00:00:00 nginx: worker process
+www-data   374   369  0 16:24 ?        00:00:00 nginx: worker process
+www-data   376   369  0 16:24 ?        00:00:00 nginx: worker process
+www-data   377   369  0 16:24 ?        00:00:00 nginx: worker process
+www-data   378   369  0 16:24 ?        00:00:00 nginx: worker process
+www-data   379   369  0 16:24 ?        00:00:00 nginx: worker process
+www-data   380   369  0 16:24 ?        00:00:00 nginx: worker process
+www-data   381   369  0 16:24 ?        00:00:00 nginx: worker process
+www-data   382   369  0 16:24 ?        00:00:00 nginx: worker process
+root       400   283  0 16:24 ?        00:00:08 /snap/ubuntu-desktop-installer/1286/usr/bin/python3.10 -m subiquity.cmd.server --use-os-prober --storage-version=2 --postinst-hooks-dir=/snap/ubuntu-desktop-installer/1286/etc/subiquity/postinst.d
+root       477     2  0 16:24 pts/1    00:00:00 /bin/login -f
+root       538     1  0 16:24 ?        00:00:00 /lib/systemd/systemd --user
+root       539   538  0 16:24 ?        00:00:00 (sd-pam)
+root       558   477  0 16:24 pts/1    00:00:00 -bash
+root       651     2  0 16:24 ?        00:00:00 /init
+root       652   651  0 16:24 ?        00:00:01 /init
+root       653   652  0 16:24 pts/2    00:00:00 -bash
+root       774   653  0 16:24 pts/2    00:00:00 su - nikola
+nikola     776     1  0 16:24 ?        00:00:00 /lib/systemd/systemd --user
+nikola     777   776  0 16:24 ?        00:00:00 (sd-pam)
+nikola     786   776  0 16:24 ?        00:00:00 /usr/bin/pipewire
+nikola     787   776  0 16:24 ?        00:00:00 /usr/bin/pipewire-media-session
+nikola     792   774  0 16:24 pts/2    00:00:00 -bash
+rtkit      808     1  0 16:24 ?        00:00:00 /usr/libexec/rtkit-daemon
+nikola     840   776  0 16:24 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root      5630    88  0 20:42 ?        00:00:00 /lib/systemd/systemd-udevd
+root      5631    88  0 20:42 ?        00:00:00 /lib/systemd/systemd-udevd
+nikola    5632   792  0 20:42 pts/2    00:00:00 ps -ef

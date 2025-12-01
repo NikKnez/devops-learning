@@ -1,0 +1,23 @@
+=== ps aux Output Columns ===
+
+USER       = User who owns the process
+PID        = Process ID (unique identifier)
+%CPU       = CPU usage percentage
+%MEM       = Memory usage percentage
+VSZ        = Virtual memory size (KB)
+RSS        = Resident Set Size - physical memory (KB)
+TTY        = Terminal associated with process
+           ? = no terminal (daemon/background)
+STAT       = Process state
+           R = Running
+           S = Sleeping (waiting)
+           D = Uninterruptible sleep (usually I/O)
+           Z = Zombie (terminated but not cleaned up)
+           T = Stopped
+           < = High priority
+           N = Low priority
+           s = Session leader
+           + = In foreground process group
+START      = When process started
+TIME       = CPU time used
+COMMAND    Command that started process
