@@ -1,0 +1,10 @@
+=== Terminal Analysis ===
+
+My terminal:
+$(tty)
+
+Processes in my terminal:
+$(ps -t $(tty))
+
+Bacground processes (no terminal):
+[Lista a few daemon processes found]

@@ -1,0 +1,16 @@
+=== Controlling Terminal (TTY) ===
+
+TTY = TeleTYpewriter (historical term for terminal)
+
+Types:
+- pts/0, pts/1, etc. = Pseudo-terminal (terminal-emulator, SSH)
+- tty1, tty2, etc. = Physical virtual console (Ctrl+Alt+F1-F6)
+- ? = No terminal (daemon, background process)
+
+Check your terminal:
+- tty command shows your current terminal
+- ps shows which terminal owns each process
+
+Session leader:
+- First process in a terminal session
+- Usually your shell (bash)
