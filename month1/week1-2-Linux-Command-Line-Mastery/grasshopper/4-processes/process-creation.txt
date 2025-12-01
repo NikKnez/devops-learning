@@ -1,0 +1,21 @@
+=== How Processes Are Created ===
+
+1. fork()
+   - Creates exact copy of parent process
+   - Parent and child are identical
+   - Child gets new PID
+
+2. exec()
+   - Replaces current process with new program
+   - Same PID, different program
+
+3. Common pattern: fork() + exec()
+   - Shell forks itself
+   - Child execs the command you typed
+   - Parent waits for child
+
+Example: When you run "ls"
+1. bash forks → creates child bash
+2. Child execs ls → becomes ls process
+3. Parent waits for ls to complete
+4. ls finishes, parent continues
