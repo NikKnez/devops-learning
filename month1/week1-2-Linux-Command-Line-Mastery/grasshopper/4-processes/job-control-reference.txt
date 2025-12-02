@@ -1,0 +1,34 @@
+=== Job Control Commands ===
+
+Starting jobs:
+command &            # Start in background
+command              # Start in foreground
+
+Suspending:
+Ctrl+Z               # Suspend foreground job
+
+Listing jobs:
+jobs                 # List all jobs
+jobs -l              # List with PIDs
+jobs -p              # List PIDs only
+
+Resuming jobs:
+bg                   # Resume suspended job in background
+bg %1                # Resume job 1 in background
+fg                   # Bring last job to foreground
+fg %2                # Bring job 2 to foreground
+
+Killing jobs:
+kill %1              # Kill job 1
+kill %2              # Kill job 2
+
+Job references:
+%1, %2               # Job number
+%%                   # Current job
+%+                   # Current job (same as %%)
+%-                   # Previous job
+%string              # Job starting with "string"
+
+Examples:
+fg %sle              # Foreground job starting with "sle"
+kill %?ython         # Kill job containing "ython"
