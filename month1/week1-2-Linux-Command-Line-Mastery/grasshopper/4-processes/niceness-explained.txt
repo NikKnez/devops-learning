@@ -1,0 +1,19 @@
+=== Process Niceness ===
+
+Nice value range: -20 to 19
+  -20 = Highest priority (least nice, most CPU)
+   0  = Default priority
+  19  = Lowest priority (most nice, least CPU))
+
+Commands:
+nice -n 10 command     # Start with nice value 10
+renice -n 5 -p PID     # Change nice value of running process
+
+Who can set what:
+- Regular users: Can increase niceness (10-19)
+- Regular users: Cannot decrease niceness (become less nice)
+- Root: Can set any nice value
+
+Priority in ps:
+- PRI = Avtual priority (lower = higher priority)
+- NI = Nice value
