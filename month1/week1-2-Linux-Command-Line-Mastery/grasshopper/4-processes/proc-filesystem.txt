@@ -1,0 +1,22 @@
+=== /proc Filesystem ===
+
+What is /proc?
+- Virtual filesystem (not on disk)
+- Kernel exposes process info through files
+- Each process has /proc/[PID] directory
+
+Important files in /proc/[PID]:
+- cmdline  = Command line arguments
+- environ  = Enviroment variables
+- status   = Process status (detailed)
+- fd/      = Open file descriptors
+- cwd      = Current workin directory (symlink)
+- exe      = Executable file (symlink)
+- maps     = Memory mappings
+- stat     = Process statistics
+
+System-wide info:
+- /proc/cpuinfo  = CPU information
+- /proc/meminfo  = Memory information
+- /proc/uptime   = System uptime
+- /proc/loadavg  = Load average

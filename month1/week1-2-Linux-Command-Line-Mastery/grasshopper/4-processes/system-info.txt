@@ -1,0 +1,14 @@
+=== CPU Info ===
+model name	: 13th Gen Intel(R) Core(TM) i5-1335U
+
+=== Memory Info ===
+MemTotal:       16131272 kB
+MemFree:        15390644 kB
+MemAvailable:   15412396 kB
+Buffers:            1468 kB
+Cached:           195900 kB
+
+9796.51 117368.11
+
+=== Load Average ===
+0.00 0.00 0.00 1/330 2418
