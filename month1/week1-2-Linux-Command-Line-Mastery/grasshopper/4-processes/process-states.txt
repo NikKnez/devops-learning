@@ -1,0 +1,31 @@
+=== Linux Process States ===
+
+R = Running or Runnable
+    - Currently executing on CPU
+    - Or waiting in run queue
+
+S = Sleeping (Interruptible)
+    - Waiting for event (I/O, timer, signal)
+    - Can be interrupted by signals
+    - Most common state
+
+D = Uninterruptible Sleep
+    - Waiting for I/O (disk, network)
+    - Cannot be interrupted by signals
+    - Cannot be killed (wait for I/O to finish)
+
+Z = Zombie
+    - Terminated but not cleaned up by parent
+    - Waiting for parent to collect exit status
+
+T = Stopped
+    - Process suspended (Ctrl+Z or SIGSTOP)
+    - Can be resumed with SIGCONT or 'fg'
+
+Additional modifiers:
+< = High priority (nice < 0)
+N = Low priority (nice > 0)
+L = Has pages locked in memory
+s = Session leader
+l = Multi-threaded
++ = In foreground process group
