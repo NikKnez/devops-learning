@@ -1,0 +1,32 @@
+=== Common Linux Signals ===
+
+SIGTERM (15) - Terminate gracefully (default for kill)
+  - Process can catch and  cleanup
+  - Polite way to ask process to exit
+
+SIGKILL (9) - Kill immediately (cannot be caught)
+  - Process dies instantly, no cleanup
+  - Use as last resort
+
+SIGINT (2) - Interrupt (Ctrl+C)
+  - User interruption from keyboard
+  - Process can catch and handle
+
+SIGHUP (1) - Hangup
+  - Terminal closed
+  - Often used to reaload config
+
+SIGSTOP (19) - Stop/pause (cannot be caught)
+  - Freezes process
+
+SIGCONT (18) - Continue
+  - Resumes stopped process
+
+SIGQUIT (3) - Quit and dump core (Ctrl+\)
+
+Usage:
+kill -TERM pid     # Graceful termination
+kill -9 pid        # Force kill
+kill -HUP pid      # Reload config
+kill -STOP pid     # Pause
+kill -CONT pid     # Resume
