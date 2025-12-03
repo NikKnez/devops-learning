@@ -1,0 +1,3 @@
+Distribution: Ubuntu 22.04.5 LTS
+Version: 22.04
+Package Manager: apt/dpkg
