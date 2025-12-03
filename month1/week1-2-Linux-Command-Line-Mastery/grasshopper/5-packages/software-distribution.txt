@@ -1,0 +1,30 @@
+=== Software Distribution Methods ===
+
+1. Package Managers (Recommended)
+   - apt (Debian/Ubuntu)
+   - yum/dnf (RedHat/CentOS)
+   - pacman (Arch)
+   - Advantages: Depedency management, updates, easy removal
+   - Example: apt install nginx
+
+2. Pre-compiled Binaries
+   - Download .deb, .rpm, .tar.gz files
+   - Install manually
+   - Example: dpkg -i package.deb
+
+3. Source Code Compilation
+   - Download source (.tar.gz)
+   - Compile with make
+   - Make control, but complex
+   - Example: ./configure && make && make install
+
+4. Snap/Flatpak/AppImage (Universal)
+   - Work across distributions
+   - Self-contained with dependencies
+   - Larger file sizes
+
+5. Language-specific Managers
+   - Python: pip
+   - Node.js: npm
+   - Ruby: gem
+   - Not system-wide package managers
