@@ -1,0 +1,7 @@
+=== Example: curl Dependencies ===
+
+Direct dependencies:
+$(apt-cache depends curl)
+
+What depends on curl:
+$(apt-cache rdepends curl | head -20)

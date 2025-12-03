@@ -1,0 +1,28 @@
+=== Package Dependencies ===
+
+What is a dependency?
+- Software package that another package needs to function
+- Example: nginx depends on libc6, libssl, etc.
+
+Types of dependencies:
+1. Required (hard dependencies)
+   - Package won't work without them
+   - Must be installed
+
+2. Recommended
+   - Strongly suggested but not required
+   - Installed by default with apt
+
+3. Suggested
+   - Optional enhancements
+   - Not installed by default
+
+Dependency hell (old problem):
+- Package A needs Package B v1.5
+- Package C needs Package B v2.0
+- Conflict!
+
+Modern solutions:
+- Package managers resolve dependencies automatically
+- Containers (Docker) bundle dependencies
+- Snap/Flatpak include all dependencies
