@@ -1,0 +1,6 @@
+Package: htop
+Action: Installed
+Date: Wed Dec  3 23:16:03 CET 2025
+Version: htop 3.0.5
+Files installed: 23
+Dependencies: 5
