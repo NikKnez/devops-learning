@@ -1,0 +1,45 @@
+=== Package Management Tools (Ubuntu/Debian) ===
+
+apt (High-level, user-friendly)
+- Modern interface (Ubuntu 16.04+)
+- Better progress bars
+- Combines apt-get and apt-cache
+- Use this for interactive work
+
+Commands:
+apt update              # Update package lists
+apt upgrade             # Upgrade packages
+apt install package     # Install package
+apt remove package      # Remove package
+apt search keyword      # Search for package
+apt show package        # Show package info
+
+apt-get (Traditional, script-friendly)
+- Stable interface
+- Use in scripts
+- More options
+
+Commands:
+apt-get update
+apt-get upgrade
+apt-get install package
+apt-get remove package
+apt-get autoremove      # Remove orphaned packages
+apt-get clean           # Clear cache
+
+dpkg (Low-level, package files)
+- Works with .deb files directly
+- No dependency resolution
+- Lower-level tool
+
+Commands:
+dpkg -i package.deb     # Install .deb file
+dpkg -r package         # Remove package
+dpkg -l                 # List installed packages
+dpkg -L package         # List files in package
+dpkg -S /path/to/file   # Find which package owns file
+
+aptitude (Alternative TUI)
+- Text-based interactive interface
+- Better dependency resolver
+- Not installed by default
