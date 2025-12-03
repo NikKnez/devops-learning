@@ -1,0 +1,10 @@
+=== Transfer tar over SSH ===
+
+# Create and send:
+tar -czf - /path/to/dir | ssh user@remote "cat > backup.tar.gz"
+
+# Receive and extract:
+ssh user@remote "cat backup.tar.gz" | tar -xzf -
+
+# Direct extraction on remote:
+tar -czf - /path/to/dir | ssh user@remote "tar -xzf - -C /destination/"

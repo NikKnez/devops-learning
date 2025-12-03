@@ -1,0 +1,31 @@
+=== tar (Tape Archive) ===
+
+Common tar operations:
+
+CREATE:
+tar -czf archive.tar.gz directory/    # Create compressed
+tar -cf archive.tar directory/        # Create uncompressed
+
+EXTRACT:
+tar -xzf archive.tar.gz               # Extract compressed
+tar -xf archive.tar                   # Extract uncompressed
+
+LIST:
+tar -tzf archive.tar.gz               # List contents (compressed)
+tar -tf archive.tar                   # List contents (uncompressed)
+
+Common flags:
+-c = Create archive
+-x = Extract archive
+-t = List contents
+-f = File (must be followed by filename)
+-z = gzip compression (.tar.gz or .tgz)
+-j = bzip2 compression (.tar.bz2)
+-v = Verbose (show progress)
+-C = Extract to specific directory
+
+File extensions:
+.tar = Uncompressed archive
+.tar.gz or .tgz = gzip compressed
+.tar.bz2 = bzip2 compressed (better compression, slower)
+.tar.xz = xz compressed (best compression, slowest)
