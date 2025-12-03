@@ -1,0 +1,23 @@
+=== Package Repositories ===
+
+What is a repository?
+- Server hosting software packages
+- Contains metadata (package info, dependencies)
+- Ensures software authenticity (GPG signatures)
+
+Ubuntu repositories:
+- main: Officially supported open source
+- universe: Community-maintained open source
+- restricted: Proprietary drivers
+- multiverse: Software with copyright/legal issues
+
+Repository sources location:
+- /etc/apt/sources.list (main file)
+- /etc/apt/sources.list.d/ (additional repos)
+
+Repository format:
+deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ jammy main restricted
+│   │            │                                  │     │
+│   └─ Architecture                                 │     └─ Components
+│                                                    │
+└─ Package type (deb or deb-src)                    └─ Distribution

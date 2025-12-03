@@ -1,0 +1,21 @@
+=== Adding Third-Party Repository ===
+
+Method 1: add-apt-repository command
+sudo add-apt-repository ppa:user/ppa-name
+sudo apt update
+
+Method 2: Manual addition
+echo "deb http://ppa.launchpad.net/user/ppa-name/ubuntu jammy main" | \
+  sudo tee /etc/apt/sources.list.d/ppa-name.list
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys KEY_ID
+sudo apt update
+
+Method 3: Direct .list file
+sudo nano /etc/apt/sources.list.d/custom.list
+# Add repository line
+sudo apt update
+
+Security note:
+- Only add trusted repositories
+- PPAs can break your system
+- Third-party software may have security issues
