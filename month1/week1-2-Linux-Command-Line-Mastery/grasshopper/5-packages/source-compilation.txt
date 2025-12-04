@@ -1,0 +1,40 @@
+=== Compiling from Source ===
+
+Why compile from source?
+- Latest version (not in repositories)
+- Custom configuration options
+- Optimizations for your system
+- Learning experience
+
+Typical process:
+1. Download source code (.tar.gz)
+2. Extract archive
+3. Read README/INSTALL
+4. Install build dependencies
+5. Configure: ./configure
+6. Compile: make
+7. Install: make install
+
+Build dependencies (Ubuntu):
+sudo apt install build-essential
+
+Common configure options:
+./configure --prefix=/usr/local     # Install location
+./configure --help                  # Show all options
+
+Pros:
++ Latest versions
++ Full control
++ Custom optimizations
+
+Cons:
+- No automatic updates
+- Manual dependency management
+- Can break system
+- Hard to uninstall cleanly
+- Time-consuming
+
+Recommendation:
+- Use package manager when possible
+- Compile only when necessary
+- Install to /usr/local or /opt
