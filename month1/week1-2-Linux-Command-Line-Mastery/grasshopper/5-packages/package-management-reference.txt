@@ -1,0 +1,58 @@
+=== Complete Package Management Reference ===
+
+UPDATING:
+sudo apt update              # Update package lists
+sudo apt upgrade             # Upgrade packages
+sudo apt full-upgrade        # Upgrade + remove if needed
+
+INSTALLING:
+sudo apt install pkg         # Install package
+sudo apt install -y pkg      # Install without prompts
+sudo apt install pkg1 pkg2   # Install multiple
+
+REMOVING:
+sudo apt remove pkg          # Remove package (keep config)
+sudo apt purge pkg           # Remove package + config
+sudo apt autoremove          # Remove orphaned packages
+
+SEARCHING:
+apt search keyword           # Search for package
+apt show pkg                 # Show package details
+apt list --installed         # List installed packages
+apt list --upgradable        # List upgradable packages
+
+INFORMATION:
+dpkg -l                      # List all installed
+dpkg -L pkg                  # Files in package
+dpkg -S /path/file           # Which package owns file
+apt-cache depends pkg        # Show dependencies
+apt-cache rdepends pkg       # Reverse dependencies
+
+FILES:
+sudo dpkg -i pkg.deb         # Install .deb file
+dpkg --contents pkg.deb      # List contents
+dpkg --info pkg.deb          # Show info
+
+MAINTENANCE:
+sudo apt autoremove          # Remove unused packages
+sudo apt clean               # Clear package cache
+sudo apt autoclean           # Clear old cache
+sudo apt-get check           # Check dependencies
+
+HOLDING:
+sudo apt-mark hold pkg       # Prevent upgrade
+sudo apt-mark unhold pkg     # Allow upgrade
+apt-mark showhold            # Show held packages
+
+TAR ARCHIVES:
+tar -czf file.tar.gz dir/    # Create compressed
+tar -xzf file.tar.gz         # Extract compressed
+tar -tzf file.tar.gz         # List contents
+tar -xzf file.tar.gz -C /dir # Extract to location
+
+SOURCE COMPILATION:
+sudo apt install build-essential  # Install build tools
+./configure                       # Configure
+make                              # Compile
+sudo make install                 # Install
+sudo make uninstall               # Uninstall (if supported)
