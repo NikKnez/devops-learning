@@ -1,0 +1,27 @@
+=== Package Installation Safety ===
+
+BEFORE installing:
+1. sudo apt update           # Get latest package info
+2. apt show package          # Read package description
+3. apt-cache depends package # Check dependencies
+4. apt-cache policy package  # Check version/source
+
+SAFE practices:
+✓ Only install from official repositories
+✓ Read package descriptions
+✓ Check package size (huge packages = investigate)
+✓ Use apt instead of downloading random .deb files
+✓ Regular updates: sudo apt update && sudo apt upgrade
+
+AVOID:
+✗ Adding untrusted PPAs
+✗ Installing .deb from random websites
+✗ Compiling as root
+✗ Ignoring dependency warnings
+✗ Never updating
+
+TROUBLESHOOTING:
+sudo apt-get install -f    # Fix broken dependencies
+sudo dpkg --configure -a   # Fix interrupted installations
+sudo apt clean             # Clear cache
+sudo apt update            # Refresh lists
