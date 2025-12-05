@@ -1,0 +1,27 @@
+=== sysfs Filesystem (/sys) ===
+
+What is sysfs?
+- Virtual filesystem mounted at /sys
+- Exposes kernel objects to userspace
+- Information about devices and drivers
+- Can configure some kernel parameters
+
+Structure:
+/sys/block/       - Block devices
+/sys/bus/         - Bus types (pci, usb, etc.)
+/sys/class/       - Device classes
+/sys/devices/     - Physical devices tree
+/sys/firmware/    - Firmware info
+/sys/kernel/      - Kernel parameters
+/sys/module/      - Loaded modules
+/sys/power/       - Power management
+
+Purpose:
+- Device discovery
+- Hardware information
+- Driver information
+- Runtime configuration
+
+vs /proc:
+- /proc: Process info + some kernel info
+- /sys: Device and driver info
