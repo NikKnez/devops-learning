@@ -1,0 +1,23 @@
+=== /dev Directory ===
+
+What is /dev?
+- Contains device files (special files)
+- Interface between hardware and software
+- Everything is a file in Linux philosophy
+- Devices appear as files here
+
+Types of files in /dev:
+- Character devices (c)
+- Block devices (b)
+- Symbolic links (l)
+- Named pipes (p)
+- Sockets (s)
+
+Why /dev exists:
+- Uniform interface to hardware
+- Programs interact with devices like files
+- Kernel manages actual hardware communication
+
+Historical note:
+- Originally manually created
+- Now dynamically managed by udev

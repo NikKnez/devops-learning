@@ -1,0 +1,38 @@
+=== Important Device Files ===
+
+/dev/null
+- Discards all data written to it
+- Returns EOF when read
+- Use: Suppress output
+- Example: command > /dev/null
+
+/dev/zero
+- Provides infinite stream of null bytes (0x00)
+- Use: Create files filled with zeros
+- Example: dd if=/dev/zero of=file bs=1M count=10
+
+/dev/random
+- True random number generator
+- Uses hardware entropy
+- Blocks when entropy pool empty
+
+/dev/urandom
+- Pseudo-random number generator
+- Never blocks
+- Use: Most random number needs
+
+/dev/stdin, /dev/stdout, /dev/stderr
+- Standard input/output/error
+- Links to /proc/self/fd/0,1,2
+
+/dev/tty
+- Current terminal
+- Always points to your terminal
+
+/dev/sdX
+- SCSI/SATA disks (sda, sdb, sdc)
+- Partitions: sda1, sda2, etc.
+
+/dev/nvmeXnY
+- NVMe SSDs
+- Example: nvme0n1, nvme0n1p1

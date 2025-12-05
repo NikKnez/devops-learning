@@ -1,0 +1,11 @@
+=== /dev Directory Analysis ===
+
+Total device files: 191
+Block devices: 28
+Character devices: 141
+Symbolic links: 9
+
+Examples of each type:
+Block device: brw-rw---- 1 root disk      7,   0 Dec  5 14:03 loop0
+Character device: crw-r--r-- 1 root root     10, 235 Dec  5 14:03 autofs
+Symbolic link: lrwxrwxrwx 1 root root          11 Dec  5 14:03 core -> /proc/kcore
