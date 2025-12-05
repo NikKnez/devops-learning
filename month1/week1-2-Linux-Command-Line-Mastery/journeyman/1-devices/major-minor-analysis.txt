@@ -1,0 +1,13 @@
+=== Major/Minor Number Examples ===
+
+Major number groups device types:
+- 1 = Memory devices (ram, null, zero, random)
+- 8 = SCSI disk devices (sda, sdb)
+- 4 = TTY devices
+- 13 = Input devices (mouse, keyboard)
+
+Examples from this system:
+crw-rw-rw- 1 root root 1, 3 Dec  5 23:31 /dev/null
+crw-rw-rw- 1 root root 1, 8 Dec  5 23:31 /dev/random
+brw-rw---- 1 root disk 8, 0 Dec  5 23:31 /dev/sda
+crw-rw-rw- 1 root tty  5, 0 Dec  5 23:31 /dev/tty

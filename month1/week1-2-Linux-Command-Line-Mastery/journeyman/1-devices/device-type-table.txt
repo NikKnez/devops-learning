@@ -1,0 +1,21 @@
+=== Device Type Classification ===
+
+BLOCK DEVICES:
+Device          Purpose
+------          -------
+/dev/sda        First SATA/SCSI disk
+/dev/sdb        Second SATA/SCSI disk
+/dev/nvme0n1    First NVMe SSD
+/dev/loop0      Loop device (mount files)
+/dev/sr0        CD/DVD drive
+
+CHARACTER DEVICES:
+Device          Purpose
+------          -------
+/dev/null       Null device (discard data)
+/dev/zero       Zero byte generator
+/dev/random     Random number generator
+/dev/urandom    Pseudo-random generator
+/dev/tty        Current terminal
+/dev/console    System console
+/dev/input/*    Input devices (mouse, keyboard)

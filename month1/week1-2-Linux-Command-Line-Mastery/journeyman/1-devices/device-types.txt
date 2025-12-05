@@ -1,0 +1,33 @@
+=== Device Types ===
+
+BLOCK DEVICES (b)
+- Transfer data in blocks (chunks)
+- Buffered I/O
+- Random access possible
+- Examples: Hard drives, SSDs, USB drives
+- Typical: /dev/sda, /dev/nvme0n1
+
+Characteristics:
+- Can seek to any position
+- OS caches data
+- Used for storage
+
+CHARACTER DEVICES (c)
+- Transfer data one character at a time
+- Unbuffered I/O
+- Sequential access only
+- Examples: Keyboards, mice, terminals, serial ports
+- Typical: /dev/tty*, /dev/input/*, /dev/null
+
+Characteristics:
+- Stream-oriented
+- No seeking
+- Immediate data transfer
+
+Major and Minor Numbers:
+- Major number: Identifies device driver
+- Minor number: Identifies specific device
+- Format: brw-rw---- 1 root disk 8, 0 ...
+                                  │  │
+                                  │  └─ Minor number
+                                  └─ Major number
