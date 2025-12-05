@@ -1,0 +1,19 @@
+=== Terminal Information ===
+
+My current terminal: /dev/pts/2
+
+Active terminals:
+root     pts/1        2025-12-05 23:31
+
+Pseudo-terminals:
+1
+2
+ptmx
+
+Virtual consoles available:
+/dev/tty1
+/dev/tty2
+/dev/tty3
+/dev/tty4
+/dev/tty5
+/dev/tty6

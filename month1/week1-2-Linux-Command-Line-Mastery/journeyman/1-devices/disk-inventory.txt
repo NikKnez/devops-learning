@@ -1,0 +1,17 @@
+=== Disk Device Inventory ===
+
+Block devices on this system:
+NAME   SIZE TYPE MOUNTPOINT
+sda  388.6M disk 
+sdb    186M disk 
+sdc      4G disk [SWAP]
+sdd      1T disk /mnt/wslg/distro
+
+Root filesystem device:
+/dev/sdd       1055762868 5519608 996539788   1% /
+
+All disk-related devices:
+/dev/sda
+/dev/sdb
+/dev/sdc
+/dev/sdd

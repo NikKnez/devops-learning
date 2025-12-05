@@ -1,0 +1,32 @@
+=== Device Naming Conventions ===
+
+DISK DEVICES:
+/dev/sdX        - SCSI/SATA disks (X = a, b, c...)
+/dev/sdXN       - Partitions (N = 1, 2, 3...)
+/dev/nvmeXnY    - NVMe drives (X = controller, Y = namespace)
+/dev/nvmeXnYpZ  - NVMe partitions (Z = partition number)
+/dev/mmcblkX    - SD/MMC cards
+/dev/mmcblkXpY  - SD card partitions
+
+Examples:
+/dev/sda        - First disk
+/dev/sda1       - First partition on first disk
+/dev/sda2       - Second partition on first disk
+/dev/sdb        - Second disk
+/dev/nvme0n1    - First NVMe drive
+/dev/nvme0n1p1  - First partition on first NVMe
+
+TERMINAL DEVICES:
+/dev/ttyN       - Virtual consoles (N = 1-6)
+/dev/pts/N      - Pseudo-terminals (SSH, terminal emulator)
+/dev/ttyS0      - Serial ports
+
+LOOP DEVICES:
+/dev/loopN      - Loop devices (mount files as disks)
+
+INPUT DEVICES:
+/dev/input/mouseN   - Mouse
+/dev/input/eventN   - Generic input events
+
+LEGACY NAMES (older systems):
+/dev/hdX        - IDE/PATA disks (mostly obsolete)
