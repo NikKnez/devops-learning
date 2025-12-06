@@ -1,0 +1,10 @@
+=== Testing dd Performance ===
+
+Block size 1K:
+10240000 bytes (10 MB, 9.8 MiB) copied, 0.0264766 s, 387 MB/s
+
+Block size 1M:
+10485760 bytes (10 MB, 10 MiB) copied, 0.0164847 s, 636 MB/s
+
+Block size 10M:
+10485760 bytes (10 MB, 10 MiB) copied, 0.0239684 s, 437 MB/s

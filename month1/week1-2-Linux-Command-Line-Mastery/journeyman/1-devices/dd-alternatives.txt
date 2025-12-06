@@ -1,0 +1,42 @@
+=== dd vs Alternative Tools ===
+
+When to use dd:
+✓ Low-level disk operations
+✓ Exact bit-for-bit copies
+✓ Working with raw devices
+✓ Creating disk images
+✓ Forensics work
+
+When NOT to use dd (use alternatives):
+
+Instead of dd for file backup → rsync, cp, tar
+- Faster
+- Progress indicators
+- Preserve metadata better
+
+Instead of dd for disk cloning → clonezilla, partclone
+- Understands filesystems
+- Only copies used space
+- Faster for large disks
+
+Instead of dd for USB creation → balenaEtcher, Rufus
+- User-friendly
+- Harder to make mistakes
+- Verification built-in
+
+Instead of dd for secure wiping → shred, wipe, hdparm
+- Multiple passes
+- Forensically secure
+- DOD-compliant patterns
+
+dd advantages:
++ Universally available
++ Simple and reliable
++ Scriptable
++ Fast for sequential operations
+
+dd disadvantages:
+- No progress by default (use status=progress)
+- Dangerous if misused
+- Copies empty space too
+- No error recovery

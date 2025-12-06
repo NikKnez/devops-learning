@@ -1,0 +1,40 @@
+=== Common dd Use Cases ===
+
+1. Backup entire disk:
+   dd if=/dev/sda of=/backup/disk.img bs=4M status=progress
+   
+2. Restore disk from backup:
+   dd if=/backup/disk.img of=/dev/sda bs=4M status=progress
+
+3. Clone disk to another disk:
+   dd if=/dev/sda of=/dev/sdb bs=4M status=progress
+
+4. Create ISO from CD/DVD:
+   dd if=/dev/cdrom of=disc.iso bs=2048
+
+5. Write ISO to USB (make bootable):
+   dd if=ubuntu.iso of=/dev/sdX bs=4M status=progress
+
+6. Securely wipe disk:
+   dd if=/dev/zero of=/dev/sdX bs=4M status=progress
+   # Or with random data:
+   dd if=/dev/urandom of=/dev/sdX bs=4M status=progress
+
+7. Create sparse file:
+   dd if=/dev/zero of=sparse.img bs=1 count=0 seek=1G
+
+8. Backup partition:
+   dd if=/dev/sda1 of=partition-backup.img bs=4M
+
+9. Create swap file:
+   dd if=/dev/zero of=/swapfile bs=1M count=2048
+
+10. Test disk speed:
+    dd if=/dev/zero of=testfile bs=1G count=1 oflag=direct
+
+CRITICAL SAFETY RULES:
+- ALWAYS verify if= and of= before pressing Enter
+- One typo can destroy your data
+- Test on non-critical systems first
+- Keep backups
+- if=/dev/sda of=/dev/sdb is VERY different from of=/dev/sda if=/dev/sdb

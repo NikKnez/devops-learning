@@ -1,0 +1,36 @@
+=== dd Command ===
+
+What is dd?
+- "Data Definition" or "Disk Duplicator"
+- Low-level data copying
+- Works with bytes/blocks
+- Can copy disks, partitions, files
+- Creates exact bit-for-bit copies
+
+WARNING: dd is DANGEROUS!
+- Can destroy data instantly
+- No undo
+- Wrong command = destroyed disk
+- Always double-check syntax
+- Nicknamed "Disk Destroyer"
+
+Syntax:
+dd if=INPUT_FILE of=OUTPUT_FILE [options]
+
+Common options:
+bs=SIZE     - Block size (1K, 1M, 1G)
+count=N     - Copy only N blocks
+skip=N      - Skip N blocks at start of input
+seek=N      - Skip N blocks at start of output
+conv=sync   - Pad blocks to block size
+status=progress - Show progress
+
+Common uses:
+1. Backup disk: dd if=/dev/sda of=backup.img
+2. Restore disk: dd if=backup.img of=/dev/sda
+3. Create ISO: dd if=/dev/cdrom of=disk.iso
+4. Wipe disk: dd if=/dev/zero of=/dev/sda
+5. Create test file: dd if=/dev/zero of=testfile bs=1M count=100
+6. USB bootable: dd if=linux.iso of=/dev/sdX
+
+NEVER run dd on production systems without testing command first!
