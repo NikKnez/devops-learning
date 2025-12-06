@@ -1,0 +1,24 @@
+=== Hardware Inventory ===
+
+Block devices:
+NAME   SIZE TYPE
+sda  388.6M disk
+sdb    186M disk
+sdc      4G disk
+sdd      1T disk
+
+USB devices:
+
+
+PCI devices:
+5582:00:00.0 SCSI storage controller: Red Hat, Inc. Virtio console (rev 01)
+59f2:00:00.0 3D controller: Microsoft Corporation Device 008e
+5b9c:00:00.0 System peripheral: Red Hat, Inc. Virtio file system (rev 01)
+
+CPU:
+CPU(s):                               12
+On-line CPU(s) list:                  0-11
+Model name:                           13th Gen Intel(R) Core(TM) i5-1335U
+Thread(s) per core:                   2
+Core(s) per socket:                   6
+NUMA node0 CPU(s):                    0-11

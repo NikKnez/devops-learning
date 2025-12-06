@@ -1,0 +1,26 @@
+=== Block Device Report ===
+
+Basic layout:
+NAME MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+sda    8:0    0 388.6M  1 disk 
+sdb    8:16   0   186M  1 disk 
+sdc    8:32   0     4G  0 disk [SWAP]
+sdd    8:48   0     1T  0 disk /snap
+                               /mnt/wslg/distro
+                               /
+
+With filesystem info:
+NAME FSTYPE FSVER LABEL UUID                                 FSAVAIL FSUSE% MOUNTPOINTS
+sda  ext4   1.0                                                             
+sdb  ext4   1.0                                                             
+sdc  swap   1           08574a3d-3b45-4233-a340-6837095a3df1                [SWAP]
+sdd  ext4   1.0         cf12f200-493d-491d-8332-31a61a515c98  950.4G     1% /snap
+                                                                            /mnt/wslg/distro
+                                                                            /
+
+Detailed info:
+NAME   SIZE TYPE FSTYPE MOUNTPOINT       LABEL UUID
+sda  388.6M disk ext4                          
+sdb    186M disk ext4                          
+sdc      4G disk swap   [SWAP]                 08574a3d-3b45-4233-a340-6837095a3df1
+sdd      1T disk ext4   /mnt/wslg/distro       cf12f200-493d-491d-8332-31a61a515c98
