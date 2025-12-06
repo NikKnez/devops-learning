@@ -1,0 +1,17 @@
+=== Monitoring udev Events ===
+
+To monitor device events:
+./monitor-udev.sh
+
+What you'll see:
+- KERNEL events (from kernel)
+- UDEV events (after udev processes)
+
+Example event:
+KERNEL[1234.567890] add /devices/pci.../block/sdb (block)
+UDEV  [1234.567900] add /devices/pci.../block/sdb (block)
+
+This shows:
+- Action: add
+- Device path
+- Subsystem: block

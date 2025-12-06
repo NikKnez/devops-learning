@@ -1,0 +1,33 @@
+=== udev Device Manager ===
+
+What is udev?
+- Dynamic device management system
+- Creates/removes device nodes in /dev
+- Loads firmware
+- Runs scripts when devices added/removed
+- Manages device permissions
+
+How udev works:
+1. Kernel detects device
+2. Kernel sends uevent
+3. udev receives uevent
+4. udev creates device node in /dev
+5. udev applies rules
+6. udev runs configured programs
+
+udev rules:
+- Location: /etc/udev/rules.d/, /lib/udev/rules.d/
+- Match devices and perform actions
+- Set permissions, create symlinks, run scripts
+
+Key commands:
+udevadm info    - Query device info
+udevadm monitor - Watch udev events
+udevadm trigger - Replay events
+udevadm control - Control udev daemon
+
+Persistent device names:
+- /dev/disk/by-uuid/
+- /dev/disk/by-label/
+- /dev/disk/by-path/
+- /dev/disk/by-id/

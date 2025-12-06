@@ -1,0 +1,18 @@
+=== Persistent Device Names ===
+
+Why use them?
+- Device names (sda, sdb) can change on reboot
+- UUID/Label/ID remain constant
+- Critical for /etc/fstab
+- Prevent mounting wrong disk
+
+Available methods:
+1. by-uuid/   - Unique filesystem identifier
+2. by-label/  - Filesystem label (if set)
+3. by-id/     - Hardware identifier
+4. by-path/   - Physical connection path
+
+Examples from this system:
+total 0
+lrwxrwxrwx 1 root root 9 Dec  6 22:45 08574a3d-3b45-4233-a340-6837095a3df1 -> ../../sdc
+lrwxrwxrwx 1 root root 9 Dec  6 22:45 cf12f200-493d-491d-8332-31a61a515c98 -> ../../sdd
