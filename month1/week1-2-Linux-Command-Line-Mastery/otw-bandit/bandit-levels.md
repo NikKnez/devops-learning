@@ -31,3 +31,18 @@ Pass: MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
 Level Goal
 The password for the next level is stored in a hidden file in the inhere directory.
 Pass: 2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
+
+## Bandit Level 4 → Level 5
+Level Goal
+The password for the next level is stored in the only human-readable file in the inhere directory. 
+Tip: if your terminal is messed up, try the “reset” command.
+Pass: 4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
+
+## Bandit Level 5 → Level 6
+Level Goal
+The password for the next level is stored in a file somewhere under the inhere directory and has 
+all of the following properties:
+- human-readable
+- 1033 bytes in size
+- not executable
+Pass: HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
