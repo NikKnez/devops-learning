@@ -1,0 +1,36 @@
+=== Linux Swap Space ===
+
+What is Swap?
+- Virtual memory extension
+- Disk space used as RAM when RAM is full
+- Slower than RAM but prevents OOM (Out Of Memory) kills
+
+When is Swap Used?
+- RAM is full
+- Inactive pages moved to swap
+- Hibernation (suspend-to-disk)
+
+Swap Types:
+1. Swap Partition - Dedicated disk partition
+2. Swap File - Regular file used as swap
+
+How Much Swap?
+Old rule: 2x RAM
+Modern recommendation:
+- RAM <= 2GB:     2x RAM
+- RAM 2-8GB:      Equal to RAM
+- RAM > 8GB:      8GB or less
+- Servers:        Depends on workload
+
+Swap vs No Swap:
+With Swap:  System slows but doesn't crash
+Without Swap: OOM Killer terminates processes
+
+Swappiness:
+- Kernel parameter (0-100)
+- How aggressively to use swap
+- 0 = Avoid swap unless necessary
+- 100 = Use swap aggressively
+- Default: 60
+- Desktops: 10
+- Servers: 1-10

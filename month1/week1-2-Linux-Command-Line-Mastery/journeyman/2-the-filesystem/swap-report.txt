@@ -1,0 +1,16 @@
+=== Swap Configuration Report ===
+
+Memory and Swap:
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi       502Mi        14Gi       3.0Mi       315Mi        14Gi
+Swap:          4.0Gi          0B       4.0Gi
+
+Swap devices:
+NAME     TYPE      SIZE USED PRIO
+/dev/sdc partition   4G   0B   -2
+
+Swappiness: 60
+
+Total RAM: 15Gi
+Total Swap: 4.0Gi
+Swap Used: 0B
