@@ -1,0 +1,36 @@
+=== Creating Filesystems with mkfs ===
+
+mkfs (Make Filesystem) Family:
+mkfs.ext4   - Create ext4 filesystem
+mkfs.xfs    - Create XFS filesystem
+mkfs.vfat   - Create FAT filesystem
+mkfs.ntfs   - Create NTFS filesystem
+
+Common syntax:
+mkfs.<type> /dev/sdXN
+
+Examples:
+sudo mkfs.ext4 /dev/sdb1        # Format partition as ext4
+sudo mkfs.ext4 -L mydata /dev/sdb1  # With label
+sudo mkfs.xfs /dev/sdc1         # Format as XFS
+
+Options:
+-L label    - Set filesystem label
+-t type     - Specify filesystem type
+-c          - Check for bad blocks first
+
+WARNING: mkfs DESTROYS ALL DATA!
+- Triple-check device name
+- Wrong device = data loss
+- Always unmount before formatting
+
+Filesystem Features:
+ext4:  Journaling, large file support, backwards compatible
+xfs:   High performance, good for large files
+btrfs: Snapshots, compression, advanced features
+
+Best Practices:
+1. Always unmount first: sudo umount /dev/sdX1
+2. Verify device: lsblk before mkfs
+3. Use labels: easier to identify
+4. Test mount after creating
