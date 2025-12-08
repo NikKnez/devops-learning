@@ -1,0 +1,17 @@
+=== Current Partition Scheme ===
+
+Layout:
+NAME   SIZE TYPE MOUNTPOINT       FSTYPE
+sda  388.6M disk                  ext4
+sdb    186M disk                  ext4
+sdc      4G disk [SWAP]           swap
+sdd      1T disk /mnt/wslg/distro ext4
+
+Partition details:
+/dev/sdd: UUID="cf12f200-493d-491d-8332-31a61a515c98" BLOCK_SIZE="4096" TYPE="ext4"
+/dev/sdb: BLOCK_SIZE="4096" TYPE="ext4"
+/dev/sdc: UUID="531913ee-7acf-484d-bafa-961079b70dfa" TYPE="swap"
+/dev/sda: BLOCK_SIZE="4096" TYPE="ext4"
+
+Root partition:
+/dev/sdd       1007G  5.4G  951G   1% /

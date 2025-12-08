@@ -1,0 +1,90 @@
+# Exercise 4: Disk Partitioning (Theory & Observation)
+
+
+## Task 4.1: Understanding Partitioning
+cat > partitioning-guide.txt << 'EOF'
+=== Disk Partitioning Guide ===
+
+WHY PARTITION?
+1. Separate OS from user data
+2. Multiple operating systems
+3. Isolate critical directories (/var, /home)
+4. Performance optimization
+5. Security (separate /tmp with noexec)
+
+PARTITION TYPES:
+
+Primary Partitions:
+- Bootable
+- Max 4 on MBR disks
+- Can contain filesystem directly
+
+Extended Partition:
+- Container for logical partitions
+- Only on MBR disks
+- Not used with GPT
+
+Logical Partitions:
+- Inside extended partition
+- Can have many (limited by partition table)
+
+COMMON PARTITION SCHEMES:
+
+Minimal (Single disk):
+/dev/sda1  - /boot (500 MB)
+/dev/sda2  - swap (RAM size or 2x RAM)
+/dev/sda3  - / (rest of disk)
+
+Standard (Single disk):
+/dev/sda1  - /boot (1 GB)
+/dev/sda2  - swap (8 GB)
+/dev/sda3  - / (50 GB)
+/dev/sda4  - /home (rest)
+
+Server (Separate /var for logs):
+/dev/sda1  - /boot (1 GB)
+/dev/sda2  - swap (16 GB)
+/dev/sda3  - / (50 GB)
+/dev/sda4  - /var (100 GB - logs)
+/dev/sda5  - /home (rest)
+
+PARTITIONING TOOLS:
+fdisk   - MBR partitions (interactive)
+gdisk   - GPT partitions (fdisk for GPT)
+parted  - Both MBR and GPT (scriptable)
+
+WARNING: Partitioning destroys data!
+Always backup before repartitioning.
+EOF
+
+cat partitioning-guide.txt
+
+
+## Task 4.2: View Partition Information (Safe)
+# Current partition layout
+lsblk -o NAME,SIZE,TYPE,MOUNTPOINT,FSTYPE
+
+# Detailed partition info
+sudo fdisk -l | grep -E "^Disk|^Device"
+
+# Show partition UUIDs
+sudo blkid
+
+# Check partition alignment (performance)
+sudo parted /dev/sda align-check optimal 1 2>/dev/null || echo "Cannot check alignment"
+
+# Document current partitions
+cat > current-partitions.txt << EOF
+=== Current Partition Scheme ===
+
+Layout:
+$(lsblk -o NAME,SIZE,TYPE,MOUNTPOINT,FSTYPE)
+
+Partition details:
+$(sudo blkid)
+
+Root partition:
+$(df -h / | tail -1)
+EOF
+
+cat current-partitions.txt
