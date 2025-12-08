@@ -1,0 +1,49 @@
+=== Linux Filesystem Types ===
+
+EXT4 (Fourth Extended Filesystem)
+- Most common on Linux
+- Journaling filesystem (crash recovery)
+- Max file size: 16 TB
+- Max volume size: 1 EB
+- Use: General purpose, root partitions
+
+XFS
+- High performance, scalability
+- Good for large files
+- Used by RHEL/CentOS by default
+- Use: Large databases, media servers
+
+BTRFS (B-Tree Filesystem)
+- Copy-on-write (COW)
+- Built-in snapshots, compression
+- Self-healing capabilities
+- Use: Advanced users, NAS systems
+
+FAT32
+- Universal compatibility (Windows, Mac, Linux)
+- Max file size: 4 GB (limitation!)
+- Use: USB drives, SD cards
+
+NTFS
+- Windows filesystem
+- Linux can read/write with ntfs-3g driver
+- Use: Dual-boot systems, external drives
+
+TMPFS
+- RAM-based filesystem
+- Very fast, volatile (lost on reboot)
+- Use: /tmp, /dev/shm
+
+SWAP
+- Virtual memory extension
+- Not a traditional filesystem
+- Use: System swap space
+
+Network Filesystems:
+NFS  - Network File System (Unix/Linux)
+CIFS - Common Internet File System (Windows shares)
+
+Virtual Filesystems:
+/proc - Process information
+/sys  - Kernel and device info
+/dev  - Device files

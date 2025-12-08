@@ -1,0 +1,43 @@
+=== My System's Filesystems ===
+
+All mounted filesystems:
+Filesystem     Type           Size  Used Avail Use% Mounted on
+/dev/sdd       ext4          1007G  5.4G  951G   1% /
+rootfs         rootfs         7.7G  2.7M  7.7G   1% /init
+none           tmpfs          7.7G     0  7.7G   0% /dev/shm
+none           tmpfs          7.7G  956K  7.7G   1% /run
+none           tmpfs          7.7G     0  7.7G   0% /run/lock
+none           tmpfs          7.7G   80K  7.7G   1% /run/user
+tmpfs          tmpfs          1.6G  8.0K  1.6G   1% /run/user/0
+drivers        9p             953G  296G  658G  32% /usr/lib/wsl/drivers
+none           overlay        7.7G     0  7.7G   0% /usr/lib/wsl/lib
+none           tmpfs          7.7G  4.0K  7.7G   1% /mnt/wsl
+none           overlay        7.7G   76K  7.7G   1% /mnt/wslg/versions.txt
+none           overlay        7.7G   76K  7.7G   1% /mnt/wslg/doc
+none           overlay        7.7G     0  7.7G   0% /usr/lib/modules/6.6.87.2-microsoft-standard-WSL2
+snapfuse       fuse.snapfuse  128K  128K     0 100% /snap/bare/5
+snapfuse       fuse.snapfuse  256K  256K     0 100% /snap/figlet/36
+snapfuse       fuse.snapfuse   56M   56M     0 100% /snap/core18/2959
+snapfuse       fuse.snapfuse   74M   74M     0 100% /snap/core22/2139
+snapfuse       fuse.snapfuse  251M  251M     0 100% /snap/firefox/7423
+snapfuse       fuse.snapfuse   74M   74M     0 100% /snap/core22/2163
+snapfuse       fuse.snapfuse   56M   56M     0 100% /snap/core18/2976
+snapfuse       fuse.snapfuse  517M  517M     0 100% /snap/gnome-42-2204/226
+snapfuse       fuse.snapfuse   92M   92M     0 100% /snap/gtk-common-themes/1535
+snapfuse       fuse.snapfuse   51M   51M     0 100% /snap/snapd/25202
+snapfuse       fuse.snapfuse   51M   51M     0 100% /snap/snapd/25577
+snapfuse       fuse.snapfuse  131M  131M     0 100% /snap/ubuntu-desktop-installer/1284
+snapfuse       fuse.snapfuse  132M  132M     0 100% /snap/ubuntu-desktop-installer/1286
+C:\            9p             953G  296G  658G  32% /mnt/c
+tmpfs          tmpfs          1.6G  8.0K  1.6G   1% /run/user/1000
+
+Root filesystem type: ext4
+
+All filesystems with details:
+NAME FSTYPE FSVER LABEL UUID                                 FSAVAIL FSUSE% MOUNTPOINTS
+sda  ext4   1.0                                                             
+sdb  ext4   1.0                                                             
+sdc  swap   1           531913ee-7acf-484d-bafa-961079b70dfa                [SWAP]
+sdd  ext4   1.0         cf12f200-493d-491d-8332-31a61a515c98  950.3G     1% /snap
+                                                                            /mnt/wslg/distro
+                                                                            /
