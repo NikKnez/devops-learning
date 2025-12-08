@@ -1,0 +1,40 @@
+=== Practice fstab Entries ===
+
+Example 1: USB Drive
+UUID=1234-5678  /mnt/usb  vfat  defaults,noauto,user  0  0
+- noauto: Don't mount at boot
+- user: Allow non-root users to mount
+
+Example 2: External Backup Drive
+UUID=abc-def  /mnt/backup  ext4  defaults,nofail  0  2
+- nofail: Don't halt boot if missing
+
+Example 3: Temporary RAM Disk
+tmpfs  /mnt/ramdisk  tmpfs  defaults,size=1G  0  0
+- In-memory filesystem
+- Very fast, volatile
+
+Example 4: Network Share
+//192.168.1.100/share  /mnt/network  cifs  credentials=/root/.smbcreds  0  0
+- Network filesystem
+- Credentials file for security
+
+Example 5: Swap Partition
+UUID=swap-uuid  none  swap  sw  0  0
+- none: No mount point
+- sw: Swap priority
+
+How to Add Entry:
+1. sudo cp /etc/fstab /etc/fstab.backup  # Backup!
+2. Get UUID: sudo blkid /dev/sdX1
+3. sudo nano /etc/fstab
+4. Add line
+5. Test: sudo mount -a
+6. If error: sudo cp /etc/fstab.backup /etc/fstab
+
+Emergency Recovery:
+If fstab prevents boot:
+1. Boot from live USB
+2. Mount root: sudo mount /dev/sdX2 /mnt
+3. Fix: sudo nano /mnt/etc/fstab
+4. Reboot

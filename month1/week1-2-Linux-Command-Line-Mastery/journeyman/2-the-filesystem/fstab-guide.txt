@@ -1,0 +1,56 @@
+=== /etc/fstab File System Table ===
+
+Purpose:
+- Defines how filesystems should be mounted at boot
+- Automatic mounting without manual commands
+- System boot depends on this file
+
+Format (6 columns):
+<device> <mount point> <type> <options> <dump> <pass>
+
+Example Line:
+UUID=abc-123 /home ext4 defaults 0 2
+
+Column 1 - Device:
+/dev/sda1                    # Device name (can change!)
+UUID=abc-def-123             # UUID (preferred - never changes)
+LABEL=mydisk                 # Filesystem label
+//server/share               # Network share
+
+Column 2 - Mount Point:
+/                # Root
+/home            # Home directories
+/mnt/data        # Custom mount
+none             # For swap
+
+Column 3 - Filesystem Type:
+ext4, xfs, vfat, ntfs, swap, nfs, tmpfs
+
+Column 4 - Mount Options:
+defaults         # rw, suid, dev, exec, auto, nouser, async
+ro               # Read-only
+rw               # Read-write
+noexec           # Don't allow program execution
+nosuid           # Ignore setuid bits
+noauto           # Don't mount at boot (manual mount only)
+user             # Allow regular users to mount
+nofail           # Don't halt boot if device missing
+
+Column 5 - Dump:
+0 = Don't backup with dump utility
+1 = Backup with dump
+
+Column 6 - Pass (fsck order):
+0 = Don't check
+1 = Check first (root filesystem)
+2 = Check after root
+
+CRITICAL WARNINGS:
+- Syntax errors prevent boot!
+- Always test before rebooting
+- Keep backup of working fstab
+- Use UUID instead of /dev/sdX (device names can change)
+
+Testing fstab Changes:
+sudo mount -a      # Mount all in fstab
+sudo findmnt --verify  # Verify fstab syntax

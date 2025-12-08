@@ -1,0 +1,59 @@
+=== My System's /etc/fstab Analysis ===
+
+Current fstab (without comments):
+
+
+Root partition device: /dev/sdd
+Root partition UUID: UUID="cf12f200-493d-491d-8332-31a61a515c98"
+
+Mounted filesystems:
+/dev/sdd     on  /                                                  type  ext4           (rw,relatime,discard,errors=remount-ro,data=ordered)
+rootfs       on  /init                                              type  rootfs         (ro,size=8060596k,nr_inodes=2015149)
+none         on  /dev                                               type  devtmpfs       (rw,nosuid,relatime,size=8060596k,nr_inodes=2015149,mode=755)
+devpts       on  /dev/pts                                           type  devpts         (rw,nosuid,noexec,noatime,gid=5,mode=620,ptmxmode=000)
+none         on  /dev/shm                                           type  tmpfs          (rw,nosuid,nodev,noatime)
+hugetlbfs    on  /dev/hugepages                                     type  hugetlbfs      (rw,relatime,pagesize=2M)
+mqueue       on  /dev/mqueue                                        type  mqueue         (rw,nosuid,nodev,noexec,relatime)
+sysfs        on  /sys                                               type  sysfs          (rw,nosuid,nodev,noexec,noatime)
+cgroup2      on  /sys/fs/cgroup                                     type  cgroup2        (rw,nosuid,nodev,noexec,relatime,nsdelegate)
+debugfs      on  /sys/kernel/debug                                  type  debugfs        (rw,nosuid,nodev,noexec,relatime)
+tracefs      on  /sys/kernel/tracing                                type  tracefs        (rw,nosuid,nodev,noexec,relatime)
+fusectl      on  /sys/fs/fuse/connections                           type  fusectl        (rw,nosuid,nodev,noexec,relatime)
+proc         on  /proc                                              type  proc           (rw,nosuid,nodev,noexec,noatime)
+binfmt_misc  on  /proc/sys/fs/binfmt_misc                           type  binfmt_misc    (rw,relatime)
+none         on  /run                                               type  tmpfs          (rw,nosuid,nodev,mode=755)
+none         on  /run/lock                                          type  tmpfs          (rw,nosuid,nodev,noexec,noatime)
+none         on  /run/shm                                           type  tmpfs          (rw,nosuid,nodev,noatime)
+none         on  /run/user                                          type  tmpfs          (rw,nosuid,nodev,noexec,noatime,mode=755)
+none         on  /run/user                                          type  tmpfs          (rw,relatime)
+tmpfs        on  /run/user/0                                        type  tmpfs          (rw,nosuid,nodev,relatime,size=1613124k,nr_inodes=403281,mode=700)
+drivers      on  /usr/lib/wsl/drivers                               type  9p             (ro,nosuid,nodev,noatime,aname=drivers;fmask=222;dmask=222,cache=5,access=client,msize=65536,trans=fd,rfd=8,wfd=8)
+none         on  /usr/lib/wsl/lib                                   type  overlay        (rw,nosuid,nodev,noatime,lowerdir=/gpu_lib_packaged:/gpu_lib_inbox,upperdir=/gpu_lib/rw/upper,workdir=/gpu_lib/rw/work,uuid=on)
+none         on  /mnt/wsl                                           type  tmpfs          (rw,relatime)
+none         on  /mnt/wslg                                          type  tmpfs          (rw,relatime)
+/dev/sdd     on  /mnt/wslg/distro                                   type  ext4           (ro,relatime,discard,errors=remount-ro,data=ordered)
+none         on  /mnt/wslg/versions.txt                             type  overlay        (rw,relatime,lowerdir=/systemvhd,upperdir=/system/rw/upper,workdir=/system/rw/work,uuid=on)
+none         on  /mnt/wslg/doc                                      type  overlay        (rw,relatime,lowerdir=/systemvhd,upperdir=/system/rw/upper,workdir=/system/rw/work,uuid=on)
+tmpfs        on  /mnt/wslg/run/user/0                               type  tmpfs          (rw,nosuid,nodev,relatime,size=1613124k,nr_inodes=403281,mode=700)
+none         on  /tmp/.X11-unix                                     type  tmpfs          (ro,relatime)
+none         on  /usr/lib/modules/6.6.87.2-microsoft-standard-WSL2  type  overlay        (rw,nosuid,nodev,noatime,lowerdir=/modules,upperdir=/lib/modules/6.6.87.2-microsoft-standard-WSL2/rw/upper,workdir=/lib/modules/6.6.87.2-microsoft-standard-WSL2/rw/work,uuid=on)
+/dev/sdd     on  /snap                                              type  ext4           (rw,relatime,discard,errors=remount-ro,data=ordered)
+snapfuse     on  /snap/bare/5                                       type  fuse.snapfuse  (ro,nodev,relatime,user_id=0,group_id=0,allow_other)
+snapfuse     on  /snap/core18/2976                                  type  fuse.snapfuse  (ro,nodev,relatime,user_id=0,group_id=0,allow_other)
+snapfuse     on  /snap/core18/2959                                  type  fuse.snapfuse  (ro,nodev,relatime,user_id=0,group_id=0,allow_other)
+snapfuse     on  /snap/core22/2139                                  type  fuse.snapfuse  (ro,nodev,relatime,user_id=0,group_id=0,allow_other)
+snapfuse     on  /snap/core22/2163                                  type  fuse.snapfuse  (ro,nodev,relatime,user_id=0,group_id=0,allow_other)
+snapfuse     on  /snap/figlet/36                                    type  fuse.snapfuse  (ro,nodev,relatime,user_id=0,group_id=0,allow_other)
+snapfuse     on  /snap/firefox/7423                                 type  fuse.snapfuse  (ro,nodev,relatime,user_id=0,group_id=0,allow_other)
+snapfuse     on  /snap/gnome-42-2204/226                            type  fuse.snapfuse  (ro,nodev,relatime,user_id=0,group_id=0,allow_other)
+snapfuse     on  /snap/gtk-common-themes/1535                       type  fuse.snapfuse  (ro,nodev,relatime,user_id=0,group_id=0,allow_other)
+snapfuse     on  /snap/snapd/25202                                  type  fuse.snapfuse  (ro,nodev,relatime,user_id=0,group_id=0,allow_other)
+snapfuse     on  /snap/snapd/25577                                  type  fuse.snapfuse  (ro,nodev,relatime,user_id=0,group_id=0,allow_other)
+snapfuse     on  /snap/ubuntu-desktop-installer/1284                type  fuse.snapfuse  (ro,nodev,relatime,user_id=0,group_id=0,allow_other)
+snapfuse     on  /snap/ubuntu-desktop-installer/1286                type  fuse.snapfuse  (ro,nodev,relatime,user_id=0,group_id=0,allow_other)
+C:\          on  /mnt/c                                             type  9p             (rw,noatime,aname=drvfs;path=C:\;uid=0;gid=0;symlinkroot=/mnt/,cache=5,access=client,msize=65536,trans=fd,rfd=13,wfd=13)
+tmpfs        on  /mnt/wslg/run/user/1000                            type  tmpfs          (rw,nosuid,nodev,relatime,size=1613124k,nr_inodes=403281,mode=700,uid=1000,gid=1001)
+tmpfs        on  /run/user/1000                                     type  tmpfs          (rw,nosuid,nodev,relatime,size=1613124k,nr_inodes=403281,mode=700,uid=1000,gid=1001)
+
+FileSystems in fstab:
+UNCONFIGURED  FSTAB  FOR
