@@ -1,0 +1,43 @@
+=== Mounting Filesystems ===
+
+What is Mounting?
+- Attaching a filesystem to the directory tree
+- Makes files accessible at a specific path
+- Only mounted filesystems are usable
+
+Mount Command Syntax:
+sudo mount /dev/sdX1 /mnt/mountpoint
+
+Common Mount Options (-o):
+ro          - Read-only
+rw          - Read-write (default)
+noexec      - Prevent execution of binaries
+nosuid      - Ignore setuid/setgid bits
+nodev       - Ignore device files
+defaults    - rw, suid, dev, exec, auto, nouser, async
+
+Examples:
+sudo mount /dev/sdb1 /mnt/data          # Simple mount
+sudo mount -o ro /dev/sdb1 /mnt/data    # Read-only
+sudo mount -t ext4 /dev/sdb1 /mnt/data  # Specify type
+sudo mount -a                           # Mount all in /etc/fstab
+
+Unmount Command:
+sudo umount /mnt/mountpoint
+sudo umount /dev/sdX1
+
+Common Unmount Issues:
+"Device is busy" - Something is using it
+- Check: lsof /mnt/mountpoint
+- Or: fuser -m /mnt/mountpoint
+- Solution: cd out of directory, close files, kill processes
+
+Force unmount:
+sudo umount -f /mnt/mountpoint    # Force
+sudo umount -l /mnt/mountpoint    # Lazy (when possible)
+
+Checking What's Mounted:
+mount                  # All mounts
+df -h                  # Mounted filesystems with usage
+lsblk                  # Block devices and mount points
+cat /proc/mounts       # Kernel view of mounts
