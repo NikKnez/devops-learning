@@ -1,0 +1,35 @@
+=== Disk Inventory ===
+
+Block devices:
+NAME MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+sda    8:0    0 388.6M  1 disk 
+sdb    8:16   0   186M  1 disk 
+sdc    8:32   0     4G  0 disk [SWAP]
+sdd    8:48   0     1T  0 disk /snap
+                               /mnt/wslg/distro
+                               /
+
+Partition information:
+Disk /dev/ram0: 4 MiB, 4194304 bytes, 8192 sectors
+Disk /dev/ram1: 4 MiB, 4194304 bytes, 8192 sectors
+Disk /dev/ram2: 4 MiB, 4194304 bytes, 8192 sectors
+Disk /dev/ram3: 4 MiB, 4194304 bytes, 8192 sectors
+Disk /dev/ram4: 4 MiB, 4194304 bytes, 8192 sectors
+Disk /dev/ram5: 4 MiB, 4194304 bytes, 8192 sectors
+Disk /dev/ram6: 4 MiB, 4194304 bytes, 8192 sectors
+Disk /dev/ram7: 4 MiB, 4194304 bytes, 8192 sectors
+Disk /dev/ram8: 4 MiB, 4194304 bytes, 8192 sectors
+Disk /dev/ram9: 4 MiB, 4194304 bytes, 8192 sectors
+Disk /dev/ram10: 4 MiB, 4194304 bytes, 8192 sectors
+Disk /dev/ram11: 4 MiB, 4194304 bytes, 8192 sectors
+Disk /dev/ram12: 4 MiB, 4194304 bytes, 8192 sectors
+Disk /dev/ram13: 4 MiB, 4194304 bytes, 8192 sectors
+Disk /dev/ram14: 4 MiB, 4194304 bytes, 8192 sectors
+Disk /dev/ram15: 4 MiB, 4194304 bytes, 8192 sectors
+Disk /dev/sda: 388.61 MiB, 407490560 bytes, 795880 sectors
+Disk /dev/sdb: 186.04 MiB, 195080192 bytes, 381016 sectors
+Disk /dev/sdc: 4 GiB, 4294971392 bytes, 8388616 sectors
+Disk /dev/sdd: 1 TiB, 1099511627776 bytes, 2147483648 sectors
+
+Total disks: 6
+Total partitions: 0

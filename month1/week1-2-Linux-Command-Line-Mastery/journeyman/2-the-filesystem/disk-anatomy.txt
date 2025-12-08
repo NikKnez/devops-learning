@@ -1,0 +1,41 @@
+=== Anatomy of a Physical Disk ===
+
+PHYSICAL STRUCTURE:
+┌─────────────────────────────────────┐
+│         Physical Disk (sda)         │
+├─────────────────────────────────────┤
+│  Master Boot Record (MBR) or GPT    │  ← Partition Table
+├─────────────────────────────────────┤
+│      Partition 1 (sda1)             │  ← Usually /boot
+├─────────────────────────────────────┤
+│      Partition 2 (sda2)             │  ← Usually / (root)
+├─────────────────────────────────────┤
+│      Partition 3 (sda3)             │  ← Usually swap
+└─────────────────────────────────────┘
+
+PARTITION TABLE TYPES:
+
+MBR (Master Boot Record) - Legacy
+- Max 4 primary partitions
+- Max disk size: 2 TB
+- Partition size stored in 32-bit
+- Used on BIOS systems
+
+GPT (GUID Partition Table) - Modern
+- Up to 128 partitions
+- Max disk size: 9.4 ZB (practically unlimited)
+- Required for UEFI boot
+- Backup partition table for redundancy
+
+DISK DEVICE NAMING:
+/dev/sda    - First SCSI/SATA disk
+/dev/sdb    - Second SCSI/SATA disk
+/dev/sda1   - First partition on first disk
+/dev/sda2   - Second partition on first disk
+/dev/nvme0n1    - First NVMe SSD
+/dev/nvme0n1p1  - First partition on NVMe
+
+SECTORS AND BLOCKS:
+- Sector: Smallest addressable unit (512 bytes or 4KB)
+- Block: Group of sectors (typically 4KB)
+- Filesystem works with blocks, disk works with sectors
