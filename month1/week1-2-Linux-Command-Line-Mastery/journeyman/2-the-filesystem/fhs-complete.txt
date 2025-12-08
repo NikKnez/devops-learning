@@ -1,0 +1,54 @@
+=== Complete Filesystem Hierarchy Standard ===
+
+ROOT (/)
+The root of everything. Only root user should write here.
+
+ESSENTIAL BINARIES:
+/bin        - User commands (ls, cp, cat, bash)
+/sbin       - System administration commands (fsck, ip, reboot)
+/usr/bin    - Non-essential user commands
+/usr/sbin   - Non-essential system admin commands
+
+CONFIGURATION:
+/etc        - System-wide configuration files
+/usr/local  - Locally installed software config
+
+LIBRARIES:
+/lib        - Essential shared libraries and kernel modules
+/usr/lib    - Non-essential libraries
+
+VARIABLE DATA:
+/var        - Variable data (logs, mail, databases)
+/var/log    - Log files
+/var/tmp    - Temporary files (persistent across reboots)
+/var/spool  - Print and mail queues
+
+TEMPORARY:
+/tmp        - Temporary files (deleted on reboot)
+
+USER DATA:
+/home       - User home directories
+/root       - Root user's home directory
+
+SYSTEM INFORMATION (Virtual Filesystems):
+/proc       - Process information (virtual)
+/sys        - Device and kernel information (virtual)
+/dev        - Device files
+
+MOUNT POINTS:
+/mnt        - Temporary mount point
+/media      - Removable media (USB, CD-ROM)
+
+OPTIONAL:
+/opt        - Optional application software packages
+/srv        - Data for services (web, FTP)
+
+BOOT:
+/boot       - Boot loader files (kernel, initramfs)
+
+DevOps Priority Directories:
+1. /etc - Configuration management
+2. /var/log - Log analysis
+3. /opt - Custom application deployment
+4. /home - User data and scripts
+5. /tmp - Temporary build artifacts

@@ -1,0 +1,9 @@
+=== FHS Practical Findings ===
+
+Bash location: /usr/bin/bash
+Config files: 179 files in /etc
+Log files: 68 files in /var/log
+Home directories: 1 users
+
+My home directory: /home/nikola
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
