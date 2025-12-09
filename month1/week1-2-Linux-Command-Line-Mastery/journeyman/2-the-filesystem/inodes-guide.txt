@@ -1,0 +1,38 @@
+=== Linux Inodes Explained ===
+
+What is an Inode?
+- Index Node
+- Data structure storing file metadata
+- One inode per file/directory
+- Stores everything EXCEPT filename and data
+
+Inode Contains:
+- File size
+- Owner (UID/GID)
+- Permissions
+- Timestamps (created, modified, accessed)
+- Number of hard links
+- Block pointers (where data is stored)
+- File type (regular, directory, symlink)
+
+What Inode Does NOT Contain:
+- Filename (stored in directory)
+- File data (stored in data blocks)
+
+Why Inodes Matter:
+- Can run out of inodes even with free space
+- Each file needs an inode
+- Lots of small files = inode exhaustion
+- Shows as "No space left on device" even with free space
+
+Inode Number:
+- Unique within filesystem
+- Used internally by filesystem
+- mv within same filesystem = just change directory entry
+- mv across filesystems = copy data + create new inode
+
+Common Commands:
+ls -i file.txt       # Show inode number
+df -i                # Show inode usage
+stat file.txt        # Detailed inode info
+find / -inum 12345   # Find file by inode number
