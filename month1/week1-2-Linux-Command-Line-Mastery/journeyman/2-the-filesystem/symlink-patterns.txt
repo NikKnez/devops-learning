@@ -1,0 +1,41 @@
+=== Common Symlink Patterns in DevOps ===
+
+1. Application Versioning:
+   /var/www/current → /var/www/releases/20231201-v1.2.3
+   
+   Benefits:
+   - Zero-downtime deploys
+   - Easy rollback
+   - Just change symlink
+
+2. Config Management:
+   /etc/app/config → /etc/app/config.production
+   
+   Benefits:
+   - Switch environments quickly
+   - Keep all configs in version control
+   - Single source of truth
+
+3. Log Rotation:
+   /var/log/app/current.log → /var/log/app/2023-12-01.log
+   
+   Benefits:
+   - Application always writes to same path
+   - Easy to rotate logs
+   - Archive old logs
+
+4. Tool Versions:
+   /usr/local/bin/node → /usr/local/node-v18/bin/node
+   
+   Benefits:
+   - Multiple versions installed
+   - Switch versions easily
+   - No path changes
+
+5. Shared Resources:
+   ~/projects/lib → /shared/company-lib
+   
+   Benefits:
+   - Share code across projects
+   - Central updates
+   - Save disk space

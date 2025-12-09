@@ -1,0 +1,47 @@
+=== Hard Links vs Symbolic Links ===
+
+HARD LINK:
+- Additional name for existing file
+- Points to same inode
+- Same data, multiple names
+- Cannot cross filesystems
+- Cannot link to directories
+- Deleting original doesn't break link
+
+Create: ln original.txt hardlink.txt
+
+SYMBOLIC LINK (Symlink):
+- Pointer to another file/directory
+- Has its own inode
+- Points to path, not data
+- Can cross filesystems
+- Can link to directories
+- Breaks if original is deleted
+
+Create: ln -s original.txt symlink.txt
+
+Key Differences:
+
+Property          Hard Link        Symbolic Link
+---------         ---------        -------------
+Inode             Same             Different
+Cross filesystem  No               Yes
+Link to directory No               Yes
+Survives deletion Yes              No (broken link)
+File type         Regular file     Link file
+
+When to Use Hard Links:
+- Backup without duplicating data
+- Multiple names for same file
+- Within same filesystem
+
+When to Use Symlinks:
+- Shortcuts to files/directories
+- Cross-filesystem references
+- Dynamic paths (config files)
+- Directory links
+
+Common Symlink Uses in DevOps:
+/usr/bin/python → /usr/bin/python3
+/etc/nginx/sites-enabled → /etc/nginx/sites-available/mysite
+/var/www/current → /var/www/releases/v1.2.3
