@@ -1,0 +1,13 @@
+=== Disk Usage Report ===
+
+Filesystem usage:
+df -h
+
+Inode usage:
+df -i
+
+Largest directories in /:
+sudo du -h --max-depth=1 / 2>/dev/null | sort -rh | head -10
+
+/var/log size:
+sudo du -sh /var/log
