@@ -1,0 +1,29 @@
+=== ncdu (NCurses Disk Usage) ===
+
+Installation:
+sudo apt install ncdu
+
+Usage:
+ncdu /var/log          # Analyze specific directory
+ncdu /                 # Analyze entire system (takes time)
+
+Navigation:
+Up/Down arrows - Navigate
+Right arrow - Enter directory
+Left arrow - Go back
+d - Delete file/directory
+n - Sort by name
+s - Sort by size
+q - Quit
+
+Why ncdu is better than du:
+- Interactive navigation
+- Visual representation
+- Can delete files directly
+- Faster for exploration
+
+DevOps Use Cases:
+1. Find what's filling disk
+2. Quick cleanup decisions
+3. Identify log bloat
+4. Before/after comparison
