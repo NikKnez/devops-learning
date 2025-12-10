@@ -1,0 +1,37 @@
+=== My System Boot Analysis ===
+
+System booted:          system boot  2025-12-10 13:43
+Current uptime:  14:09:41 up 27 min,  1 user,  load average: 0.00, 0.00, 0.00
+
+Boot time breakdown:
+Startup finished in 3.856s (userspace) 
+graphical.target reached after 3.810s in userspace
+
+Top 10 slowest services:
+1min 1.434s motd-news.service
+     2.054s landscape-client.service
+     1.988s apt-daily-upgrade.service
+     1.520s snapd.seeded.service
+     1.259s snapd.service
+      886ms networkd-dispatcher.service
+      730ms nginx.service
+      721ms udisks2.service
+      557ms dev-sdd.device
+      363ms systemd-resolved.service
+
+Critical boot path:
+The time when unit became active or started is printed after the "@" character.
+The time the unit took to start is printed after the "+" character.
+
+graphical.target @3.810s
+└─multi-user.target @3.809s
+  └─snapd.seeded.service @1.777s +1.520s
+    └─basic.target @1.739s
+      └─sockets.target @1.738s
+        └─snapd.socket @1.582s +155ms
+          └─sysinit.target @1.559s
+            └─systemd-timesyncd.service @1.378s +179ms
+              └─systemd-tmpfiles-setup.service @1.341s +25ms
+                └─systemd-journal-flush.service @968ms +349ms
+                  └─systemd-remount-fs.service @945ms +18ms
+                    └─systemd-journald.socket @914ms
