@@ -27,7 +27,6 @@ total 4380
 81702 -rw-rw-r-- 1 nikola nikola     6956 Dec  8 20:36 fstab-analysis.txt
 75273 -rw-rw-r-- 1 nikola nikola     1601 Dec  8 20:35 fstab-guide.txt
 81764 -rw-rw-r-- 1 nikola nikola     1060 Dec  8 20:37 fstab-practice.txt
-82051 -rw-rw-r-- 1 nikola nikola        0 Dec  9 14:40 inode-analysis.txt
 75271 drwxrwxr-x 3 nikola nikola     4096 Dec  9 14:38 inode-test
 74170 -rw-rw-r-- 1 nikola nikola     1055 Dec  9 14:37 inodes-guide.txt
  6409 -rw-rw-r-- 1 nikola nikola     1009 Dec  8 20:03 mkfs-guide.txt
@@ -45,7 +44,7 @@ Detailed info for file1.txt:
 
 System inode usage:
 Filesystem       Inodes   IUsed    IFree IUse% Mounted on
-/dev/sdd       67108864   82074 67026790    1% /
+/dev/sdd       67108864   82073 67026791    1% /
 rootfs          2015149      12  2015137    1% /init
 none            2016409       1  2016408    1% /dev/shm
 none            2016409     611  2015798    1% /run
@@ -75,4 +74,4 @@ C:\                 999 -999001  1000000     - /mnt/c
 tmpfs            403281      41   403240    1% /run/user/1000
 
 Inodes used in /:
-82074 used out of 67108864 (1% used)
+82073 used out of 67108864 (1% used)
