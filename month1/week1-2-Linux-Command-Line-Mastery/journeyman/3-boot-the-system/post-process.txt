@@ -1,0 +1,56 @@
+=== POST (Power-On Self Test) ===
+
+What Happens During POST?
+
+1. CPU Initialization
+   - CPU starts executing firmware
+   - Registers initialized
+   - Cache flushed
+
+2. Memory Test
+   - RAM chips tested
+   - Memory controller initialized
+   - Bad sectors marked
+
+3. Hardware Detection
+   - Keyboard
+   - Mouse
+   - Storage devices
+   - Video card
+   - Network card
+
+4. Device Initialization
+   - Initialize SATA controllers
+   - Initialize USB controllers
+   - Initialize PCI devices
+
+5. Boot Device Selection
+   - Check boot order (BIOS/UEFI setting)
+   - Try each device in order
+   - Find bootable device (boot flag or EFI)
+
+POST Beep Codes (BIOS):
+- 1 beep: POST successful
+- 2 beeps: POST error (see screen)
+- 3 beeps: Memory error
+- Continuous beep: Power supply or motherboard failure
+
+No Video? Check:
+1. Monitor connection
+2. Video card
+3. RAM seated properly
+4. POST beep codes
+
+UEFI Boot Order:
+- Set in UEFI setup
+- Press F2/F12/Del during boot
+- Configure:
+  * Boot device priority
+  * Secure Boot settings
+  * CSM (Compatibility Support Module)
+
+DevOps Relevance:
+- Hardware failures: POST catches them
+- Boot order: Important for PXE boot
+- UEFI settings: Needed for some installs
+- Virtual machines: Simplified POST

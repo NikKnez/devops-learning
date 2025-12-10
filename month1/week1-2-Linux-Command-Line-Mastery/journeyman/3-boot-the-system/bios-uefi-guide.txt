@@ -1,0 +1,61 @@
+=== BIOS vs UEFI ===
+
+BIOS (Basic Input/Output System) - LEGACY
+- Introduced: 1975
+- 16-bit mode
+- Limited to MBR partition scheme
+- Max disk: 2TB
+- Slower boot
+- Text-based setup
+- Security: None
+
+Boot Process:
+1. POST (Power-On Self Test)
+2. Read MBR (first 512 bytes of disk)
+3. Execute bootloader in MBR
+4. Bootloader loads OS
+
+MBR Structure:
+- 446 bytes: Bootloader code
+- 64 bytes: Partition table (4 entries)
+- 2 bytes: Boot signature (0x55AA)
+
+UEFI (Unified Extensible Firmware Interface) - MODERN
+- Introduced: 2005, standard since 2010
+- 32-bit or 64-bit mode
+- Uses GPT partition scheme
+- Max disk: 9.4 ZB (essentially unlimited)
+- Faster boot
+- GUI setup possible
+- Security: Secure Boot, TPM support
+
+Boot Process:
+1. UEFI firmware initialization
+2. Read EFI System Partition (ESP)
+3. Execute bootloader from ESP (.efi file)
+4. Bootloader loads OS
+
+ESP (EFI System Partition):
+- FAT32 formatted
+- Contains bootloaders
+- Typically /boot/efi
+- ~100-500 MB
+
+Key Differences:
+
+Feature          BIOS              UEFI
+-------          ----              ----
+Released         1975              2005
+Architecture     16-bit            32/64-bit
+Partition        MBR (2TB max)     GPT (unlimited)
+Boot method      MBR               ESP
+Interface        Text              GUI possible
+Security         None              Secure Boot
+Speed            Slower            Faster
+Mouse support    No                Yes
+
+DevOps Considerations:
+- Cloud VMs: Usually UEFI
+- Containers: Boot process abstracted
+- Bare metal: Check BIOS/UEFI mode
+- Disk imaging: Different procedures

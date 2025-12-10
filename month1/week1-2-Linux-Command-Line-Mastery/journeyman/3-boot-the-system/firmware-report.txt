@@ -1,0 +1,9 @@
+=== Firmware Type Report ===
+
+Firmware type: BIOS
+
+EFI directory exists: No
+
+Partition table: loop
+
+Boot mode: Legacy BIOS
