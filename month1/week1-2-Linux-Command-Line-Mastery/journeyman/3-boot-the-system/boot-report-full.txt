@@ -1,0 +1,43 @@
+==========================================
+  Complete Linux Boot Analysis Report
+==========================================
+
+=== 1. FIRMWARE ===
+Type: BIOS (Legacy)
+
+=== 2. BOOTLOADER ===
+GRUB version: Not installed
+Installed kernels:
+
+=== 3. KERNEL ===
+Current kernel: 6.6.87.2-microsoft-standard-WSL2
+Kernel command line:
+initrd=\initrd.img WSL_ROOT_INIT=1 panic=-1 nr_cpus=12 hv_utils.timesync_implicit=1 console=hvc0 debug pty.legacy_count=0 WSL_ENABLE_CRASH_DUMP=1
+
+=== 4. INIT SYSTEM ===
+Init: systemd
+systemd version: systemd 249 (249.11-0ubuntu3.17)
+Default target: graphical.target
+
+=== 5. BOOT TIMING ===
+Startup finished in 7.919s (userspace) 
+graphical.target reached after 7.831s in userspace
+
+=== 6. SYSTEM STATUS ===
+Uptime: up 1 hour, 41 minutes
+Boot time:          system boot  2025-12-11 11:21
+
+=== 7. SERVICES ===
+Active services: 42
+Failed services: 0
+
+=== 8. TOP 5 SLOWEST SERVICES ===
+1min 397ms motd-news.service
+    6.671s apt-daily.service
+    3.034s landscape-client.service
+    2.304s snapd.seeded.service
+    2.151s dev-sdd.device
+
+==========================================
+Report generated: Thu Dec 11 12:55:05 CET 2025
+==========================================
