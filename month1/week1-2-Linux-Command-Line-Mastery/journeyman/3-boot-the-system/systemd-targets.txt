@@ -1,0 +1,53 @@
+=== systemd Targets (Runlevels) ===
+
+Common Targets:
+
+poweroff.target
+- Shutdown system
+- Equivalent to: runlevel 0
+- Command: systemctl poweroff
+
+rescue.target
+- Single-user mode
+- Minimal services
+- Root password required
+- Equivalent to: runlevel 1
+- Command: systemctl rescue
+
+multi-user.target
+- Multi-user, text mode
+- Network enabled
+- No GUI
+- Equivalent to: runlevel 3
+- Most common for servers
+- Command: systemctl isolate multi-user.target
+
+graphical.target
+- Multi-user with GUI
+- Includes multi-user.target
+- Starts display manager
+- Equivalent to: runlevel 5
+- Default for desktops
+- Command: systemctl isolate graphical.target
+
+reboot.target
+- Reboot system
+- Equivalent to: runlevel 6
+- Command: systemctl reboot
+
+Commands:
+
+View default:
+systemctl get-default
+
+Change default (permanent):
+sudo systemctl set-default multi-user.target
+
+Switch target (temporary):
+sudo systemctl isolate rescue.target
+
+Check target status:
+systemctl status multi-user.target
+
+See what's in target:
+systemctl list-dependencies graphical.target

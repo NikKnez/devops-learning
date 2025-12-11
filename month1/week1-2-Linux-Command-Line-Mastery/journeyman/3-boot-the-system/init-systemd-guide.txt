@@ -1,0 +1,81 @@
+=== Init Systems: From SysV to systemd ===
+
+What is Init?
+- First process started by kernel (PID 1)
+- Parent of all processes
+- Starts all system services
+- Manages system state
+
+Init System Evolution:
+
+1. SysV Init (1980s-2010) - LEGACY
+   - Serial startup (one service at a time)
+   - Shell scripts in /etc/init.d/
+   - Runlevels (0-6)
+   - Slow boot times
+   - Simple but inflexible
+
+2. Upstart (2006-2015) - TRANSITIONAL
+   - Event-driven
+   - Parallel startup
+   - Used by Ubuntu 6.10-14.10
+   - Replaced by systemd
+
+3. systemd (2010-Present) - CURRENT
+   - Parallel service startup
+   - Dependency-based
+   - Faster boot
+   - More features
+   - Controversial but dominant
+
+systemd Core Concepts:
+
+Units:
+- .service  - Services (daemons)
+- .socket   - IPC sockets
+- .target   - Group of units
+- .mount    - Mount points
+- .timer    - Scheduled tasks (replaces cron)
+- .path     - Path-based activation
+
+Targets (like runlevels):
+- poweroff.target       (Runlevel 0)
+- rescue.target         (Runlevel 1)
+- multi-user.target     (Runlevel 3) - CLI
+- graphical.target      (Runlevel 5) - GUI
+- reboot.target         (Runlevel 6)
+
+systemd Boot Process:
+
+1. Kernel starts systemd (PID 1)
+2. systemd reads /etc/systemd/system/default.target
+3. Default is usually multi-user.target or graphical.target
+4. systemd analyzes dependencies
+5. Starts services in parallel where possible
+6. Mounts filesystems
+7. Starts network
+8. Starts user services
+9. Reaches target state
+
+Advantages of systemd:
+✓ Parallel startup (faster boot)
+✓ On-demand service activation
+✓ Better dependency handling
+✓ Integrated logging (journald)
+✓ Unified management interface
+✓ Socket and D-Bus activation
+✓ Process supervision
+
+Criticisms of systemd:
+✗ Complexity (does too much)
+✗ Binary logs (not plain text)
+✗ Deviation from Unix philosophy
+✗ Difficult to debug
+✗ "System bloat"
+
+DevOps Perspective:
+- Love it or hate it, it's standard
+- Must know systemctl commands
+- Understanding units essential
+- Logging via journalctl
+- Service management in containers mimics systemd

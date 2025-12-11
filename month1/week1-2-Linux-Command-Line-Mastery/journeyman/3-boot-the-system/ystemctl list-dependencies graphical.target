@@ -1,0 +1,116 @@
+multi-user.target
+[0;1;32m●[0m ├─apport.service
+[0;1;32m●[0m ├─console-setup.service
+[0;1;32m●[0m ├─cron.service
+[0;1;32m●[0m ├─dbus.service
+[0m○[0m ├─dmesg.service
+[0m○[0m ├─e2scrub_reap.service
+[0m○[0m ├─irqbalance.service
+[0m○[0m ├─landscape-client.service
+[0;1;32m●[0m ├─networkd-dispatcher.service
+[0;1;32m●[0m ├─nginx.service
+[0;1;32m●[0m ├─plymouth-quit-wait.service
+[0;1;32m●[0m ├─plymouth-quit.service
+[0;1;32m●[0m ├─rsyslog.service
+[0;1;32m●[0m ├─snap-bare-5.mount
+[0;1;32m●[0m ├─snap-core18-2959.mount
+[0;1;32m●[0m ├─snap-core18-2976.mount
+[0;1;32m●[0m ├─snap-core22-2139.mount
+[0;1;32m●[0m ├─snap-core22-2163.mount
+[0;1;32m●[0m ├─snap-figlet-36.mount
+[0;1;32m●[0m ├─snap-firefox-7423.mount
+[0;1;32m●[0m ├─snap-gnome\x2d42\x2d2204-226.mount
+[0;1;32m●[0m ├─snap-gtk\x2dcommon\x2dthemes-1535.mount
+[0;1;32m●[0m ├─snap-snapd-25202.mount
+[0;1;32m●[0m ├─snap-snapd-25577.mount
+[0;1;32m●[0m ├─snap-ubuntu\x2ddesktop\x2dinstaller-1284.mount
+[0;1;32m●[0m ├─snap-ubuntu\x2ddesktop\x2dinstaller-1286.mount
+[0;1;32m●[0m ├─snap.ubuntu-desktop-installer.subiquity-server.service
+[0m○[0m ├─snapd.aa-prompt-listener.service
+[0m○[0m ├─snapd.apparmor.service
+[0m○[0m ├─snapd.autoimport.service
+[0m○[0m ├─snapd.core-fixup.service
+[0m○[0m ├─snapd.recovery-chooser-trigger.service
+[0;1;32m●[0m ├─snapd.seeded.service
+[0;1;32m●[0m ├─snapd.service
+[0;1;32m●[0m ├─systemd-ask-password-wall.path
+[0;1;32m●[0m ├─systemd-logind.service
+[0;1;32m●[0m ├─systemd-resolved.service
+[0m○[0m ├─systemd-update-utmp-runlevel.service
+[0;1;32m●[0m ├─systemd-user-sessions.service
+[0m○[0m ├─ua-reboot-cmds.service
+[0m○[0m ├─ubuntu-advantage.service
+[0;1;32m●[0m ├─ufw.service
+[0;1;32m●[0m ├─unattended-upgrades.service
+[0;1;32m●[0m ├─basic.target
+[0m○[0m │ ├─tmp.mount
+[0;1;32m●[0m │ ├─paths.target
+[0m○[0m │ │ └─apport-autoreport.path
+[0;1;32m●[0m │ ├─slices.target
+[0;1;32m●[0m │ │ ├─-.slice
+[0;1;32m●[0m │ │ └─system.slice
+[0;1;32m●[0m │ ├─sockets.target
+[0;1;32m●[0m │ │ ├─apport-forward.socket
+[0;1;32m●[0m │ │ ├─dbus.socket
+[0;1;32m●[0m │ │ ├─snapd.socket
+[0;1;32m●[0m │ │ ├─systemd-initctl.socket
+[0;1;32m●[0m │ │ ├─systemd-journald-audit.socket
+[0;1;32m●[0m │ │ ├─systemd-journald-dev-log.socket
+[0;1;32m●[0m │ │ ├─systemd-journald.socket
+[0;1;32m●[0m │ │ ├─systemd-udevd-control.socket
+[0;1;32m●[0m │ │ ├─systemd-udevd-kernel.socket
+[0;1;32m●[0m │ │ └─uuidd.socket
+[0;1;32m●[0m │ ├─sysinit.target
+[0m○[0m │ │ ├─apparmor.service
+[0;1;32m●[0m │ │ ├─dev-hugepages.mount
+[0;1;32m●[0m │ │ ├─dev-mqueue.mount
+[0;1;32m●[0m │ │ ├─keyboard-setup.service
+[0;1;32m●[0m │ │ ├─kmod-static-nodes.service
+[0;1;32m●[0m │ │ ├─plymouth-read-write.service
+[0m○[0m │ │ ├─plymouth-start.service
+[0m○[0m │ │ ├─proc-sys-fs-binfmt_misc.automount
+[0;1;32m●[0m │ │ ├─setvtrgb.service
+[0;1;32m●[0m │ │ ├─sys-fs-fuse-connections.mount
+[0m○[0m │ │ ├─sys-kernel-config.mount
+[0;1;32m●[0m │ │ ├─sys-kernel-debug.mount
+[0;1;32m●[0m │ │ ├─sys-kernel-tracing.mount
+[0;1;32m●[0m │ │ ├─systemd-ask-password-console.path
+[0m○[0m │ │ ├─systemd-binfmt.service
+[0m○[0m │ │ ├─systemd-boot-system-token.service
+[0;1;32m●[0m │ │ ├─systemd-journal-flush.service
+[0;1;32m●[0m │ │ ├─systemd-journald.service
+[0m○[0m │ │ ├─systemd-machine-id-commit.service
+[0m○[0m │ │ ├─systemd-modules-load.service
+[0m○[0m │ │ ├─systemd-pstore.service
+[0m○[0m │ │ ├─systemd-random-seed.service
+[0;1;32m●[0m │ │ ├─systemd-sysctl.service
+[0;1;32m●[0m │ │ ├─systemd-sysusers.service
+[0;1;32m●[0m │ │ ├─systemd-timesyncd.service
+[0;1;32m●[0m │ │ ├─systemd-tmpfiles-setup-dev.service
+[0;1;32m●[0m │ │ ├─systemd-tmpfiles-setup.service
+[0;1;32m●[0m │ │ ├─systemd-udev-trigger.service
+[0;1;32m●[0m │ │ ├─systemd-udevd.service
+[0;1;32m●[0m │ │ ├─systemd-update-utmp.service
+[0;1;32m●[0m │ │ ├─cryptsetup.target
+[0;1;32m●[0m │ │ ├─local-fs.target
+[0;1;32m●[0m │ │ │ └─systemd-remount-fs.service
+[0;1;32m●[0m │ │ ├─swap.target
+[0;1;32m●[0m │ │ └─veritysetup.target
+[0;1;32m●[0m │ └─timers.target
+[0m○[0m │   ├─apport-autoreport.timer
+[0;1;32m●[0m │   ├─apt-daily-upgrade.timer
+[0;1;32m●[0m │   ├─apt-daily.timer
+[0;1;32m●[0m │   ├─dpkg-db-backup.timer
+[0;1;32m●[0m │   ├─e2scrub_all.timer
+[0m○[0m │   ├─fstrim.timer
+[0;1;32m●[0m │   ├─logrotate.timer
+[0;1;32m●[0m │   ├─man-db.timer
+[0;1;32m●[0m │   ├─motd-news.timer
+[0m○[0m │   ├─snapd.snap-repair.timer
+[0;1;32m●[0m │   ├─systemd-tmpfiles-clean.timer
+[0m○[0m │   └─ua-timer.timer
+[0;1;32m●[0m ├─getty.target
+[0;1;32m●[0m │ ├─console-getty.service
+[0m○[0m │ ├─getty-static.service
+[0;1;32m●[0m │ └─getty@tty1.service
+[0;1;32m●[0m └─remote-fs.target
