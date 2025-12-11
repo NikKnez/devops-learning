@@ -1,0 +1,79 @@
+=== GRUB Recovery Procedures ===
+
+Accessing GRUB Menu:
+- Hold Shift during boot (BIOS)
+- Press Esc during boot (UEFI)
+
+GRUB Menu Options:
+- Arrow keys: Navigate
+- Enter: Boot selected
+- 'e': Edit boot parameters (temporary)
+- 'c': GRUB command line
+
+Editing Boot Parameters (Recovery):
+1. Select menu entry
+2. Press 'e' to edit
+3. Find line starting with 'linux'
+4. Add parameters to end
+5. Press Ctrl+X or F10 to boot
+
+Common Recovery Parameters:
+
+single or 1
+- Boot to single-user mode
+- Root access without password
+- No network, minimal services
+
+init=/bin/bash
+- Boot directly to bash shell
+- For password recovery
+- Root filesystem is read-only
+
+ro
+- Mount root read-only (safe mode)
+
+rw
+- Mount root read-write
+
+nomodeset
+- Disable kernel mode setting
+- For video driver issues
+
+systemd.unit=rescue.target
+- Boot to rescue mode
+- Similar to single-user mode
+
+Password Recovery Procedure:
+1. Boot to GRUB menu
+2. Press 'e' on default entry
+3. Find 'linux' line
+4. Add: init=/bin/bash
+5. Boot with Ctrl+X
+6. Remount root rw: mount -o remount,rw /
+7. Change password: passwd username
+8. Sync and reboot: sync; reboot -f
+
+GRUB Reinstallation (if broken):
+Boot from live USB, then:
+sudo mount /dev/sdX1 /mnt           # Mount root
+sudo mount /dev/sdX2 /mnt/boot      # Mount boot (if separate)
+sudo grub-install --root-directory=/mnt /dev/sdX
+sudo chroot /mnt
+update-grub
+exit
+reboot
+
+Update GRUB After Config Changes:
+sudo update-grub     # Ubuntu/Debian
+sudo grub2-mkconfig -o /boot/grub2/grub.cfg  # RHEL/CentOS
+
+Custom Menu Entry (Advanced):
+Edit /etc/grub.d/40_custom:
+
+menuentry "My Custom Entry" {
+    set root=(hd0,1)
+    linux /vmlinuz-5.15.0 root=/dev/sda1 ro quiet
+    initrd /initrd.img-5.15.0
+}
+
+Then: sudo update-grub

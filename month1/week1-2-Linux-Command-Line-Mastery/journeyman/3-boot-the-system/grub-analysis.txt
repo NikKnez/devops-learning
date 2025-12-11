@@ -1,0 +1,15 @@
+=== GRUB Configuration Analysis ===
+
+GRUB version: 
+
+User settings (/etc/default/grub):
+
+
+Installed kernels:
+
+
+Boot directory contents:
+total 0
+
+Current grub menu entries:
+

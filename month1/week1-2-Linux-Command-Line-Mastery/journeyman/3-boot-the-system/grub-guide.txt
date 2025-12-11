@@ -1,0 +1,75 @@
+=== GRUB (GRand Unified Bootloader) ===
+
+What is GRUB?
+- Stage between firmware and kernel
+- Loads kernel into memory
+- Passes parameters to kernel
+- Provides boot menu
+- Allows rescue/recovery
+
+GRUB Versions:
+- GRUB Legacy (0.9x): Obsolete
+- GRUB 2 (1.9x+): Current standard
+
+GRUB 2 Structure:
+
+Stage 1: boot.img
+- Stored in MBR or ESP
+- Very small (512 bytes for MBR)
+- Loads Stage 1.5
+
+Stage 1.5: core.img
+- Understands filesystems
+- Loads Stage 2 from disk
+
+Stage 2: GRUB files
+- /boot/grub/ directory
+- Configuration files
+- Modules for filesystems
+- Theme and graphics
+
+Key Files:
+
+/boot/grub/grub.cfg
+- Main configuration (auto-generated)
+- DO NOT EDIT DIRECTLY
+- Contains boot menu entries
+
+/etc/default/grub
+- User-editable settings
+- Timeout, default OS, kernel parameters
+- Edit this, then run update-grub
+
+/etc/grub.d/
+- Scripts that generate grub.cfg
+- 00_header, 10_linux, 30_os-prober, etc.
+- Custom entries go in 40_custom
+
+Common GRUB Settings (/etc/default/grub):
+
+GRUB_TIMEOUT=5               # Menu timeout
+GRUB_DEFAULT=0               # Default OS (0=first)
+GRUB_CMDLINE_LINUX=""        # Kernel parameters
+GRUB_DISABLE_RECOVERY=true   # Hide recovery mode
+
+Kernel Parameters (passed to kernel):
+quiet           - Minimize boot messages
+splash          - Show splash screen
+ro              - Mount root read-only initially
+root=UUID=...   - Root filesystem
+init=/bin/bash  - Use different init (recovery)
+
+GRUB Boot Process:
+1. Display menu (if timeout > 0)
+2. User selects OS or waits
+3. Load selected kernel
+4. Load initramfs
+5. Pass kernel parameters
+6. Execute kernel
+
+DevOps Use Cases:
+- Add kernel parameters for troubleshooting
+- Boot different kernels
+- Recovery mode
+- Single-user mode
+- Custom OS entries
