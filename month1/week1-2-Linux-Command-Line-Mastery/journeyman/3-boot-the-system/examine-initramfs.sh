@@ -1,0 +1,28 @@
+#!/bin/bash
+
+echo "=== Initramfs Examination ==="
+echo ""
+echo "Initramfs files:"
+ls -lh /boot/initrd* 2>/dev/null || ls -lh /boot/initramfs-* 2>/dev/null
+
+echo ""
+echo "To examine initramfs contents (advanced):"
+echo ""
+echo "1. Copy initramfs to temp location:"
+echo "   cp /boot/initrd.img-\$(uname -r) /tmp/initramfs.img"
+echo ""
+echo "2. Create extraction directory:"
+echo "   mkdir /tmp/initramfs-extract"
+echo ""
+echo "3. Extract (requires root):"
+echo "   cd /tmp/initramfs-extract"
+echo "   unmkinitramfs /tmp/initramfs.img ."
+echo "   OR"
+echo "   lsinitramfs /boot/initrd.img-\$(uname -r) | head -50"
+echo ""
+echo "4. Examine contents:"
+echo "   ls -la"
+echo "   cat init  # Main init script"
+echo ""
+echo "WARNING: This is read-only examination."
+echo "Don't modify initramfs unless you know what you're doing!"

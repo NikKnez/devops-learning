@@ -1,0 +1,87 @@
+=== Linux Kernel Boot Process ===
+
+What is the Kernel?
+- Core of operating system
+- Manages hardware and resources
+- Provides system calls
+- Schedules processes
+- Handles memory management
+
+Kernel Boot Sequence:
+
+1. BOOTLOADER HANDOFF
+   - Kernel loaded into RAM by GRUB
+   - Kernel compressed (vmlinuz)
+   - Initramfs loaded into RAM
+
+2. KERNEL DECOMPRESSION
+   - Kernel decompresses itself
+   - First code: arch/x86/boot/compressed/head_64.S
+   - Prepares protected mode
+
+3. KERNEL INITIALIZATION
+   - Initialize CPU
+   - Setup memory management (MMU)
+   - Initialize interrupt handlers
+   - Detect and initialize hardware
+
+4. DRIVER LOADING
+   - Built-in drivers initialized
+   - Kernel modules loaded as needed
+   - Hardware detected and configured
+
+5. INITRAMFS MOUNTING
+   - Initial RAM filesystem mounted
+   - Contains essential drivers and tools
+   - Temporary root filesystem
+
+6. ROOT FILESYSTEM MOUNT
+   - Find real root filesystem (from kernel parameters)
+   - Mount root filesystem
+   - Switch from initramfs to real root
+
+7. EXECUTE INIT
+   - Start /sbin/init (PID 1)
+   - Hand off control to user-space
+   - Kernel continues running in background
+
+Kernel Components:
+
+vmlinuz
+- Compressed kernel image
+- Located in /boot/
+- Example: vmlinuz-5.15.0-91-generic
+
+initramfs (initrd)
+- Initial RAM filesystem
+- Contains drivers needed to mount root
+- Modules for: disk controllers, filesystems, encryption
+- Located in /boot/
+- Example: initrd.img-5.15.0-91-generic
+
+System.map
+- Symbol table for kernel
+- Used for debugging
+- Maps function names to addresses
+
+Kernel Parameters:
+Passed by bootloader, control kernel behavior:
+
+root=/dev/sda1              # Root filesystem
+ro                          # Mount read-only initially  
+quiet                       # Reduce boot messages
+splash                      # Show splash screen
+console=ttyS0               # Serial console
+panic=10                    # Reboot 10s after kernel panic
+
+Kernel Ring Buffer:
+- Internal log of kernel messages
+- View with: dmesg
+- Preserved through boots with: dmesg --ctime
+
+Kernel Boot Messages Show:
+- Hardware detection
+- Driver loading
+- Filesystem mounting
+- Error messages
+- Timing information

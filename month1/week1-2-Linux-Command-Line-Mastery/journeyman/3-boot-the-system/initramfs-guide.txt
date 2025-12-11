@@ -1,0 +1,55 @@
+=== Initramfs (Initial RAM Filesystem) ===
+
+What is Initramfs?
+- Temporary root filesystem
+- Loaded into RAM by bootloader
+- Contains drivers needed to mount real root
+- Modern replacement for initrd
+
+Why Needed?
+- Chicken-and-egg problem
+- Kernel needs drivers to access disk
+- Drivers might be on the disk
+- Initramfs contains those drivers in RAM
+
+Initramfs Contents:
+- Essential kernel modules (drivers)
+- Tools: mount, modprobe, fsck
+- Scripts to mount real root
+- Support for: LVM, RAID, encryption, network boot
+
+Boot Process with Initramfs:
+1. Bootloader loads kernel + initramfs into RAM
+2. Kernel boots, mounts initramfs as /
+3. Kernel executes /init script in initramfs
+4. Script loads necessary modules
+5. Script mounts real root filesystem
+6. Script switches root (pivot_root)
+7. Real init (/sbin/init) takes over
+
+Initramfs vs Initrd:
+- Initrd: Older, block device in RAM
+- Initramfs: Modern, compressed cpio archive
+- Initramfs: More flexible, smaller
+
+Creating/Updating Initramfs:
+Ubuntu/Debian: update-initramfs -u
+RHEL/CentOS: dracut -f
+Arch: mkinitcpio -p linux
+
+When to Rebuild Initramfs:
+- After kernel update (usually automatic)
+- After adding storage drivers
+- After changing disk encryption
+- After filesystem changes
+- Hardware changes (RAID, LVM)
+
+Troubleshooting:
+If system drops to initramfs prompt:
+- Disk not found
+- Filesystem corruption
+- Wrong root parameter
+- Missing drivers
+
+Commands available in initramfs shell:
+ls, cat, mount, lsblk, blkid, fsck
