@@ -64,3 +64,20 @@ Pass: dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
 Level Goal
 The password for the next level is stored in the file data.txt and is the only line of text that occurs only once
 Pass: 4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
+
+## Bandit Level 9 → Level 10
+Level Goal
+The password for the next level is stored in the file data.txt in one of the few human-readable strings, 
+preceded by several ‘=’ characters.
+Pass: FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
+
+## Bandit Level 10 → Level 11
+Level Goal
+The password for the next level is stored in the file data.txt, which contains base64 encoded data
+Pass: dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
+
+## Bandit Level 11 → Level 12
+Level Goal
+The password for the next level is stored in the file data.txt, 
+where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions
+Pass: 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
