@@ -1,0 +1,48 @@
+=== Linux Kernel Versioning ===
+
+Version Format: X.Y.Z-BUILD
+
+Example: 5.15.0-91-generic
+
+X = Major version (5)
+Y = Minor version (15)
+Z = Patch level (0)
+BUILD = Distribution build number (91)
+-generic = Distribution-specific suffix
+
+Version History:
+- 2.6.x  - 2003-2011 (long-term)
+- 3.x    - 2011-2015
+- 4.x    - 2015-2019
+- 5.x    - 2019-2022
+- 6.x    - 2022-present
+
+Release Types:
+
+Mainline:
+- Latest development
+- Cutting edge features
+- May be unstable
+
+Stable:
+- Bug fixes for mainline
+- Safe for production
+- Regular updates
+
+Long-term (LTS):
+- Supported for years
+- Enterprise use
+- Critical fixes only
+
+Current Kernel Versions (as of 2024):
+- Latest: 6.x series
+- LTS: 6.1, 5.15, 5.10, 5.4, 4.19
+
+Ubuntu Kernel Versions:
+- Ubuntu 20.04 LTS: 5.4
+- Ubuntu 22.04 LTS: 5.15
+- Ubuntu 24.04 LTS: 6.8
+
+Checking for Updates:
+apt search linux-image    # Available kernels
+uname -r                  # Current kernel

@@ -1,0 +1,84 @@
+=== Linux Kernel Overview ===
+
+What is the Kernel?
+- Core of the operating system
+- Bridge between hardware and software
+- First program loaded at boot (after bootloader)
+- Runs in privileged mode
+- Has complete control over everything
+
+Kernel Responsibilities:
+
+1. Process Management
+   - Creating/destroying processes
+   - Scheduling (which process runs when)
+   - Context switching
+   - Inter-process communication
+
+2. Memory Management
+   - RAM allocation
+   - Virtual memory
+   - Paging and swapping
+   - Memory protection between processes
+
+3. Device Management
+   - Device drivers
+   - Hardware abstraction
+   - /dev filesystem
+   - Interrupt handling
+
+4. File System Management
+   - VFS (Virtual File System)
+   - Multiple filesystem support
+   - File operations
+   - Directory structure
+
+5. Network Management
+   - Network stack (TCP/IP)
+   - Socket operations
+   - Network device drivers
+   - Routing
+
+Kernel Types:
+
+Monolithic Kernel (Linux):
+- All services in kernel space
+- Fast (no context switching)
+- Large kernel size
+- Less modular
+
+Microkernel:
+- Minimal kernel
+- Services in user space
+- More stable (crashes isolated)
+- Slower (more context switching)
+
+Hybrid Kernel:
+- Mix of both
+- Windows, macOS use this
+
+Linux Kernel Architecture:
+┌─────────────────────────────────┐
+│      User Applications          │
+├─────────────────────────────────┤
+│      System Libraries           │
+│      (glibc, etc.)              │
+├─────────────────────────────────┤
+│      System Calls               │ ← User/Kernel boundary
+├─────────────────────────────────┤
+│      Linux Kernel               │
+│  ┌───────────────────────────┐  │
+│  │ Process Scheduler         │  │
+│  │ Memory Manager            │  │
+│  │ Virtual File System       │  │
+│  │ Network Stack             │  │
+│  │ Device Drivers            │  │
+│  └───────────────────────────┘  │
+├─────────────────────────────────┤
+│         Hardware                │
+└─────────────────────────────────┘
+
+Kernel Space vs User Space:
+- Kernel Space: Privileged, unrestricted access
+- User Space: Limited, protected, safe
+- System calls bridge the two spaces

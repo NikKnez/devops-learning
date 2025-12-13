@@ -1,0 +1,21 @@
+=== My System's Kernel Information ===
+
+Kernel version: 6.14.0-37-generic
+Kernel name: Linux
+Architecture: x86_64
+Hostname: nikola-VirtualBox
+
+Full system info:
+Linux nikola-VirtualBox 6.14.0-37-generic #37~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Nov 20 10:25:38 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
+
+Detailed kernel:
+Linux version 6.14.0-37-generic (buildd@lcy02-amd64-031) (x86_64-linux-gnu-gcc-13 (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0, GNU ld (GNU Binutils for Ubuntu) 2.42) #37~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Nov 20 10:25:38 UTC 2
+
+Boot parameters:
+BOOT_IMAGE=/boot/vmlinuz-6.14.0-37-generic root=UUID=4c8b8c39-9698-4c53-9a4a-ba47e0769b1d ro quiet splash
+
+System uptime:
+ 19:48:44 up 22 min,  1 user,  load average: 0.43, 0.23, 0.40
+
+Kernel compile date:
+#37~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Nov 20 10:25:38 UTC 2
