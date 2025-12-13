@@ -1,0 +1,98 @@
+=== System Calls (syscalls) ===
+
+What is a System Call?
+- Request from user space to kernel
+- Only way to access kernel services
+- Controlled entry point to kernel
+- Mediated by kernel
+
+Why System Calls?
+- User programs cannot access hardware directly
+- Need kernel to perform privileged operations
+- Provides abstraction and security
+
+System Call Categories:
+
+1. Process Control:
+   fork()   - Create new process
+   exec()   - Execute program
+   exit()   - Terminate process
+   wait()   - Wait for child process
+   kill()   - Send signal
+
+2. File Operations:
+   open()   - Open file
+   read()   - Read from file
+   write()  - Write to file
+   close()  - Close file
+   stat()   - File information
+
+3. Device Management:
+   ioctl()  - Device control
+   read()   - Read from device
+   write()  - Write to device
+
+4. Information Maintenance:
+   getpid() - Get process ID
+   time()   - Get current time
+   getuid() - Get user ID
+
+5. Communication:
+   pipe()   - Create pipe
+   socket() - Create socket
+   send()   - Send data
+   recv()   - Receive data
+
+6. Memory Management:
+   mmap()   - Map memory
+   brk()    - Change heap size
+   sbrk()   - Allocate memory
+
+System Call Flow:
+
+User Program
+     │
+     ├─→ 1. Call library function (e.g., printf)
+     │
+Library (glibc)
+     │
+     ├─→ 2. Setup syscall (write)
+     │
+     ├─→ 3. Execute INT 0x80 or SYSCALL instruction
+     │
+KERNEL
+     │
+     ├─→ 4. Validate parameters
+     │
+     ├─→ 5. Execute kernel code
+     │
+     ├─→ 6. Return result
+     │
+Back to User Program
+
+Common System Calls:
+
+Number  Name       Purpose
+------  ----       -------
+0       read       Read from file descriptor
+1       write      Write to file descriptor
+2       open       Open file
+3       close      Close file
+4       stat       Get file status
+5       fstat      Get file status (fd)
+39      getpid     Get process ID
+57      fork       Create process
+59      execve     Execute program
+60      exit       Exit process
+
+Example: What Happens When You Type "ls"
+
+1. Shell forks (fork syscall)
+2. Child executes ls (execve syscall)
+3. ls opens directory (open syscall)
+4. ls reads directory (read syscall)
+5. ls writes to stdout (write syscall)
+6. ls exits (exit syscall)
+7. Shell waits (wait syscall)
+
+All of these are system calls!
