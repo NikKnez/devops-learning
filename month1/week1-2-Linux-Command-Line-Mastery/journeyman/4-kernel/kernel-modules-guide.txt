@@ -1,0 +1,87 @@
+=== Linux Kernel Modules ===
+
+What are Kernel Modules?
+- Pieces of kernel code
+- Loaded/unloaded dynamically
+- Extend kernel functionality
+- No need to recompile kernel
+- Also called: LKMs (Loadable Kernel Modules)
+
+Why Modules?
+
+Advantages:
+- Smaller kernel image
+- Load only needed drivers
+- Easy updates
+- No reboot for driver changes
+
+vs Built-in:
+- Built-in: Compiled into kernel
+- Modules: Loaded on demand
+- Built-in: Always in memory
+- Modules: Can be unloaded
+
+Types of Modules:
+- Device drivers (USB, graphics, network)
+- Filesystem drivers (ext4, ntfs, nfs)
+- Network protocols
+- Cryptographic functions
+
+Module Files:
+- Extension: .ko (Kernel Object)
+- Location: /lib/modules/$(uname -r)/
+- Config: /etc/modprobe.d/
+
+Module Commands:
+
+lsmod
+- List loaded modules
+- Shows: name, size, usage count
+
+modinfo <module>
+- Show module information
+- Version, author, description, parameters
+
+modprobe <module>
+- Load module (smart way)
+- Handles dependencies automatically
+- Preferred method
+
+insmod <path/to/module.ko>
+- Load module (manual way)
+- No dependency handling
+- Need full path
+
+rmmod <module>
+- Unload module
+- Fails if in use
+
+modprobe -r <module>
+- Unload module (smart way)
+- Handles dependencies
+
+Automatic Loading:
+- udev detects hardware
+- Loads appropriate modules
+- /etc/modules - modules to load at boot
+- /etc/modprobe.d/ - module configurations
+
+Module Parameters:
+- Modules can accept parameters
+- Set at load time
+- Example: modprobe module param=value
+
+Blacklisting Modules:
+- Prevent auto-loading
+- Add to /etc/modprobe.d/blacklist.conf
+- Format: blacklist module_name
+
+Common Modules:
+e1000e      - Intel ethernet
+iwlwifi     - Intel WiFi
+nouveau     - Nvidia open driver
+nvidia      - Nvidia proprietary
+snd-hda     - HD audio
+usb-storage - USB storage
+ext4        - ext4 filesystem
+nfs         - Network filesystem

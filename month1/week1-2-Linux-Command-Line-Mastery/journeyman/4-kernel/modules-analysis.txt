@@ -1,0 +1,25 @@
+=== Loaded Kernel Modules Analysis ===
+
+Total modules loaded: 85
+
+Top 10 largest modules:
+vmwgfx                466944  1
+bridge                421888  0
+nf_tables             385024  80 nft_compat,nft_chain_nat
+hid                   262144  2 usbhid,hid_generic
+psmouse               217088  0
+overlay               217088  0
+nf_conntrack          200704  3 xt_conntrack,nf_nat,xt_MASQUERADE
+snd_ac97_codec        196608  1 snd_intel8x0
+snd_pcm               192512  2 snd_intel8x0,snd_ac97_codec
+e1000                 180224  0
+
+USB-related modules:
+usbhid
+hid
+
+Network modules:
+nfnetlink
+
+Filesystem modules:
+

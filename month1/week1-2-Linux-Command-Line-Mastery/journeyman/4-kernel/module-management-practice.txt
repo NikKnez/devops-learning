@@ -1,0 +1,56 @@
+=== Module Management Commands ===
+
+VIEWING:
+lsmod                          # List loaded modules
+lsmod | grep module_name       # Find specific module
+modinfo module_name            # Module details
+modprobe --show-depends mod    # Show dependencies
+
+LOADING (as root):
+sudo modprobe module_name      # Load module (smart)
+sudo insmod /path/to/mod.ko    # Load module (manual)
+
+UNLOADING (as root):
+sudo modprobe -r module_name   # Unload (smart)
+sudo rmmod module_name         # Unload (manual)
+
+CONFIGURATION:
+/etc/modules                   # Load at boot
+/etc/modprobe.d/*.conf         # Module options
+
+BLACKLISTING:
+File: /etc/modprobe.d/blacklist.conf
+Content: blacklist module_name
+
+Example: Blacklist nouveau (Nvidia open driver)
+echo "blacklist nouveau" | sudo tee /etc/modprobe.d/blacklist-nouveau.conf
+
+PARAMETERS:
+modprobe module param=value    # Load with parameter
+cat /sys/module/mod/parameters/* # View current parameters
+
+DEBUGGING:
+dmesg | grep module_name       # Kernel messages about module
+journalctl | grep module_name  # System logs
+
+Real-world Examples:
+
+1. Load USB storage support:
+   sudo modprobe usb-storage
+
+2. Check ethernet driver:
+   lsmod | grep e1000
+   modinfo e1000e
+
+3. Reload network module:
+   sudo modprobe -r module_name
+   sudo modprobe module_name
+
+4. View module parameters:
+   ls /sys/module/*/parameters/
+
+WARNING:
+- Don't unload critical modules (filesystem, etc.)
+- System may crash if module in use
+- Always check usage count before unloading
+- Use modprobe over insmod/rmmod
