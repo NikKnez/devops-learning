@@ -1,0 +1,65 @@
+=== CPU Privilege Levels (Protection Rings) ===
+
+x86 Architecture has 4 rings (0-3):
+
+Ring 0 (Most Privileged) - KERNEL MODE
+- Complete hardware access
+- All CPU instructions available
+- Direct memory access
+- I/O port access
+- Linux kernel runs here
+- Device drivers run here
+
+Ring 1 & 2 (Medium Privilege)
+- Rarely used in modern systems
+- Originally for device drivers
+- Linux doesn't use these
+
+Ring 3 (Least Privileged) - USER MODE
+- Restricted access
+- Cannot access hardware directly
+- Cannot execute privileged instructions
+- User applications run here
+- Protected from each other
+
+Why Privilege Levels?
+
+1. Security:
+   - User code can't crash kernel
+   - Processes can't access each other's memory
+   - Malware has limited damage potential
+
+2. Stability:
+   - Buggy applications can't crash system
+   - Kernel protected from user errors
+   - System remains operational
+
+3. Isolation:
+   - Each process in its own space
+   - Fair resource allocation
+   - Controlled hardware access
+
+Mode Switching:
+
+User Mode → Kernel Mode:
+- System call
+- Hardware interrupt
+- Exception/fault
+- Saves state, switches to ring 0
+
+Kernel Mode → User Mode:
+- Return from system call
+- Return from interrupt
+- Restores state, switches to ring 3
+
+Cost of Context Switching:
+- Save all registers
+- Switch page tables
+- Load new context
+- Overhead: microseconds
+- Too many = performance hit
+
+Checking Current Mode:
+- User processes always ring 3
+- Cannot check from user space
+- Kernel knows its ring level
