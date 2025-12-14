@@ -1,0 +1,80 @@
+=== Upstart Job Configuration ===
+
+Job File Location:
+/etc/init/myservice.conf
+
+Basic Structure:
+```
+description "Service description"
+
+# When to start
+start on runlevel [2345]
+start on started networking
+
+# When to stop  
+stop on runlevel [016]
+
+# Automatically restart if crashes
+respawn
+
+# Limit restarts (5 times in 60 seconds)
+respawn limit 5 60
+
+# Run before starting main process
+pre-start script
+    mkdir -p /var/run/myservice
+end script
+
+# Main process
+exec /usr/bin/myservice --foreground
+
+# Run after stopping
+post-stop script
+    rm -rf /var/run/myservice
+end script
+```
+
+Upstart Events:
+startup          - System boot
+started JOB      - After job started
+stopped JOB      - After job stopped
+runlevel [N]     - Entering runlevel N
+filesystem       - Filesystems mounted
+local-filesystems - Local filesystems mounted
+remote-filesystems - Network filesystems mounted
+network-services  - Network is up
+
+Upstart Commands (historical):
+initctl list              # List all jobs
+initctl status JOB        # Job status
+initctl start JOB         # Start job
+initctl stop JOB          # Stop job
+initctl restart JOB       # Restart job
+initctl reload JOB        # Reload config
+initctl emit EVENT        # Emit custom event
+
+Example: SSH Service
+```
+# /etc/init/ssh.conf
+description "OpenSSH server"
+
+start on runlevel [2345]
+stop on runlevel [!2345]
+
+respawn
+respawn limit 10 5
+
+pre-start script
+    mkdir -p -m0755 /var/run/sshd
+end script
+
+exec /usr/sbin/sshd -D
+```
+
+Upstart vs SysV:
+SysV: Shell scripts, sequential
+Upstart: Config files, event-driven
+
+Upstart vs systemd:
+Both: Event-driven, parallel
+systemd: Won industry adoption
