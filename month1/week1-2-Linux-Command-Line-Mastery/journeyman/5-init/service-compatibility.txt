@@ -1,0 +1,25 @@
+=== SysV vs Systemd Service Commands ===
+
+SysV Commands → Systemd Equivalent:
+
+service nginx start     → systemctl start nginx
+service nginx stop      → systemctl stop nginx
+service nginx restart   → systemctl restart nginx
+service nginx status    → systemctl status nginx
+service nginx reload    → systemctl reload nginx
+
+chkconfig nginx on      → systemctl enable nginx
+chkconfig nginx off     → systemctl disable nginx
+chkconfig --list        → systemctl list-unit-files
+
+service --status-all    → systemctl list-units --type=service
+
+/etc/init.d/nginx start → systemctl start nginx
+
+Why systemctl is better:
+- Dependency management
+- Parallel startup
+- Better logging (journald)
+- Socket activation
+- Resource limits (cgroups)
+- More reliable state tracking
