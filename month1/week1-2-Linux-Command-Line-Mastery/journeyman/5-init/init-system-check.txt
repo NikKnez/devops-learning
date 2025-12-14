@@ -1,0 +1,19 @@
+=== Current Init System ===
+
+Init process (PID 1): systemd
+
+SysV compatibility directories:
+drwxr-xr-x 2 root root 4096 Dec 12 13:48 /etc/init.d/
+drwxr-xr-x 2 root root 4096 Sep 10  2024 /etc/rc0.d/
+drwxr-xr-x 2 root root 4096 Sep 10  2024 /etc/rc1.d/
+drwxr-xr-x 2 root root 4096 Sep 10  2024 /etc/rc2.d/
+drwxr-xr-x 2 root root 4096 Sep 10  2024 /etc/rc3.d/
+drwxr-xr-x 2 root root 4096 Sep 10  2024 /etc/rc4.d/
+drwxr-xr-x 2 root root 4096 Sep 10  2024 /etc/rc5.d/
+drwxr-xr-x 2 root root 4096 Sep 10  2024 /etc/rc6.d/
+drwxr-xr-x 2 root root 4096 Apr 24  2024 /etc/rcS.d/
+
+Init system in use: systemd
+- Modern systems use systemd
+- SysV directories exist for compatibility
+- Scripts redirect to systemd
