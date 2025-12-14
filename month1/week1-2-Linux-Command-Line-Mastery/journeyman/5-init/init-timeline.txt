@@ -1,0 +1,24 @@
+=== Init System Timeline ===
+
+1970s-2000s: SysV Init
+- Traditional Unix approach
+- Runlevels
+- Sequential startup
+- /etc/init.d/ scripts
+
+2006-2014: Upstart (Ubuntu)
+- Event-based
+- Parallel startup
+- /etc/init/*.conf
+- Ubuntu-specific
+
+2010-Present: systemd
+- Most Linux distributions
+- Unit files
+- Dependency management
+- /etc/systemd/system/
+
+Your System:
+Distribution: $(lsb_release -d | cut -f2)
+Init System: $(ps -p 1 -o comm=)
+Version: $(systemd --version | head -1)

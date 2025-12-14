@@ -1,0 +1,61 @@
+=== Upstart Init System ===
+
+What is Upstart?
+- Event-based init system
+- Developed by Ubuntu (Canonical)
+- Used in Ubuntu 6.10 (2006) to 14.10 (2014)
+- Replaced by systemd in Ubuntu 15.04+
+- Asynchronous, event-driven
+
+Key Improvements Over SysV:
+- Event-based (not runlevel-based)
+- Parallel service startup
+- Automatic respawn of crashed services
+- Better dependency handling
+- Supervises processes
+
+Upstart Concepts:
+
+Events:
+- Starting, started
+- Stopping, stopped
+- System events (filesystem mounted, network up)
+
+Jobs:
+- Services or tasks
+- Defined in /etc/init/*.conf
+- React to events
+
+Job States:
+waiting  - Waiting for start event
+starting - About to start
+running  - Process is running
+stopping - About to stop
+stopped  - Not running
+
+Upstart Configuration:
+- Location: /etc/init/
+- Format: .conf files
+- Declarative syntax (not shell scripts)
+
+Basic Upstart Job:
+```
+# /etc/init/myservice.conf
+description "My Service"
+start on runlevel [2345]
+stop on runlevel [016]
+
+respawn
+exec /usr/bin/myservice
+```
+
+Why Upstart Failed:
+- Not adopted outside Ubuntu ecosystem
+- Systemd gained more traction
+- Limited tooling compared to systemd
+- Ubuntu switched to systemd for compatibility
+
+Legacy Status:
+- Removed from modern Ubuntu
+- Some concepts influenced systemd
+- Historical interest only
