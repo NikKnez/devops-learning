@@ -1,0 +1,81 @@
+=== Linux Power States ===
+
+Power Management Types:
+
+1. SHUTDOWN (Poweroff)
+   - System completely off
+   - Power removed from hardware
+   - Full boot required to start
+   - Command: systemctl poweroff
+
+2. REBOOT
+   - Shutdown and restart
+   - Loads kernel fresh
+   - All services restart
+   - Command: systemctl reboot
+
+3. SUSPEND (Sleep / Suspend-to-RAM)
+   - Low power state
+   - RAM powered (keeps state)
+   - CPU and disk off
+   - Quick wake (seconds)
+   - Loses state if power lost
+   - Command: systemctl suspend
+
+4. HIBERNATE (Suspend-to-Disk)
+   - Saves RAM to disk (swap)
+   - Completely powers off
+   - Restores state on boot
+   - Slower than suspend
+   - Survives power loss
+   - Requires swap space >= RAM
+   - Command: systemctl hibernate
+
+5. HYBRID SLEEP
+   - Suspends AND hibernates
+   - Quick wake like suspend
+   - Safe like hibernate
+   - Best of both worlds
+   - Command: systemctl hybrid-sleep
+
+6. SUSPEND-THEN-HIBERNATE
+   - Suspends first (quick)
+   - Hibernates after timeout
+   - Saves battery
+   - Command: systemctl suspend-then-hibernate
+
+Power State Comparison:
+
+State       Speed   Power   Data Safe   Requires
+-----       -----   -----   ---------   --------
+Suspend     Fast    Low     No          -
+Hibernate   Slow    None    Yes         Swap
+Hybrid      Fast    Low     Yes         Swap
+Poweroff    N/A     None    Yes         -
+
+Systemd Power Commands:
+systemctl poweroff            # Shut down
+systemctl reboot              # Restart
+systemctl suspend             # Sleep
+systemctl hibernate           # Hibernate
+systemctl hybrid-sleep        # Hybrid
+systemctl suspend-then-hibernate  # Combo
+
+Legacy Commands (still work):
+shutdown -h now     → systemctl poweroff
+shutdown -r now     → systemctl reboot
+halt                → systemctl halt
+poweroff            → systemctl poweroff
+reboot              → systemctl reboot
+
+Scheduled Shutdown:
+shutdown -h +10          # Shutdown in 10 minutes
+shutdown -h 20:00        # Shutdown at 8 PM
+shutdown -r +5 "Reboot"  # With message
+shutdown -c              # Cancel shutdown
+
+ACPI Events:
+- Power button pressed
+- Lid closed
+- Battery low
+- Configured in /etc/systemd/logind.conf

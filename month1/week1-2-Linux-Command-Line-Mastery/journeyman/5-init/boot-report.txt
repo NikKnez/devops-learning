@@ -1,0 +1,38 @@
+=== System Boot and Uptime Report ===
+
+Current uptime:
+ 13:02:45 up 46 min,  1 user,  load average: 0.66, 0.74, 0.90
+
+Last boot:
+         system boot  2025-12-15 12:16
+
+Boot time analysis:
+Startup finished in 4.326s (kernel) + 31.145s (userspace) = 35.472s 
+graphical.target reached after 31.113s in userspace.
+
+Critical chain (boot dependencies):
+The time when unit became active or started is printed after the "@" character.
+The time the unit took to start is printed after the "+" character.
+
+graphical.target @31.113s
+└─multi-user.target @31.113s
+  └─plymouth-quit-wait.service @8.054s +23.057s
+    └─systemd-user-sessions.service @7.991s +50ms
+      └─network.target @7.916s
+        └─NetworkManager.service @5.152s +2.761s
+          └─dbus.service @3.457s +1.657s
+            └─basic.target @3.441s
+              └─sockets.target @3.441s
+                └─cups.socket @5.023s
+                  └─sysinit.target @3.414s
+                    └─snapd.apparmor.service @3.010s +403ms
+
+Recent reboot history:
+reboot   system boot  6.14.0-37-generi Mon Dec 15 12:16   still running
+reboot   system boot  6.14.0-37-generi Sun Dec 14 20:32 - 22:26  (01:53)
+reboot   system boot  6.14.0-37-generi Sat Dec 13 19:26 - 21:04  (01:38)
+reboot   system boot  6.14.0-37-generi Sat Dec 13 11:35 - 11:37  (00:01)
+reboot   system boot  6.14.0-37-generi Sat Dec 13 09:33 - 09:50  (00:17)
+
+System state:
+running
