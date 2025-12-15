@@ -1,0 +1,45 @@
+=== Essential Systemd Commands ===
+
+SERVICE CONTROL:
+systemctl start SERVICE       # Start now
+systemctl stop SERVICE        # Stop now
+systemctl restart SERVICE     # Restart
+systemctl reload SERVICE      # Reload config
+systemctl status SERVICE      # Check status
+systemctl is-active SERVICE   # Running?
+systemctl is-enabled SERVICE  # Start at boot?
+
+BOOT CONFIGURATION:
+systemctl enable SERVICE      # Start at boot
+systemctl disable SERVICE     # Don't start at boot
+systemctl mask SERVICE        # Prevent starting (stronger than disable)
+systemctl unmask SERVICE      # Remove mask
+
+SYSTEM STATE:
+systemctl list-units          # All active units
+systemctl list-unit-files     # All installed units
+systemctl --failed            # Failed units
+systemctl status              # System overview
+
+UNIT INFORMATION:
+systemctl show SERVICE        # All properties
+systemctl cat SERVICE         # Show unit file
+systemctl list-dependencies SERVICE  # Dependencies
+
+SYSTEM CONTROL:
+systemctl reboot              # Reboot system
+systemctl poweroff            # Shut down
+systemctl suspend             # Suspend to RAM
+systemctl hibernate           # Suspend to disk
+
+ADVANCED:
+systemctl daemon-reload       # Reload unit files
+systemctl reset-failed        # Clear failed state
+systemctl isolate TARGET      # Switch to target
+
+LOGS:
+journalctl                    # All logs
+journalctl -u SERVICE         # Service logs
+journalctl -f                 # Follow logs
+journalctl -b                 # Current boot logs
+journalctl --since "1 hour ago"  # Recent logs

@@ -1,0 +1,39 @@
+=== Systemd System Report ===
+
+Version:
+systemd 255 (255.4-1ubuntu8.11)
++PAM +AUDIT +SELINUX +APPARMOR +IMA +SMACK +SECCOMP +GCRYPT -GNUTLS +OPENSSL +ACL +BLKID +CURL +ELFUTILS +FIDO2 +IDN2 -IDN +IPTC +KMOD +LIBCRYPTSETUP +LIBFDISK +PCRE2 -PWQUALITY +P11KIT +QRENCODE +TPM2 +BZIP2 +LZ4 +XZ +ZLIB +ZSTD -BPF_FRAMEWORK -XKBCOMMON +UTMP +SYSVINIT default-hierarchy=unified
+
+System State:
+running
+
+Total Units:
+558
+
+Active Services:
+38
+
+Failed Units:
+3
+
+Boot Time:
+Startup finished in 4.326s (kernel) + 31.145s (userspace) = 35.472s 
+
+Slowest Services (Top 5):
+23.057s plymouth-quit-wait.service
+ 7.176s docker.service
+ 4.868s logrotate.service
+ 4.151s snapd.seeded.service
+ 3.879s snapd.service
+
+Recently Started Services:
+  UNIT                          LOAD   ACTIVE SUB     DESCRIPTION
+  accounts-daemon.service       loaded active running Accounts Service
+  avahi-daemon.service          loaded active running Avahi mDNS/DNS-SD Stack
+  colord.service                loaded active running Manage, Install and Generate Color Profiles
+  containerd.service            loaded active running containerd container runtime
+  cron.service                  loaded active running Regular background program processing daemon
+  cups-browsed.service          loaded active running Make remote CUPS printers available locally
+  cups.service                  loaded active running CUPS Scheduler
+  dbus.service                  loaded active running D-Bus System Message Bus
+  docker.service                loaded active running Docker Application Container Engine

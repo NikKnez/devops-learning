@@ -1,0 +1,85 @@
+=== Systemd Init System ===
+
+What is Systemd?
+- Modern init system and service manager
+- Standard on most Linux distributions
+- Created by Lennart Poettering (Red Hat)
+- First released 2010
+- Default since RHEL 7, Ubuntu 15.04, Debian 8
+
+Why Systemd Won:
+- Parallel service startup (fast boot)
+- Proper dependency management
+- Socket and D-Bus activation
+- On-demand service starting
+- Unified logging (journald)
+- Resource management (cgroups)
+- Timer units (replaces cron)
+- Backwards compatible with SysV
+
+Core Components:
+
+systemd (PID 1)
+- Init process
+- Service manager
+- Process supervisor
+
+systemctl
+- Control systemd
+- Manage services
+- Query system state
+
+journalctl
+- Query systemd journal
+- View logs
+
+systemd-analyze
+- Boot time analysis
+- System performance
+
+Key Concepts:
+
+Units:
+- Service units (.service) - Daemons/services
+- Mount units (.mount) - Filesystem mounts
+- Target units (.target) - Group of units
+- Timer units (.timer) - Scheduled tasks
+- Socket units (.socket) - IPC sockets
+- Device units (.device) - Hardware devices
+- Path units (.path) - File/directory watching
+
+Unit File Locations:
+/lib/systemd/system/       - Distribution defaults
+/etc/systemd/system/       - Administrator overrides
+/run/systemd/system/       - Runtime units
+
+Dependencies:
+Requires=    - Hard dependency
+Wants=       - Soft dependency
+Before=      - Order dependency
+After=       - Order dependency
+Conflicts=   - Negative dependency
+
+Advantages:
+✓ Fast parallel startup
+✓ Automatic dependency resolution
+✓ Socket activation (lazy loading)
+✓ Resource limits per service
+✓ Better process tracking
+✓ Transactional activation
+✓ Snapshot and restore
+✓ Powerful logging
+
+Controversies:
+- Binary logs (not plain text)
+- Large scope (does many things)
+- Breaking Unix philosophy
+- Opinionated design
+- Required by many desktop environments
+
+DevOps Relevance:
+- Industry standard
+- Must know for modern Linux
+- Container init systems
+- Cloud instances
+- Kubernetes nodes
