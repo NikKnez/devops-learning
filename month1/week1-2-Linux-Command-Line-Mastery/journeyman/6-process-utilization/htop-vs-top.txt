@@ -1,0 +1,43 @@
+=== htop vs top ===
+
+htop Advantages:
+- Color-coded display
+- Mouse support
+- Easier to read
+- Shows CPU bars visually
+- Tree view of processes
+- Easier to kill/renice
+- Horizontal/vertical scrolling
+
+Installation:
+sudo apt install htop
+
+htop Features:
+F1 - Help
+F2 - Setup
+F3 - Search
+F4 - Filter
+F5 - Tree view
+F6 - Sort by
+F9 - Kill process
+F10 - Quit
+
+Space - Tag process
+U - Untag all
+c - Tag with children
+H - Hide/show threads
+K - Show/hide kernel threads
+t - Tree view
+/ - Search
+
+htop Keyboard:
+M - Sort by memory
+P - Sort by CPU
+T - Sort by time
+u - Filter by user
+
+When to use top vs htop:
+top:  Already installed, scripting, remote systems
+htop: Interactive work, better UX, when available
+
+Both show same data, htop just presents it better.

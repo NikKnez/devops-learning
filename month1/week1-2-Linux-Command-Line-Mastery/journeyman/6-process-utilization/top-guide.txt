@@ -1,0 +1,80 @@
+=== Mastering top Command ===
+
+What is top?
+- Real-time process viewer
+- Shows CPU, memory, process info
+- Updates every 3 seconds (default)
+- Interactive - can kill processes, renice, etc.
+
+Starting top:
+top           # Basic
+top -u nikola # Show only user's processes
+top -d 5      # Update every 5 seconds
+top -b -n 1   # Batch mode, one iteration (for scripts)
+
+Top Display Sections:
+
+1. SUMMARY (Top 5 lines):
+   - System uptime, users, load average
+   - Tasks: total, running, sleeping, stopped, zombie
+   - CPU usage: us, sy, ni, id, wa, hi, si, st
+   - Memory: total, used, free, buffers
+   - Swap: total, used, free, cached
+
+2. PROCESS LIST:
+   PID    - Process ID
+   USER   - Owner
+   PR     - Priority
+   NI     - Nice value
+   VIRT   - Virtual memory
+   RES    - Resident memory (actual RAM)
+   SHR    - Shared memory
+   S      - State (R=running, S=sleeping, Z=zombie)
+   %CPU   - CPU usage
+   %MEM   - Memory usage
+   TIME+  - Total CPU time
+   COMMAND - Process name
+
+Interactive Commands Inside top:
+h or ? - Help
+q      - Quit
+k      - Kill process (enter PID)
+r      - Renice process
+M      - Sort by memory usage
+P      - Sort by CPU usage
+T      - Sort by time
+u      - Filter by user
+c      - Show full command path
+1      - Show individual CPU cores
+z      - Color toggle
+W      - Write config to ~/.toprc
+
+CPU States Explained:
+us - User space (normal programs)
+sy - System/kernel space
+ni - Nice (low priority processes)
+id - Idle
+wa - IO wait (disk/network)
+hi - Hardware interrupts
+si - Software interrupts
+st - Stolen (VMs only)
+
+Load Average:
+Three numbers: 1min, 5min, 15min
+- 1.00 = 100% CPU usage (1 core)
+- On 4-core system:
+  * 4.00 = 100% utilized
+  * 8.00 = 200% overloaded
+- Rule: Load > number of cores = overloaded
+
+Memory Types:
+VIRT - Virtual memory allocated (can be > physical RAM)
+RES  - Actual physical RAM used
+SHR  - Shared with other processes
+
+DevOps Use Cases:
+1. Find process eating CPU
+2. Find memory leaks
+3. Check system load
+4. Identify zombies
+5. Quick health check
