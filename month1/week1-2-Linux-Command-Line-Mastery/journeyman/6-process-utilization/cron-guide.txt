@@ -1,0 +1,197 @@
+=== Cron Jobs Complete Guide ===
+
+What is Cron?
+- Time-based job scheduler
+- Runs commands/scripts at specified times
+- Daemon process (crond)
+- User-level and system-level jobs
+
+Cron Syntax:
+* * * * * command
+│ │ │ │ │
+│ │ │ │ └─── Day of week (0-7, Sun=0 or 7)
+│ │ │ └───── Month (1-12)
+│ │ └─────── Day of month (1-31)
+│ └───────── Hour (0-23)
+└─────────── Minute (0-59)
+
+Special Characters:
+*     - Any value
+,     - List (1,3,5)
+-     - Range (1-5)
+/     - Step (*/5 = every 5)
+
+Examples:
+
+0 0 * * *           # Daily at midnight
+0 */6 * * *         # Every 6 hours
+30 2 * * 0          # Sunday at 2:30 AM
+0 9-17 * * 1-5      # 9 AM-5 PM, Mon-Fri, every hour
+*/15 * * * *        # Every 15 minutes
+0 0 1 * *           # First day of month at midnight
+0 0 * * 0           # Every Sunday at midnight
+@reboot             # At system boot
+@daily              # Once a day (0:00)
+@weekly             # Once a week (Sun 0:00)
+@monthly            # Once a month (1st 0:00)
+@yearly             # Once a year (Jan 1 0:00)
+
+Managing Cron Jobs:
+
+View cron jobs:
+crontab -l              # List your cron jobs
+crontab -l -u username  # List other user's jobs (root only)
+
+Edit cron jobs:
+crontab -e              # Edit with default editor
+
+Remove all cron jobs:
+crontab -r              # Careful!
+
+System-wide cron:
+/etc/crontab            # System crontab
+/etc/cron.d/            # Additional cron files
+/etc/cron.daily/        # Daily scripts
+/etc/cron.weekly/       # Weekly scripts
+/etc/cron.monthly/      # Monthly scripts
+
+Crontab Format:
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=admin@example.com
+
+# m h dom mon dow command
+0 2 * * * /home/user/backup.sh
+*/10 * * * * /usr/local/bin/healthcheck.sh
+
+Environment Variables:
+SHELL    - Shell to use (default: /bin/sh)
+PATH     - Search path for commands
+MAILTO   - Email output to this address
+HOME     - Home directory
+LOGNAME  - Username
+
+Cron Best Practices:
+
+1. Use absolute paths:
+   # Bad:  */5 * * * * backup.sh
+   # Good: */5 * * * * /home/user/backup.sh
+
+2. Redirect output:
+   */5 * * * * /home/user/script.sh >> /var/log/script.log 2>&1
+
+3. Set environment:
+   SHELL=/bin/bash
+   PATH=/usr/local/bin:/usr/bin:/bin
+
+4. Test scripts manually first:
+   Run script before scheduling
+
+5. Handle failures:
+   Script should log errors
+   Use exit codes properly
+
+6. Don't overlap jobs:
+   Ensure job finishes before next run
+   Use locking mechanisms
+
+7. Email notifications:
+   MAILTO=admin@example.com
+   Or: command 2>&1 | mail -s "Job" admin@example.com
+
+Cron Logging:
+
+Check cron logs:
+grep CRON /var/log/syslog
+journalctl -u cron
+
+Enable detailed logging:
+# Edit /etc/rsyslog.conf
+cron.* /var/log/cron.log
+
+Debugging Cron Jobs:
+
+Job not running? Check:
+1. Is cron running?
+   systemctl status cron
+
+2. Syntax correct?
+   crontab -l
+
+3. Check logs:
+   grep CRON /var/log/syslog
+
+4. Test script manually:
+   /path/to/script.sh
+
+5. Check permissions:
+   ls -l /path/to/script.sh
+
+6. Environment issues:
+   Add: * * * * * env > /tmp/cron-env.txt
+   Compare with normal environment
+
+Common Cron Patterns:
+
+Backups:
+0 2 * * * /usr/local/bin/backup-database.sh
+0 3 * * 0 /usr/local/bin/backup-full.sh
+
+Monitoring:
+*/5 * * * * /usr/local/bin/check-disk-space.sh
+*/10 * * * * /usr/local/bin/check-services.sh
+
+Maintenance:
+0 4 * * * /usr/local/bin/cleanup-logs.sh
+0 0 * * 0 /usr/local/bin/update-system.sh
+
+Log Rotation:
+0 0 * * * /usr/sbin/logrotate /etc/logrotate.conf
+
+Security:
+0 */4 * * * /usr/local/bin/security-scan.sh
+
+Cron vs Systemd Timers:
+
+Cron:
+- Simple, well-known
+- User-level and system-level
+- Limited logging
+- No dependencies
+
+Systemd Timers:
+- More features (dependencies, retries)
+- Better logging (journalctl)
+- More complex setup
+- Modern approach
+
+For DevOps:
+- Simple scheduled tasks: Cron
+- Complex workflows: Systemd timers
+- CI/CD: External tools (Jenkins, GitLab CI)
+
+Cron Gotchas:
+
+1. % is special in cron:
+   # Bad:  date +%Y-%m-%d
+   # Good: date +\%Y-\%M-\%d
+   Or use $(date +%Y-%m-%d)
+
+2. PATH is minimal:
+   Always use absolute paths
+
+3. Different user environment:
+   Cron runs in minimal environment
+   Source ~/.bashrc if needed
+
+4. No terminal:
+   Interactive commands fail
+   Use -y flags for auto-yes
+
+5. Timezone:
+   Cron uses system timezone
+   Check: timedatectl
+
+6. Concurrent execution:
+   Job can run while previous still running
+   Use flock or custom locking
