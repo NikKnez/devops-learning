@@ -1,0 +1,211 @@
+# Exercise 7: Continuous Monitoring
+
+
+## Task 7.1: Continuous Monitoring Strategies
+cat > continuous-monitoring.txt << 'EOF'
+=== Continuous Monitoring Strategies ===
+
+Why Continuous Monitoring?
+- Catch issues before users notice
+- Historical data for troubleshooting
+- Capacity planning
+- Performance trends
+
+Monitoring Approaches:
+
+1. Terminal-based (Interactive):
+   - top, htop, iotop
+   - watch command
+   - Good for: Active troubleshooting
+
+2. Logging-based (Passive):
+   - sar (sysstat)
+   - Custom scripts with cron
+   - Good for: Historical analysis
+
+3. Tool-based (Professional):
+   - Prometheus + Grafana
+   - Nagios, Zabbix
+   - Good for: Production monitoring
+
+Terminal Monitoring:
+
+watch Command:
+watch -n 1 'df -h'              # Disk space every second
+watch -n 5 'free -h'            # Memory every 5 seconds
+watch 'ps aux --sort=-%cpu | head -10'  # Top CPU
+
+Continuous top:
+top -d 1                        # Update every second
+top -b -n 1000 > top-log.txt    # Log 1000 iterations
+
+Log All the Things:
+while true; do
+    date >> monitor.log
+    top -b -n 1 | head -20 >> monitor.log
+    sleep 60
+done
+
+SystemD Journal:
+journalctl -f                   # Follow system log
+journalctl -u nginx -f          # Follow service log
+journalctl --since "1 hour ago" # Recent logs
+
+Historical Monitoring with sar:
+
+Enable sysstat:
+sudo systemctl enable sysstat
+sudo systemctl start sysstat
+
+View historical data:
+sar -u                          # CPU usage (today)
+sar -u -f /var/log/sysstat/sa15 # CPU on 15th
+sar -r                          # Memory usage
+sar -b                          # I/O usage
+sar -n DEV                      # Network usage
+
+Common sar Commands:
+sar -u 1 10                     # CPU, 10 samples, 1 sec apart
+sar -r 1 10                     # Memory
+sar -d 1 10                     # Disk
+sar -n DEV 1 10                 # Network
+
+Alerting Strategies:
+
+1. Threshold-based:
+   if [ $(free | grep Mem | awk '{print $4/$2 * 100}') -lt 10 ]; then
+       echo "Low memory!" | mail -s "Alert" admin@example.com
+   fi
+
+2. Rate-of-change:
+   Monitor if CPU increases >50% in 5 minutes
+
+3. Pattern-based:
+   if grep -q "error" /var/log/app.log; then
+       alert
+   fi
+
+Custom Monitoring Script:
+#!/bin/bash
+while true; do
+    CPU=$(top -bn1 | grep "Cpu(s)" | awk '{print $2}')
+    MEM=$(free | grep Mem | awk '{print $3/$2 * 100.0}')
+    LOAD=$(uptime | awk '{print $(NF-2)}' | sed 's/,//')
+    
+    if (( $(echo "$CPU > 80" | bc -l) )); then
+        echo "High CPU: $CPU%" | mail -s "Alert" admin@example.com
+    fi
+    
+    if (( $(echo "$MEM > 90" | bc -l) )); then
+        echo "High Memory: $MEM%" | mail -s "Alert" admin@example.com
+    fi
+    
+    sleep 60
+done
+
+Best Practices:
+
+1. Monitor what matters:
+   - CPU, Memory, Disk, Network
+   - Application-specific metrics
+   - Error rates, response times
+
+2. Set meaningful thresholds:
+   - Not too sensitive (false positives)
+   - Not too loose (miss real issues)
+   - Tune based on baselines
+
+3. Keep historical data:
+   - At least 7 days detailed
+   - 30 days summarized
+   - 1 year trends
+
+4. Document baselines:
+   - Normal CPU: 20-40%
+   - Normal Memory: 60-80%
+   - Normal Load: < number of cores
+
+5. Alert fatigue is real:
+   - Too many alerts = ignored alerts
+   - Group related alerts
+   - Escalate critical only
+
+Monitoring Stack for DevOps:
+
+Level 1 (Learning):
+- top/htop for interactive
+- sar for historical
+- Custom scripts for automation
+
+Level 2 (Production):
+- Prometheus for metrics
+- Grafana for visualization
+- Alertmanager for alerts
+
+Level 3 (Enterprise):
+- Datadog, New Relic, or similar
+- Full-stack observability
+- APM (Application Performance Monitoring)
+EOF
+
+cat continuous-monitoring.txt
+
+
+## Task 7.2: Create Monitoring Dashboard Script
+cat > monitoring-dashboard.sh << 'EOF'
+#!/bin/bash
+
+# Simple monitoring dashboard
+# Run with: watch -n 5 ./monitoring-dashboard.sh
+
+clear
+echo "============================================"
+echo "     SYSTEM MONITORING DASHBOARD"
+echo "============================================"
+echo "Last Update: $(date)"
+echo ""
+
+# CPU
+echo "CPU Usage:"
+top -bn1 | grep "Cpu(s)" | awk '{print "  User: " $2 ", System: " $4 ", Idle: " $8}'
+echo "  Load Average: $(uptime | awk -F'load average:' '{print $2}')"
+echo ""
+
+# Memory
+echo "Memory:"
+free -h | grep Mem | awk '{print "  Total: " $2 ", Used: " $3 ", Available: " $7}'
+free -h | grep Swap | awk '{print "  Swap Used: " $3 " / " $2}'
+echo ""
+
+# Disk
+echo "Disk Usage:"
+df -h | grep -E "^/dev" | awk '{print "  " $1 ": " $5 " used (" $3 " / " $2 ")"}'
+echo ""
+
+# Network
+echo "Network (if ss available):"
+if command -v ss &> /dev/null; then
+    ESTABLISHED=$(ss -tan | grep ESTAB | wc -l)
+    LISTENING=$(ss -tln | wc -l)
+    echo "  Established connections: $ESTABLISHED"
+    echo "  Listening ports: $LISTENING"
+else
+    echo "  ss command not available"
+fi
+echo ""
+
+# Top Processes
+echo "Top 3 CPU Processes:"
+ps aux --sort=-%cpu | head -4 | tail -3 | awk '{printf "  %-10s %5s%% %s\n", $1, $3, $11}'
+echo ""
+
+echo "Top 3 Memory Processes:"
+ps aux --sort=-%mem | head -4 | tail -3 | awk '{printf "  %-10s %5s%% %s\n", $1, $4, $11}'
+echo ""
+
+echo "============================================"
+echo "Press Ctrl+C to exit"
+EOF
+
+chmod +x monitoring-dashboard.sh
+echo "Run: watch -n 5 ./monitoring-dashboard.sh"
