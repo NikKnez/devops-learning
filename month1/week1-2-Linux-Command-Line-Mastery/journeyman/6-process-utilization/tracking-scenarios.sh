@@ -1,0 +1,42 @@
+#!/bin/bash
+
+echo "=== Common Process Tracking Scenarios ==="
+echo ""
+
+echo "Scenario 1: Can't delete file"
+echo "  Problem: rm file.txt → 'Device or resource busy'"
+echo "  Solution:"
+echo "    lsof file.txt              # Find process"
+echo "    kill <PID>                 # Kill it"
+echo "    rm file.txt                # Now works"
+echo ""
+
+echo "Scenario 2: Port already in use"
+echo "  Problem: Starting server → 'Port 8080 already in use'"
+echo "  Solution:"
+echo "    lsof -i :8080              # Find process"
+echo "    # or: fuser -n tcp 8080"
+echo "    kill <PID>"
+echo ""
+
+echo "Scenario 3: Disk full but file deleted"
+echo "  Problem: Deleted 10GB log, no space freed"
+echo "  Solution:"
+echo "    lsof | grep deleted        # Find process still holding it"
+echo "    sudo systemctl restart service  # Release file"
+echo ""
+
+echo "Scenario 4: Can't unmount USB"
+echo "  Problem: umount /mnt/usb → 'target is busy'"
+echo "  Solution:"
+echo "    lsof /mnt/usb              # Find what's using it"
+echo "    cd ~                       # Get out of that directory"
+echo "    fuser -km /mnt/usb         # Kill all processes"
+echo "    umount /mnt/usb            # Now works"
+echo ""
+
+echo "Scenario 5: Find all SSH connections"
+echo "  Solution:"
+echo "    lsof -i :22"
+echo "    # or: ss -tnp | grep :22"
+echo ""

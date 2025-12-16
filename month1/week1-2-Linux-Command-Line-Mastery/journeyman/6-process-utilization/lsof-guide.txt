@@ -1,0 +1,68 @@
+=== lsof (List Open Files) ===
+
+What is lsof?
+- Lists all open files
+- Remember: "Everything is a file" in Linux
+- Shows files, directories, sockets, pipes, devices
+
+Why lsof Matters:
+- Find which process is using a file
+- See network connections
+- Troubleshoot "file in use" errors
+- Find deleted files still held by processes
+
+Basic Usage:
+lsof                    # List all open files (huge output!)
+lsof /path/to/file      # Who's using this file?
+lsof -u username        # Files opened by user
+lsof -c process_name    # Files opened by process
+lsof -p PID             # Files opened by PID
+
+Network Usage:
+lsof -i                 # All network connections
+lsof -i :80             # Who's using port 80?
+lsof -i TCP             # TCP connections only
+lsof -i TCP:22          # SSH connections
+lsof -i @192.168.1.1    # Connections to specific IP
+
+Common Scenarios:
+
+1. Can't unmount drive:
+   Problem: "device is busy"
+   Solution: lsof /mnt/drive
+   Find process, kill it, unmount
+
+2. Can't bind to port:
+   Problem: "Address already in use"
+   Solution: lsof -i :8080
+   Find conflicting process
+
+3. Deleted file still using space:
+   Problem: Deleted 10GB file, no space freed
+   Solution: lsof | grep deleted
+   Process still has file open, restart it
+
+4. Find network connections:
+   lsof -i -P -n
+   -P: Show port numbers (not service names)
+   -n: Show IP addresses (not hostnames)
+
+Output Columns:
+COMMAND - Process name
+PID     - Process ID
+USER    - Owner
+FD      - File descriptor
+TYPE    - File type (REG, DIR, CHR, IPv4, IPv6)
+DEVICE  - Device numbers
+SIZE    - File size
+NODE    - Inode number
+NAME    - File path or network connection
+
+File Descriptors (FD):
+cwd - Current working directory
+txt - Program text (code)
+mem - Memory-mapped file
+0u  - stdin
+1u  - stdout
+2u  - stderr
+3u  - File descriptor 3 (open file)

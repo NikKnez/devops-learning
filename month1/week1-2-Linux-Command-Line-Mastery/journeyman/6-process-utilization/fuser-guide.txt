@@ -1,0 +1,46 @@
+=== fuser (File User) ===
+
+What is fuser?
+- Identifies processes using files or sockets
+- Simpler than lsof for basic tasks
+- Can send signals to processes
+
+Basic Usage:
+fuser filename          # Show PIDs using file
+fuser -v filename       # Verbose (show details)
+fuser -m /mnt/disk      # All processes using mount point
+fuser -k filename       # Kill processes using file
+fuser -i -k filename    # Kill with confirmation
+
+Network Usage:
+fuser -n tcp 80         # Who's using TCP port 80?
+fuser -n tcp 22         # Who's using SSH port?
+
+Access Codes:
+c - Current directory
+e - Executable being run
+f - Open file
+F - Open file for writing
+r - Root directory
+m - Memory-mapped file
+
+Common Use Cases:
+
+1. Unmount busy filesystem:
+   fuser -vm /mnt/backup
+   fuser -km /mnt/backup  # Kill all
+   umount /mnt/backup
+
+2. Find process using port:
+   fuser -n tcp 8080
+
+3. Kill processes using file:
+   fuser -k /var/log/app.log
+
+fuser vs lsof:
+fuser:  Simpler, focused on specific file/port
+lsof:   More detailed, more options, network info
+
+DevOps Tip:
+Use fuser for quick checks and kills.
+Use lsof for detailed investigation.

@@ -1,0 +1,27 @@
+=== Who's using test-file.txt? ===
+COMMAND  PID   USER   FD   TYPE DEVICE SIZE/OFF    NODE NAME
+tail    4068 nikola    3r   REG    8,2       10 1991314 test-file.txt
+
+=== My open files (first 10): ===
+COMMAND    PID   USER   FD      TYPE             DEVICE  SIZE/OFF    NODE NAME
+systemd   1302 nikola  cwd   unknown                                      /proc/1302/cwd (readlink: Permission denied)
+systemd   1302 nikola  rtd   unknown                                      /proc/1302/root (readlink: Permission denied)
+systemd   1302 nikola  txt   unknown                                      /proc/1302/exe (readlink: Permission denied)
+systemd   1302 nikola    0   unknown                                      /proc/1302/fd/0 (readlink: Permission denied)
+systemd   1302 nikola    1   unknown                                      /proc/1302/fd/1 (readlink: Permission denied)
+systemd   1302 nikola    2   unknown                                      /proc/1302/fd/2 (readlink: Permission denied)
+systemd   1302 nikola    3   unknown                                      /proc/1302/fd/3 (readlink: Permission denied)
+systemd   1302 nikola    4   unknown                                      /proc/1302/fd/4 (readlink: Permission denied)
+systemd   1302 nikola    5   unknown                                      /proc/1302/fd/5 (readlink: Permission denied)
+
+=== Network connections: ===
+COMMAND    PID            USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+systemd-r  480 systemd-resolve   14u  IPv4   7556      0t0  UDP _localdnsstub:domain 
+systemd-r  480 systemd-resolve   15u  IPv4   7557      0t0  TCP _localdnsstub:domain (LISTEN)
+systemd-r  480 systemd-resolve   16u  IPv4   7558      0t0  UDP _localdnsproxy:domain 
+systemd-r  480 systemd-resolve   17u  IPv4   7559      0t0  TCP _localdnsproxy:domain (LISTEN)
+avahi-dae  864           avahi   12u  IPv4  12451      0t0  UDP *:mdns 
+avahi-dae  864           avahi   13u  IPv6  12452      0t0  UDP *:mdns 
+avahi-dae  864           avahi   14u  IPv4  12453      0t0  UDP *:41452 
+avahi-dae  864           avahi   15u  IPv6  12454      0t0  UDP *:52526 
+NetworkMa 1044            root   26u  IPv4  11800      0t0  UDP 10.0.2.15:bootpc->10.0.2.2:bootps 
