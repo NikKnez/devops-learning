@@ -1,0 +1,213 @@
+# Exercise 6: Memory Monitoring
+
+
+## Task 6.1: Memory Monitoring Guide
+cat > memory-monitoring.txt << 'EOF'
+=== Memory Monitoring Comprehensive Guide ===
+
+Linux Memory Types:
+1. Physical RAM - Actual memory chips
+2. Swap - Disk space used as RAM
+3. Cache - File system cache
+4. Buffers - Disk block cache
+5. Shared - Memory shared between processes
+
+Key Concept: Linux Uses All Available RAM!
+- "Used" memory includes cache/buffers
+- Cache can be freed instantly
+- "Available" is what matters, not "free"
+
+Memory States:
+Total = Used + Free
+Available = Free + Reclaimable(cache/buffers)
+
+Tools:
+
+1. free
+   - Quick memory overview
+   - Shows total, used, free, cache
+   - Most common tool
+
+2. top/htop
+   - Per-process memory
+   - Real-time updates
+   - Sort by memory (press 'M')
+
+3. vmstat
+   - Virtual memory stats
+   - Swap in/out
+   - Good for swap issues
+
+4. ps
+   - Process memory details
+   - RSS, VSZ values
+   - Find memory hogs
+
+5. smem
+   - Proportional memory
+   - Shared memory handled correctly
+   - More accurate than ps
+
+Commands:
+
+# Quick checks
+free -h                 # Human-readable
+free -m                 # Megabytes
+cat /proc/meminfo       # Detailed info
+
+# Process memory
+ps aux --sort=-%mem | head -10   # Top memory users
+top -o %MEM             # Sort by memory
+pmap -x PID             # Memory map of process
+cat /proc/PID/status    # Process memory details
+
+# System memory
+vmstat 1                # Virtual memory stats
+sar -r                  # Historical memory usage
+cat /proc/meminfo       # All memory info
+
+free Command Output:
+              total        used        free      shared  buff/cache   available
+Mem:           15Gi       8.0Gi       2.0Gi       500Mi       5.0Gi       6.5Gi
+Swap:          2.0Gi       500Mi       1.5Gi
+
+Columns:
+total      - Physical RAM installed
+used       - Actually used by programs
+free       - Completely unused
+shared     - Shared memory (tmpfs, etc.)
+buff/cache - Disk cache (can be freed)
+available  - Memory available for apps (THIS IS KEY!)
+Swap total - Swap space total
+Swap used  - Swap currently in use
+
+Memory Metrics:
+
+RSS (Resident Set Size):
+- Physical RAM used by process
+- Doesn't include swapped pages
+- Includes shared libraries (counted multiple times)
+
+VSZ (Virtual Size):
+- Virtual memory allocated
+- Includes swapped pages
+- Can be > physical RAM
+- Not all is actually used
+
+PSS (Proportional Set Size):
+- RSS but shared memory divided by share count
+- More accurate than RSS
+- Requires smem tool
+
+Memory States:
+
+Good Memory:
+- Available > 20% of total
+- Swap used < 10%
+- No swap activity (si/so = 0)
+- Cache/buffers healthy
+
+Bad Memory:
+- Available < 5% (RAM pressure)
+- Swap heavily used
+- Swap thrashing (si/so > 0)
+- OOM Killer activating
+
+OOM (Out Of Memory) Killer:
+- Kernel's last resort
+- Kills processes to free RAM
+- Check logs: dmesg | grep oom
+- Scored by memory usage
+- Critical processes protected
+
+Troubleshooting High Memory:
+
+1. Find memory hog:
+   ps aux --sort=-%mem | head -10
+   top (press 'M')
+   
+2. Check for memory leak:
+   Monitor over time
+   Memory constantly increasing?
+   Restart leaking process
+   
+3. Check swap usage:
+   free -h
+   swapon --show
+   vmstat 1 (si/so columns)
+4. Reduce memory:
+   Drop caches: sync; echo 3 > /proc/sys/vm/drop_caches
+   Kill unnecessary processes
+   Increase swap
+   Add RAM
+
+Memory Leak Detection:
+watch -n 1 'ps aux --sort=-%mem | head -10'
+Watch for process memory growing over time
+
+Swap Monitoring:
+si - Swap in (pages/sec from disk to RAM)
+so - Swap out (pages/sec from RAM to disk)
+
+High si/so = Swap thrashing = Add RAM urgently!
+
+Cache vs Buffer:
+Cache: File data cache
+Buffer: Block device cache
+
+Both can be freed by kernel when needed.
+
+Common Memory Issues:
+1. Java heap too large:-Xmx setting > available RAM Tune -Xmx parameter
+2. Memory leak: Process grows over time Restart or fix application
+3. Too many processes: Each process uses RAM Reduce services
+4. Large file processing: Loading entire file in RAM Use streaming instead
+5. Swap death spiral: Swap usage → slow → more swap → slower Add RAM or reduce usage
+EOF
+
+cat memory-monitoring.txt
+
+## Task 6.2: Memory Monitoring Practice
+# Create memory monitor
+cat > memory-monitor.sh << 'EOF'
+#!/bin/bash
+
+echo "=== Memory Monitoring Report ==="
+date
+echo ""
+
+echo "1. Memory Overview:"
+free -h
+echo ""
+
+echo "2. Memory Available:"
+AVAILABLE=$(free -m | grep Mem | awk '{print $7}')
+TOTAL=$(free -m | grep Mem | awk '{print $2}')
+PERCENT=$((100 * AVAILABLE / TOTAL))
+echo "   Available: ${AVAILABLE}MB / ${TOTAL}MB (${PERCENT}%)"
+echo ""
+
+echo "3. Swap Usage:"
+free -h | grep Swap
+echo ""
+
+echo "4. Top 5 Memory-Using Processes:"
+ps aux --sort=-%mem | head -6 | awk '{printf "   %-10s %5s %5s %s\n", $1, $3, $4, $11}'
+echo ""
+
+echo "5. Memory Details:"
+cat /proc/meminfo | grep -E "MemTotal|MemFree|MemAvailable|Buffers|Cached|SwapTotal|SwapFree"
+echo ""
+
+echo "6. Virtual Memory Stats:"
+if command -v vmstat &> /dev/null; then
+    echo "   si/so (swap in/out):"
+    vmstat 1 2 | tail -1 | awk '{print "   Swap In: " $7 ", Swap Out: " $8}'
+else
+    echo "   vmstat not available"
+fi
+EOF
+
+chmod +x memory-monitor.sh
+./memory-monitor.sh > memory-report.txt
+cat memory-report.txt
