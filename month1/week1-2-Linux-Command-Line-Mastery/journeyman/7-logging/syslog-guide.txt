@@ -1,0 +1,49 @@
+=== Syslog and rsyslog ===
+
+What is Syslog?
+- Protocol for log message transport
+- Standard way applications send logs
+- rsyslog is modern implementation
+
+rsyslog Configuration:
+Main config: /etc/rsyslog.conf
+Additional: /etc/rsyslog.d/*.conf
+
+Syslog Message Format:
+<priority>timestamp hostname application[PID]: message
+
+Priority = Facility * 8 + Severity
+
+Facilities (What generated the message):
+0  - kern      Kernel messages
+1  - user      User-level messages
+2  - mail      Mail system
+3  - daemon    System daemons
+4  - auth      Security/authorization
+5  - syslog    Syslog internal
+6  - lpr       Line printer subsystem
+7  - news      Network news
+16 - local0    Local use 0-7
+...
+23 - local7    Local use 0-7
+
+rsyslog Rules Format:
+facility.severity    action
+
+Examples:
+*.info;mail.none     /var/log/messages
+auth,authpriv.*      /var/log/auth.log
+kern.*               /var/log/kern.log
+*.emerg              :omusrmsg:*
+
+Actions:
+/path/to/file        Write to file
+@remote-host:514     Send to remote (UDP)
+@@remote-host:514    Send to remote (TCP)
+|/path/to/script     Pipe to script
+:omusrmsg:*          Message to all users
+
+Testing rsyslog:
+logger "Test message"                    # Send to syslog
+logger -p user.err "Error test"          # With priority
+logger -t myapp "Application log"        # With tag

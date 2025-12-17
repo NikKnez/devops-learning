@@ -1,0 +1,16 @@
+=== rsyslog Configuration Analysis ===
+
+Service status:
+active
+
+Configuration files:
+20-ufw.conf
+21-cloudinit.conf
+50-default.conf
+
+Active rules (sample):
+*.*;auth,authpriv.none		-/var/log/syslog
+*.emerg				:omusrmsg:*
+
+Test message sent: "DevOps test message"
+Found in log: 1 times
