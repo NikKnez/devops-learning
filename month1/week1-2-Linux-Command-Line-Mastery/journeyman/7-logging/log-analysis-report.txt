@@ -1,0 +1,28 @@
+=== System Log Analysis ===
+
+Analyzing: /var/log/syslog
+
+Log size: 1.6M
+Last modified: 2025-12-17 13:50:33
+
+Top 10 Most Frequent Messages:
+    243 Deactivated successfully. 
+     44 
+     36 CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1) 
+     35 sysstat-collect.service - system activity accounting tool... 
+     35 sysstat-collect.service - system activity accounting tool. 
+     33 0 threads of 0 processes of 0 users. 
+     30 warning: egl: failed to create dri2 screen 
+     30 No 3D enabled (0, Success). 
+     25 decibel volume range for element 'LFE' (-4650 dB - -2400 dB) has negative maximum. Disabling the decibel range. 
+     25 decibel volume range for element 'Center' (-4650 dB - -2400 dB) has negative maximum. Disabling the decibel range. 
+
+Error count today: 0
+Warning count today: 0
+
+Recent errors (last 5):
+2025-12-17T13:20:01.596485+01:00 nikola-VirtualBox gnome-shell[1530]: Error in size change accounting.
+2025-12-17T13:20:02.626624+01:00 nikola-VirtualBox gnome-shell[1530]: Error in size change accounting.
+2025-12-17T13:37:51.001827+01:00 nikola-VirtualBox gnome-shell[1530]: libinput error: event6  - VirtualBox mouse integration: client bug: event processing lagging behind by 31ms, your system is too slow
+2025-12-17T13:38:50.297077+01:00 nikola-VirtualBox nikola: Error level test
+2025-12-17T13:39:55.380384+01:00 nikola-VirtualBox nikola: Error: Failed to connect
