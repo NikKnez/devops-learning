@@ -1,0 +1,35 @@
+=== Authentication Logging ===
+
+Purpose:
+- Track login attempts (successful/failed)
+- sudo command usage
+- SSH connections
+- User account changes
+- Security auditing
+
+Log Locations:
+Ubuntu/Debian: /var/log/auth.log
+RHEL/CentOS:   /var/log/secure
+
+What's Logged:
+- SSH login attempts
+- sudo command execution
+- su (switch user) usage
+- Failed password attempts
+- Account creation/deletion
+- Group membership changes
+- PAM authentication events
+
+Why It Matters for DevOps:
+1. Security: Detect intrusion attempts
+2. Compliance: Who did what when
+3. Troubleshooting: Why can't user X login?
+4. Audit: Track privileged access
+
+Common Patterns to Search:
+"Failed password"     - Failed login attempts
+"Accepted password"   - Successful logins
+"sudo:"               - Sudo command usage
+"session opened"      - User logged in
+"session closed"      - User logged out
+"authentication failure" - Auth failed

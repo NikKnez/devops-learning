@@ -1,0 +1,20 @@
+=== Authentication Log Analysis ===
+
+Log file: /var/log/auth.log
+Log size: 72K
+
+Failed login attempts today:
+0
+
+Successful logins today:
+0
+
+sudo commands today:
+6
+
+Recent failed attempts (last 5):
+2025-12-15T12:52:14.275916+01:00 nikola-VirtualBox dbus-daemon[944]: [system] Failed to activate service 'org.bluez': timed out (service_start_timeout=25000ms)
+2025-12-16T13:01:20.658159+01:00 nikola-VirtualBox dbus-daemon[865]: [system] Failed to activate service 'org.bluez': timed out (service_start_timeout=25000ms)
+2025-12-16T18:01:10.914096+01:00 nikola-VirtualBox dbus-daemon[830]: [system] Failed to activate service 'org.bluez': timed out (service_start_timeout=25000ms)
+2025-12-17T13:50:07.170734+01:00 nikola-VirtualBox dbus-daemon[820]: [system] Failed to activate service 'org.bluez': timed out (service_start_timeout=25000ms)
+2025-12-17T14:34:35.644669+01:00 nikola-VirtualBox sudo:   nikola : TTY=pts/0 ; PWD=/home/nikola/devops-learning/month1/week1-2-Linux-Command-Line-Mastery/journeyman/7-logging ; USER=root ; COMMAND=/usr/bin/grep Failed /var/log/auth.log
