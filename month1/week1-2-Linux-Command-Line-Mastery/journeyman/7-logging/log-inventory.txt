@@ -1,0 +1,83 @@
+=== System Log Inventory ===
+
+Total log files: 207
+Total log size: 440M
+
+Largest log files:
+425M	/var/log/journal
+6.4M	/var/log/syslog.1
+1.8M	/var/log/kern.log.1
+1.6M	/var/log/syslog
+1.6M	/var/log/installer
+
+Recently modified (last hour):
+14 files
+
+Available log files:
+alternatives.log
+alternatives.log.1
+alternatives.log.2.gz
+apport.log
+apport.log.1
+apport.log.2.gz
+apport.log.3.gz
+apt
+auth.log
+auth.log.1
+auth.log.2.gz
+auth.log.3.gz
+auth.log.4.gz
+boot.log
+boot.log.1
+boot.log.2
+boot.log.3
+boot.log.4
+boot.log.5
+boot.log.6
+boot.log.7
+bootstrap.log
+btmp
+btmp.1
+cloud-init.log
+cloud-init-output.log
+cups
+cups-browsed
+dist-upgrade
+dmesg
+dmesg.0
+dmesg.1.gz
+dmesg.2.gz
+dmesg.3.gz
+dmesg.4.gz
+dpkg.log
+dpkg.log.1
+dpkg.log.2.gz
+faillog
+fontconfig.log
+gdm3
+gpu-manager.log
+hp
+installer
+journal
+kern.log
+kern.log.1
+kern.log.2.gz
+kern.log.3.gz
+kern.log.4.gz
+lastlog
+openvpn
+private
+README
+speech-dispatcher
+sssd
+syslog
+syslog.1
+syslog.2.gz
+syslog.3.gz
+syslog.4.gz
+sysstat
+ubuntu-advantage.log
+ubuntu-advantage.log.1
+ubuntu-advantage.log.2.gz
+unattended-upgrades
+wtmp
