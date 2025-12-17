@@ -1,0 +1,33 @@
+=== Kernel Logging with dmesg ===
+
+What is dmesg?
+- Displays kernel ring buffer
+- Boot messages
+- Hardware detection
+- Device driver messages
+- Kernel errors/warnings
+
+When to Use dmesg:
+- System won't boot properly
+- New hardware not detected
+- Driver issues
+- Kernel panics
+- USB device problems
+
+dmesg Output Format:
+[timestamp] message
+
+Timestamp:
+- Seconds since boot
+- Use -T for human-readable
+
+Common Use Cases:
+1. Check boot messages
+2. USB device detection
+3. Disk errors
+4. Network card issues
+5. Memory problems
+
+Persistent Kernel Logs:
+dmesg is in RAM (lost on reboot)
+Persistent logs: /var/log/kern.log or /var/log/dmesg

@@ -1,0 +1,27 @@
+=== Kernel Message Analysis ===
+
+Total kernel messages: 869
+
+Recent messages (last 10):
+[Wed Dec 17 14:25:33 2025] audit: type=1400 audit(1765977933.244:373): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:25:38 2025] audit: type=1400 audit(1765977938.288:374): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:25:43 2025] audit: type=1400 audit(1765977943.375:375): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:25:48 2025] audit: type=1400 audit(1765977948.429:376): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:26:33 2025] audit: type=1400 audit(1765977993.171:377): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:26:38 2025] audit: type=1400 audit(1765977998.253:378): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:26:43 2025] audit: type=1400 audit(1765978003.255:379): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:26:48 2025] audit: type=1400 audit(1765978008.260:380): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:26:53 2025] audit: type=1400 audit(1765978013.275:381): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:26:58 2025] audit: type=1400 audit(1765978018.326:382): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+
+Errors found:
+4 error messages
+
+Warnings found:
+26 warning messages
+
+USB related:
+28 USB messages
+
+Network related:
+3 network messages

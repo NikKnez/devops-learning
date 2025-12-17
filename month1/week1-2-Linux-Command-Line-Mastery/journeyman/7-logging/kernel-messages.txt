@@ -1,0 +1,864 @@
+[Wed Dec 17 13:14:40 2025] Linux version 6.14.0-37-generic (buildd@lcy02-amd64-031) (x86_64-linux-gnu-gcc-13 (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0, GNU ld (GNU Binutils for Ubuntu) 2.42) #37~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Nov 20 10:25:38 UTC 2 (Ubuntu 6.14.0-37.37~24.04.1-generic 6.14.11)
+[Wed Dec 17 13:14:40 2025] Command line: BOOT_IMAGE=/boot/vmlinuz-6.14.0-37-generic root=UUID=4c8b8c39-9698-4c53-9a4a-ba47e0769b1d ro quiet splash
+[Wed Dec 17 13:14:40 2025] KERNEL supported cpus:
+[Wed Dec 17 13:14:40 2025]   Intel GenuineIntel
+[Wed Dec 17 13:14:40 2025]   AMD AuthenticAMD
+[Wed Dec 17 13:14:40 2025]   Hygon HygonGenuine
+[Wed Dec 17 13:14:40 2025]   Centaur CentaurHauls
+[Wed Dec 17 13:14:40 2025]   zhaoxin   Shanghai  
+[Wed Dec 17 13:14:40 2025] BIOS-provided physical RAM map:
+[Wed Dec 17 13:14:40 2025] BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+[Wed Dec 17 13:14:40 2025] BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+[Wed Dec 17 13:14:40 2025] BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+[Wed Dec 17 13:14:40 2025] BIOS-e820: [mem 0x0000000000100000-0x00000000dffeffff] usable
+[Wed Dec 17 13:14:40 2025] BIOS-e820: [mem 0x00000000dfff0000-0x00000000dfffffff] ACPI data
+[Wed Dec 17 13:14:40 2025] BIOS-e820: [mem 0x00000000fec00000-0x00000000fec00fff] reserved
+[Wed Dec 17 13:14:40 2025] BIOS-e820: [mem 0x00000000fee00000-0x00000000fee00fff] reserved
+[Wed Dec 17 13:14:40 2025] BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+[Wed Dec 17 13:14:40 2025] BIOS-e820: [mem 0x0000000100000000-0x000000035fffffff] usable
+[Wed Dec 17 13:14:40 2025] NX (Execute Disable) protection: active
+[Wed Dec 17 13:14:40 2025] APIC: Static calls initialized
+[Wed Dec 17 13:14:40 2025] SMBIOS 2.5 present.
+[Wed Dec 17 13:14:40 2025] DMI: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[Wed Dec 17 13:14:40 2025] DMI: Memory slots populated: 0/0
+[Wed Dec 17 13:14:40 2025] Hypervisor detected: KVM
+[Wed Dec 17 13:14:40 2025] kvm-clock: Using msrs 4b564d01 and 4b564d00
+[Wed Dec 17 13:14:40 2025] kvm-clock: using sched offset of 9849106390 cycles
+[Wed Dec 17 13:14:40 2025] clocksource: kvm-clock: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns
+[Wed Dec 17 13:14:40 2025] tsc: Detected 2495.998 MHz processor
+[Wed Dec 17 13:14:40 2025] e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+[Wed Dec 17 13:14:40 2025] e820: remove [mem 0x000a0000-0x000fffff] usable
+[Wed Dec 17 13:14:40 2025] last_pfn = 0x360000 max_arch_pfn = 0x400000000
+[Wed Dec 17 13:14:40 2025] MTRR map: 3 entries (3 fixed + 0 variable; max 19), built from 8 variable MTRRs
+[Wed Dec 17 13:14:40 2025] x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WP  UC- WT  
+[Wed Dec 17 13:14:40 2025] CPU MTRRs all blank - virtualized system.
+[Wed Dec 17 13:14:40 2025] last_pfn = 0xe0000 max_arch_pfn = 0x400000000
+[Wed Dec 17 13:14:40 2025] found SMP MP-table at [mem 0x0009fbf0-0x0009fbff]
+[Wed Dec 17 13:14:40 2025] RAMDISK: [mem 0x2f02b000-0x3380cfff]
+[Wed Dec 17 13:14:40 2025] ACPI: Early table checksum verification disabled
+[Wed Dec 17 13:14:40 2025] ACPI: RSDP 0x00000000000E0000 000024 (v02 VBOX  )
+[Wed Dec 17 13:14:40 2025] ACPI: XSDT 0x00000000DFFF0030 00003C (v01 VBOX   VBOXXSDT 00000001 ASL  00000061)
+[Wed Dec 17 13:14:40 2025] ACPI: FACP 0x00000000DFFF00F0 0000F4 (v04 VBOX   VBOXFACP 00000001 ASL  00000061)
+[Wed Dec 17 13:14:40 2025] ACPI: DSDT 0x00000000DFFF0330 002353 (v02 VBOX   VBOXBIOS 00000002 VBOX 00029BF3)
+[Wed Dec 17 13:14:40 2025] ACPI: FACS 0x00000000DFFF0200 000040
+[Wed Dec 17 13:14:40 2025] ACPI: FACS 0x00000000DFFF0200 000040
+[Wed Dec 17 13:14:40 2025] ACPI: APIC 0x00000000DFFF0240 000074 (v02 VBOX   VBOXAPIC 00000001 ASL  00000061)
+[Wed Dec 17 13:14:40 2025] ACPI: SSDT 0x00000000DFFF02C0 00006D (v01 VBOX   VBOXCPUT 00000002 VBOX 00029BF3)
+[Wed Dec 17 13:14:40 2025] ACPI: Reserving FACP table memory at [mem 0xdfff00f0-0xdfff01e3]
+[Wed Dec 17 13:14:40 2025] ACPI: Reserving DSDT table memory at [mem 0xdfff0330-0xdfff2682]
+[Wed Dec 17 13:14:40 2025] ACPI: Reserving FACS table memory at [mem 0xdfff0200-0xdfff023f]
+[Wed Dec 17 13:14:40 2025] ACPI: Reserving FACS table memory at [mem 0xdfff0200-0xdfff023f]
+[Wed Dec 17 13:14:40 2025] ACPI: Reserving APIC table memory at [mem 0xdfff0240-0xdfff02b3]
+[Wed Dec 17 13:14:40 2025] ACPI: Reserving SSDT table memory at [mem 0xdfff02c0-0xdfff032c]
+[Wed Dec 17 13:14:40 2025] No NUMA configuration found
+[Wed Dec 17 13:14:40 2025] Faking a node at [mem 0x0000000000000000-0x000000035fffffff]
+[Wed Dec 17 13:14:40 2025] NODE_DATA(0) allocated [mem 0x35ffd1540-0x35fffbfff]
+[Wed Dec 17 13:14:40 2025] Zone ranges:
+[Wed Dec 17 13:14:40 2025]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+[Wed Dec 17 13:14:40 2025]   DMA32    [mem 0x0000000001000000-0x00000000ffffffff]
+[Wed Dec 17 13:14:40 2025]   Normal   [mem 0x0000000100000000-0x000000035fffffff]
+[Wed Dec 17 13:14:40 2025]   Device   empty
+[Wed Dec 17 13:14:40 2025] Movable zone start for each node
+[Wed Dec 17 13:14:40 2025] Early memory node ranges
+[Wed Dec 17 13:14:40 2025]   node   0: [mem 0x0000000000001000-0x000000000009efff]
+[Wed Dec 17 13:14:40 2025]   node   0: [mem 0x0000000000100000-0x00000000dffeffff]
+[Wed Dec 17 13:14:40 2025]   node   0: [mem 0x0000000100000000-0x000000035fffffff]
+[Wed Dec 17 13:14:40 2025] Initmem setup node 0 [mem 0x0000000000001000-0x000000035fffffff]
+[Wed Dec 17 13:14:40 2025] On node 0, zone DMA: 1 pages in unavailable ranges
+[Wed Dec 17 13:14:40 2025] On node 0, zone DMA: 97 pages in unavailable ranges
+[Wed Dec 17 13:14:41 2025] On node 0, zone Normal: 16 pages in unavailable ranges
+[Wed Dec 17 13:14:41 2025] ACPI: PM-Timer IO Port: 0x4008
+[Wed Dec 17 13:14:41 2025] IOAPIC[0]: apic_id 5, version 32, address 0xfec00000, GSI 0-23
+[Wed Dec 17 13:14:41 2025] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+[Wed Dec 17 13:14:41 2025] ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 low level)
+[Wed Dec 17 13:14:41 2025] ACPI: Using ACPI (MADT) for SMP configuration information
+[Wed Dec 17 13:14:41 2025] CPU topo: Max. logical packages:   1
+[Wed Dec 17 13:14:41 2025] CPU topo: Max. logical dies:       1
+[Wed Dec 17 13:14:41 2025] CPU topo: Max. dies per package:   1
+[Wed Dec 17 13:14:41 2025] CPU topo: Max. threads per core:   1
+[Wed Dec 17 13:14:41 2025] CPU topo: Num. cores per package:     5
+[Wed Dec 17 13:14:41 2025] CPU topo: Num. threads per package:   5
+[Wed Dec 17 13:14:41 2025] CPU topo: Allowing 5 present CPUs plus 0 hotplug CPUs
+[Wed Dec 17 13:14:41 2025] PM: hibernation: Registered nosave memory: [mem 0x00000000-0x00000fff]
+[Wed Dec 17 13:14:41 2025] PM: hibernation: Registered nosave memory: [mem 0x0009f000-0x000fffff]
+[Wed Dec 17 13:14:41 2025] PM: hibernation: Registered nosave memory: [mem 0xdfff0000-0xffffffff]
+[Wed Dec 17 13:14:41 2025] [mem 0xe0000000-0xfebfffff] available for PCI devices
+[Wed Dec 17 13:14:41 2025] Booting paravirtualized kernel on KVM
+[Wed Dec 17 13:14:41 2025] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1910969940391419 ns
+[Wed Dec 17 13:14:41 2025] setup_percpu: NR_CPUS:8192 nr_cpumask_bits:5 nr_cpu_ids:5 nr_node_ids:1
+[Wed Dec 17 13:14:41 2025] percpu: Embedded 88 pages/cpu s237568 r8192 d114688 u1048576
+[Wed Dec 17 13:14:41 2025] pcpu-alloc: s237568 r8192 d114688 u1048576 alloc=1*2097152
+[Wed Dec 17 13:14:41 2025] pcpu-alloc: [0] 0 1 [0] 2 3 [0] 4 - 
+[Wed Dec 17 13:14:41 2025] kvm-guest: PV spinlocks enabled
+[Wed Dec 17 13:14:41 2025] PV qspinlock hash table entries: 256 (order: 0, 4096 bytes, linear)
+[Wed Dec 17 13:14:41 2025] Kernel command line: BOOT_IMAGE=/boot/vmlinuz-6.14.0-37-generic root=UUID=4c8b8c39-9698-4c53-9a4a-ba47e0769b1d ro quiet splash
+[Wed Dec 17 13:14:41 2025] Unknown kernel command line parameters "splash BOOT_IMAGE=/boot/vmlinuz-6.14.0-37-generic", will be passed to user space.
+[Wed Dec 17 13:14:41 2025] random: crng init done
+[Wed Dec 17 13:14:41 2025] printk: log buffer data + meta data: 262144 + 917504 = 1179648 bytes
+[Wed Dec 17 13:14:41 2025] Dentry cache hash table entries: 2097152 (order: 12, 16777216 bytes, linear)
+[Wed Dec 17 13:14:41 2025] Inode-cache hash table entries: 1048576 (order: 11, 8388608 bytes, linear)
+[Wed Dec 17 13:14:41 2025] Fallback order for Node 0: 0 
+[Wed Dec 17 13:14:41 2025] Built 1 zonelists, mobility grouping on.  Total pages: 3407758
+[Wed Dec 17 13:14:41 2025] Policy zone: Normal
+[Wed Dec 17 13:14:41 2025] mem auto-init: stack:all(zero), heap alloc:on, heap free:off
+[Wed Dec 17 13:14:41 2025] software IO TLB: area num 8.
+[Wed Dec 17 13:14:41 2025] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=5, Nodes=1
+[Wed Dec 17 13:14:41 2025] ftrace: allocating 60485 entries in 237 pages
+[Wed Dec 17 13:14:41 2025] ftrace: allocated 237 pages with 6 groups
+[Wed Dec 17 13:14:41 2025] Dynamic Preempt: voluntary
+[Wed Dec 17 13:14:41 2025] rcu: Preemptible hierarchical RCU implementation.
+[Wed Dec 17 13:14:41 2025] rcu: 	RCU restricting CPUs from NR_CPUS=8192 to nr_cpu_ids=5.
+[Wed Dec 17 13:14:41 2025] 	Trampoline variant of Tasks RCU enabled.
+[Wed Dec 17 13:14:41 2025] 	Rude variant of Tasks RCU enabled.
+[Wed Dec 17 13:14:41 2025] 	Tracing variant of Tasks RCU enabled.
+[Wed Dec 17 13:14:41 2025] rcu: RCU calculated value of scheduler-enlistment delay is 100 jiffies.
+[Wed Dec 17 13:14:41 2025] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=5
+[Wed Dec 17 13:14:41 2025] RCU Tasks: Setting shift to 3 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=5.
+[Wed Dec 17 13:14:41 2025] RCU Tasks Rude: Setting shift to 3 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=5.
+[Wed Dec 17 13:14:41 2025] RCU Tasks Trace: Setting shift to 3 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=5.
+[Wed Dec 17 13:14:41 2025] NR_IRQS: 524544, nr_irqs: 464, preallocated irqs: 16
+[Wed Dec 17 13:14:41 2025] rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[Wed Dec 17 13:14:41 2025] Console: colour VGA+ 80x25
+[Wed Dec 17 13:14:41 2025] printk: legacy console [tty0] enabled
+[Wed Dec 17 13:14:41 2025] ACPI: Core revision 20240827
+[Wed Dec 17 13:14:41 2025] APIC: Switch to symmetric I/O mode setup
+[Wed Dec 17 13:14:41 2025] ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+[Wed Dec 17 13:14:41 2025] clocksource: tsc-early: mask: 0xffffffffffffffff max_cycles: 0x23fa754787d, max_idle_ns: 440795210092 ns
+[Wed Dec 17 13:14:41 2025] Calibrating delay loop (skipped) preset value.. 4991.99 BogoMIPS (lpj=2495998)
+[Wed Dec 17 13:14:41 2025] Last level iTLB entries: 4KB 0, 2MB 0, 4MB 0
+[Wed Dec 17 13:14:41 2025] Last level dTLB entries: 4KB 0, 2MB 0, 4MB 0, 1GB 0
+[Wed Dec 17 13:14:41 2025] Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+[Wed Dec 17 13:14:41 2025] Spectre V2 : Spectre BHI mitigation: SW BHB clearing on syscall and VM exit
+[Wed Dec 17 13:14:41 2025] Spectre V2 : Mitigation: Enhanced / Automatic IBRS
+[Wed Dec 17 13:14:41 2025] Spectre V2 : Spectre v2 / PBRSB-eIBRS: Retire a single CALL on VMEXIT
+[Wed Dec 17 13:14:41 2025] RETBleed: Mitigation: Enhanced IBRS
+[Wed Dec 17 13:14:41 2025] Speculative Store Bypass: Vulnerable
+[Wed Dec 17 13:14:41 2025] Register File Data Sampling: Mitigation: Clear Register File
+[Wed Dec 17 13:14:41 2025] ITS: Mitigation: Aligned branch/return thunks
+[Wed Dec 17 13:14:41 2025] x86/fpu: Supporting XSAVE feature 0x001: 'x87 floating point registers'
+[Wed Dec 17 13:14:41 2025] x86/fpu: Supporting XSAVE feature 0x002: 'SSE registers'
+[Wed Dec 17 13:14:41 2025] x86/fpu: Supporting XSAVE feature 0x004: 'AVX registers'
+[Wed Dec 17 13:14:41 2025] x86/fpu: xstate_offset[2]:  576, xstate_sizes[2]:  256
+[Wed Dec 17 13:14:41 2025] x86/fpu: Enabled xstate features 0x7, context size is 832 bytes, using 'standard' format.
+[Wed Dec 17 13:14:41 2025] Freeing SMP alternatives memory: 48K
+[Wed Dec 17 13:14:41 2025] pid_max: default: 32768 minimum: 301
+[Wed Dec 17 13:14:41 2025] LSM: initializing lsm=lockdown,capability,landlock,yama,apparmor,ima,evm
+[Wed Dec 17 13:14:41 2025] landlock: Up and running.
+[Wed Dec 17 13:14:41 2025] Yama: becoming mindful.
+[Wed Dec 17 13:14:41 2025] AppArmor: AppArmor initialized
+[Wed Dec 17 13:14:41 2025] Mount-cache hash table entries: 32768 (order: 6, 262144 bytes, linear)
+[Wed Dec 17 13:14:41 2025] Mountpoint-cache hash table entries: 32768 (order: 6, 262144 bytes, linear)
+[Wed Dec 17 13:14:41 2025] APIC calibration not consistent with PM-Timer: 151ms instead of 100ms
+[Wed Dec 17 13:14:41 2025] APIC delta adjusted to PM-Timer: 6285181 (9498551)
+[Wed Dec 17 13:14:41 2025] smpboot: CPU0: 13th Gen Intel(R) Core(TM) i5-1335U (family: 0x6, model: 0xba, stepping: 0x3)
+[Wed Dec 17 13:14:41 2025] Performance Events: unsupported p6 CPU model 186 no PMU driver, software events only.
+[Wed Dec 17 13:14:41 2025] signal: max sigframe size: 1776
+[Wed Dec 17 13:14:41 2025] rcu: Hierarchical SRCU implementation.
+[Wed Dec 17 13:14:41 2025] rcu: 	Max phase no-delay instances is 400.
+[Wed Dec 17 13:14:41 2025] Timer migration: 1 hierarchy levels; 8 children per group; 1 crossnode level
+[Wed Dec 17 13:14:41 2025] NMI watchdog: Perf NMI watchdog permanently disabled
+[Wed Dec 17 13:14:41 2025] smp: Bringing up secondary CPUs ...
+[Wed Dec 17 13:14:41 2025] smpboot: x86: Booting SMP configuration:
+[Wed Dec 17 13:14:41 2025] .... node  #0, CPUs:      #1 #2 #3 #4
+[Wed Dec 17 13:14:41 2025] smp: Brought up 1 node, 5 CPUs
+[Wed Dec 17 13:14:41 2025] smpboot: Total of 5 processors activated (24959.98 BogoMIPS)
+[Wed Dec 17 13:14:41 2025] Memory: 13187472K/13631032K available (21475K kernel code, 4587K rwdata, 15072K rodata, 5140K init, 4412K bss, 433428K reserved, 0K cma-reserved)
+[Wed Dec 17 13:14:41 2025] devtmpfs: initialized
+[Wed Dec 17 13:14:41 2025] x86/mm: Memory block size: 128MB
+[Wed Dec 17 13:14:41 2025] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275000 ns
+[Wed Dec 17 13:14:41 2025] futex hash table entries: 2048 (order: 5, 131072 bytes, linear)
+[Wed Dec 17 13:14:41 2025] pinctrl core: initialized pinctrl subsystem
+[Wed Dec 17 13:14:41 2025] PM: RTC time: 12:14:40, date: 2025-12-17
+[Wed Dec 17 13:14:41 2025] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[Wed Dec 17 13:14:41 2025] DMA: preallocated 2048 KiB GFP_KERNEL pool for atomic allocations
+[Wed Dec 17 13:14:41 2025] DMA: preallocated 2048 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
+[Wed Dec 17 13:14:41 2025] DMA: preallocated 2048 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
+[Wed Dec 17 13:14:41 2025] audit: initializing netlink subsys (disabled)
+[Wed Dec 17 13:14:41 2025] audit: type=2000 audit(1765973693.371:1): state=initialized audit_enabled=0 res=1
+[Wed Dec 17 13:14:41 2025] thermal_sys: Registered thermal governor 'fair_share'
+[Wed Dec 17 13:14:41 2025] thermal_sys: Registered thermal governor 'bang_bang'
+[Wed Dec 17 13:14:41 2025] thermal_sys: Registered thermal governor 'step_wise'
+[Wed Dec 17 13:14:41 2025] thermal_sys: Registered thermal governor 'user_space'
+[Wed Dec 17 13:14:41 2025] thermal_sys: Registered thermal governor 'power_allocator'
+[Wed Dec 17 13:14:41 2025] cpuidle: using governor ladder
+[Wed Dec 17 13:14:41 2025] cpuidle: using governor menu
+[Wed Dec 17 13:14:41 2025] acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+[Wed Dec 17 13:14:41 2025] PCI: Using configuration type 1 for base access
+[Wed Dec 17 13:14:41 2025] mtrr: your CPUs had inconsistent variable MTRR settings
+[Wed Dec 17 13:14:41 2025] mtrr: probably your BIOS does not setup all CPUs.
+[Wed Dec 17 13:14:41 2025] mtrr: corrected configuration.
+[Wed Dec 17 13:14:41 2025] kprobes: kprobe jump-optimization is enabled. All kprobes are optimized if possible.
+[Wed Dec 17 13:14:41 2025] HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
+[Wed Dec 17 13:14:41 2025] HugeTLB: 28 KiB vmemmap can be freed for a 2.00 MiB page
+[Wed Dec 17 13:14:41 2025] ACPI: Added _OSI(Module Device)
+[Wed Dec 17 13:14:41 2025] ACPI: Added _OSI(Processor Device)
+[Wed Dec 17 13:14:41 2025] ACPI: Added _OSI(Processor Aggregator Device)
+[Wed Dec 17 13:14:41 2025] ACPI: 2 ACPI AML tables successfully acquired and loaded
+[Wed Dec 17 13:14:41 2025] ACPI: Interpreter enabled
+[Wed Dec 17 13:14:41 2025] ACPI: PM: (supports S0 S5)
+[Wed Dec 17 13:14:41 2025] ACPI: Using IOAPIC for interrupt routing
+[Wed Dec 17 13:14:41 2025] PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+[Wed Dec 17 13:14:41 2025] PCI: Using E820 reservations for host bridge windows
+[Wed Dec 17 13:14:41 2025] ACPI: Enabled 2 GPEs in block 00 to 07
+[Wed Dec 17 13:14:41 2025] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+[Wed Dec 17 13:14:41 2025] acpi PNP0A03:00: _OSC: OS supports [ASPM ClockPM Segments MSI EDR HPX-Type3]
+[Wed Dec 17 13:14:41 2025] acpi PNP0A03:00: _OSC: not requesting OS control; OS requires [ExtendedConfig ASPM ClockPM MSI]
+[Wed Dec 17 13:14:41 2025] acpi PNP0A03:00: fail to add MMCONFIG information, can't access extended configuration space under this bridge
+[Wed Dec 17 13:14:41 2025] PCI host bridge to bus 0000:00
+[Wed Dec 17 13:14:41 2025] pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+[Wed Dec 17 13:14:41 2025] pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+[Wed Dec 17 13:14:41 2025] pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+[Wed Dec 17 13:14:41 2025] pci_bus 0000:00: root bus resource [mem 0xe0000000-0xfdffffff window]
+[Wed Dec 17 13:14:41 2025] pci_bus 0000:00: root bus resource [bus 00-ff]
+[Wed Dec 17 13:14:41 2025] pci 0000:00:00.0: [8086:1237] type 00 class 0x060000 conventional PCI endpoint
+[Wed Dec 17 13:14:41 2025] pci 0000:00:01.0: [8086:7000] type 00 class 0x060100 conventional PCI endpoint
+[Wed Dec 17 13:14:41 2025] pci 0000:00:01.1: [8086:7111] type 00 class 0x01018a conventional PCI endpoint
+[Wed Dec 17 13:14:41 2025] pci 0000:00:01.1: BAR 4 [io  0xd000-0xd00f]
+[Wed Dec 17 13:14:41 2025] pci 0000:00:01.1: BAR 0 [io  0x01f0-0x01f7]: legacy IDE quirk
+[Wed Dec 17 13:14:41 2025] pci 0000:00:01.1: BAR 1 [io  0x03f6]: legacy IDE quirk
+[Wed Dec 17 13:14:41 2025] pci 0000:00:01.1: BAR 2 [io  0x0170-0x0177]: legacy IDE quirk
+[Wed Dec 17 13:14:41 2025] pci 0000:00:01.1: BAR 3 [io  0x0376]: legacy IDE quirk
+[Wed Dec 17 13:14:41 2025] pci 0000:00:02.0: [15ad:0405] type 00 class 0x030000 conventional PCI endpoint
+[Wed Dec 17 13:14:41 2025] pci 0000:00:02.0: BAR 0 [io  0xd010-0xd01f]
+[Wed Dec 17 13:14:41 2025] pci 0000:00:02.0: BAR 1 [mem 0xe0000000-0xe7ffffff pref]
+[Wed Dec 17 13:14:41 2025] pci 0000:00:02.0: BAR 2 [mem 0xf0000000-0xf01fffff]
+[Wed Dec 17 13:14:41 2025] pci 0000:00:02.0: Video device with shadowed ROM at [mem 0x000c0000-0x000dffff]
+[Wed Dec 17 13:14:41 2025] pci 0000:00:03.0: [8086:100e] type 00 class 0x020000 conventional PCI endpoint
+[Wed Dec 17 13:14:41 2025] pci 0000:00:03.0: BAR 0 [mem 0xf0200000-0xf021ffff]
+[Wed Dec 17 13:14:41 2025] pci 0000:00:03.0: BAR 2 [io  0xd020-0xd027]
+[Wed Dec 17 13:14:41 2025] pci 0000:00:04.0: [80ee:cafe] type 00 class 0x088000 conventional PCI endpoint
+[Wed Dec 17 13:14:41 2025] pci 0000:00:04.0: BAR 0 [io  0xd040-0xd05f]
+[Wed Dec 17 13:14:41 2025] pci 0000:00:04.0: BAR 1 [mem 0xf0400000-0xf07fffff]
+[Wed Dec 17 13:14:41 2025] pci 0000:00:04.0: BAR 2 [mem 0xf0800000-0xf0803fff pref]
+[Wed Dec 17 13:14:41 2025] pci 0000:00:05.0: [8086:2415] type 00 class 0x040100 conventional PCI endpoint
+[Wed Dec 17 13:14:41 2025] pci 0000:00:05.0: BAR 0 [io  0xd100-0xd1ff]
+[Wed Dec 17 13:14:41 2025] pci 0000:00:05.0: BAR 1 [io  0xd200-0xd23f]
+[Wed Dec 17 13:14:41 2025] pci 0000:00:06.0: [106b:003f] type 00 class 0x0c0310 conventional PCI endpoint
+[Wed Dec 17 13:14:41 2025] pci 0000:00:06.0: BAR 0 [mem 0xf0804000-0xf0804fff]
+[Wed Dec 17 13:14:41 2025] pci 0000:00:07.0: [8086:7113] type 00 class 0x068000 conventional PCI endpoint
+[Wed Dec 17 13:14:41 2025] pci 0000:00:07.0: quirk: [io  0x4000-0x403f] claimed by PIIX4 ACPI
+[Wed Dec 17 13:14:41 2025] pci 0000:00:07.0: quirk: [io  0x4100-0x410f] claimed by PIIX4 SMB
+[Wed Dec 17 13:14:41 2025] pci 0000:00:0b.0: [8086:265c] type 00 class 0x0c0320 conventional PCI endpoint
+[Wed Dec 17 13:14:41 2025] pci 0000:00:0b.0: BAR 0 [mem 0xf0805000-0xf0805fff]
+[Wed Dec 17 13:14:41 2025] pci 0000:00:0d.0: [8086:2829] type 00 class 0x010601 conventional PCI endpoint
+[Wed Dec 17 13:14:41 2025] pci 0000:00:0d.0: BAR 0 [io  0xd240-0xd247]
+[Wed Dec 17 13:14:41 2025] pci 0000:00:0d.0: BAR 1 [io  0xd248-0xd24b]
+[Wed Dec 17 13:14:41 2025] pci 0000:00:0d.0: BAR 2 [io  0xd250-0xd257]
+[Wed Dec 17 13:14:41 2025] pci 0000:00:0d.0: BAR 3 [io  0xd258-0xd25b]
+[Wed Dec 17 13:14:41 2025] pci 0000:00:0d.0: BAR 4 [io  0xd260-0xd26f]
+[Wed Dec 17 13:14:41 2025] pci 0000:00:0d.0: BAR 5 [mem 0xf0806000-0xf0807fff]
+[Wed Dec 17 13:14:41 2025] ACPI: PCI: Interrupt link LNKA configured for IRQ 11
+[Wed Dec 17 13:14:41 2025] ACPI: PCI: Interrupt link LNKB configured for IRQ 10
+[Wed Dec 17 13:14:41 2025] ACPI: PCI: Interrupt link LNKC configured for IRQ 9
+[Wed Dec 17 13:14:41 2025] ACPI: PCI: Interrupt link LNKD configured for IRQ 11
+[Wed Dec 17 13:14:41 2025] iommu: Default domain type: Translated
+[Wed Dec 17 13:14:41 2025] iommu: DMA domain TLB invalidation policy: lazy mode
+[Wed Dec 17 13:14:41 2025] SCSI subsystem initialized
+[Wed Dec 17 13:14:41 2025] libata version 3.00 loaded.
+[Wed Dec 17 13:14:41 2025] ACPI: bus type USB registered
+[Wed Dec 17 13:14:41 2025] usbcore: registered new interface driver usbfs
+[Wed Dec 17 13:14:41 2025] usbcore: registered new interface driver hub
+[Wed Dec 17 13:14:41 2025] usbcore: registered new device driver usb
+[Wed Dec 17 13:14:41 2025] pps_core: LinuxPPS API ver. 1 registered
+[Wed Dec 17 13:14:41 2025] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[Wed Dec 17 13:14:41 2025] PTP clock support registered
+[Wed Dec 17 13:14:41 2025] EDAC MC: Ver: 3.0.0
+[Wed Dec 17 13:14:41 2025] NetLabel: Initializing
+[Wed Dec 17 13:14:41 2025] NetLabel:  domain hash size = 128
+[Wed Dec 17 13:14:41 2025] NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+[Wed Dec 17 13:14:41 2025] NetLabel:  unlabeled traffic allowed by default
+[Wed Dec 17 13:14:41 2025] mctp: management component transport protocol core
+[Wed Dec 17 13:14:41 2025] NET: Registered PF_MCTP protocol family
+[Wed Dec 17 13:14:41 2025] PCI: Using ACPI for IRQ routing
+[Wed Dec 17 13:14:41 2025] PCI: pci_cache_line_size set to 64 bytes
+[Wed Dec 17 13:14:41 2025] e820: reserve RAM buffer [mem 0x0009fc00-0x0009ffff]
+[Wed Dec 17 13:14:41 2025] e820: reserve RAM buffer [mem 0xdfff0000-0xdfffffff]
+[Wed Dec 17 13:14:41 2025] pci 0000:00:02.0: vgaarb: setting as boot VGA device
+[Wed Dec 17 13:14:41 2025] pci 0000:00:02.0: vgaarb: bridge control possible
+[Wed Dec 17 13:14:41 2025] pci 0000:00:02.0: vgaarb: VGA device added: decodes=io+mem,owns=io+mem,locks=none
+[Wed Dec 17 13:14:41 2025] vgaarb: loaded
+[Wed Dec 17 13:14:41 2025] clocksource: Switched to clocksource kvm-clock
+[Wed Dec 17 13:14:41 2025] VFS: Disk quotas dquot_6.6.0
+[Wed Dec 17 13:14:41 2025] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[Wed Dec 17 13:14:41 2025] AppArmor: AppArmor Filesystem Enabled
+[Wed Dec 17 13:14:41 2025] pnp: PnP ACPI init
+[Wed Dec 17 13:14:41 2025] pnp: PnP ACPI: found 2 devices
+[Wed Dec 17 13:14:42 2025] clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+[Wed Dec 17 13:14:42 2025] NET: Registered PF_INET protocol family
+[Wed Dec 17 13:14:42 2025] IP idents hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+[Wed Dec 17 13:14:42 2025] tcp_listen_portaddr_hash hash table entries: 8192 (order: 5, 131072 bytes, linear)
+[Wed Dec 17 13:14:42 2025] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[Wed Dec 17 13:14:42 2025] TCP established hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+[Wed Dec 17 13:14:42 2025] TCP bind hash table entries: 65536 (order: 9, 2097152 bytes, linear)
+[Wed Dec 17 13:14:42 2025] TCP: Hash tables configured (established 131072 bind 65536)
+[Wed Dec 17 13:14:42 2025] MPTCP token hash table entries: 16384 (order: 6, 393216 bytes, linear)
+[Wed Dec 17 13:14:42 2025] UDP hash table entries: 8192 (order: 7, 524288 bytes, linear)
+[Wed Dec 17 13:14:42 2025] UDP-Lite hash table entries: 8192 (order: 7, 524288 bytes, linear)
+[Wed Dec 17 13:14:42 2025] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[Wed Dec 17 13:14:42 2025] NET: Registered PF_XDP protocol family
+[Wed Dec 17 13:14:42 2025] pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7 window]
+[Wed Dec 17 13:14:42 2025] pci_bus 0000:00: resource 5 [io  0x0d00-0xffff window]
+[Wed Dec 17 13:14:42 2025] pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff window]
+[Wed Dec 17 13:14:42 2025] pci_bus 0000:00: resource 7 [mem 0xe0000000-0xfdffffff window]
+[Wed Dec 17 13:14:42 2025] pci 0000:00:00.0: Limiting direct PCI/PCI transfers
+[Wed Dec 17 13:14:42 2025] PCI: CLS 0 bytes, default 64
+[Wed Dec 17 13:14:42 2025] Trying to unpack rootfs image as initramfs...
+[Wed Dec 17 13:14:42 2025] PCI-DMA: Using software bounce buffering for IO (SWIOTLB)
+[Wed Dec 17 13:14:42 2025] software IO TLB: mapped [mem 0x00000000dbff0000-0x00000000dfff0000] (64MB)
+[Wed Dec 17 13:14:42 2025] clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x23fa754787d, max_idle_ns: 440795210092 ns
+[Wed Dec 17 13:14:42 2025] clocksource: Switched to clocksource tsc
+[Wed Dec 17 13:14:42 2025] platform rtc_cmos: registered platform RTC device (no PNP device found)
+[Wed Dec 17 13:14:42 2025] Initialise system trusted keyrings
+[Wed Dec 17 13:14:42 2025] Key type blacklist registered
+[Wed Dec 17 13:14:42 2025] workingset: timestamp_bits=36 max_order=22 bucket_order=0
+[Wed Dec 17 13:14:42 2025] zbud: loaded
+[Wed Dec 17 13:14:42 2025] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[Wed Dec 17 13:14:42 2025] fuse: init (API version 7.42)
+[Wed Dec 17 13:14:42 2025] integrity: Platform Keyring initialized
+[Wed Dec 17 13:14:42 2025] integrity: Machine keyring initialized
+[Wed Dec 17 13:14:42 2025] Key type asymmetric registered
+[Wed Dec 17 13:14:42 2025] Asymmetric key parser 'x509' registered
+[Wed Dec 17 13:14:42 2025] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 243)
+[Wed Dec 17 13:14:42 2025] io scheduler mq-deadline registered
+[Wed Dec 17 13:14:42 2025] ledtrig-cpu: registered to indicate activity on CPUs
+[Wed Dec 17 13:14:42 2025] shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+[Wed Dec 17 13:14:42 2025] ACPI: AC: AC Adapter [AC] (off-line)
+[Wed Dec 17 13:14:42 2025] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+[Wed Dec 17 13:14:42 2025] ACPI: button: Power Button [PWRF]
+[Wed Dec 17 13:14:42 2025] input: Sleep Button as /devices/LNXSYSTM:00/LNXSLPBN:00/input/input1
+[Wed Dec 17 13:14:42 2025] ACPI: button: Sleep Button [SLPF]
+[Wed Dec 17 13:14:42 2025] ACPI: battery: Slot [BAT0] (battery present)
+[Wed Dec 17 13:14:42 2025] Serial: 8250/16550 driver, 32 ports, IRQ sharing enabled
+[Wed Dec 17 13:14:42 2025] Linux agpgart interface v0.103
+[Wed Dec 17 13:14:42 2025] loop: module loaded
+[Wed Dec 17 13:14:42 2025] ata_piix 0000:00:01.1: version 2.13
+[Wed Dec 17 13:14:42 2025] scsi host0: ata_piix
+[Wed Dec 17 13:14:42 2025] scsi host1: ata_piix
+[Wed Dec 17 13:14:42 2025] ata1: PATA max UDMA/33 cmd 0x1f0 ctl 0x3f6 bmdma 0xd000 irq 14 lpm-pol 0
+[Wed Dec 17 13:14:42 2025] ata2: PATA max UDMA/33 cmd 0x170 ctl 0x376 bmdma 0xd008 irq 15 lpm-pol 0
+[Wed Dec 17 13:14:42 2025] ACPI: bus type drm_connector registered
+[Wed Dec 17 13:14:42 2025] tun: Universal TUN/TAP device driver, 1.6
+[Wed Dec 17 13:14:42 2025] PPP generic driver version 2.4.2
+[Wed Dec 17 13:14:42 2025] ohci-pci 0000:00:06.0: OHCI PCI host controller
+[Wed Dec 17 13:14:42 2025] ohci-pci 0000:00:06.0: new USB bus registered, assigned bus number 1
+[Wed Dec 17 13:14:42 2025] ohci-pci 0000:00:06.0: irq 22, io mem 0xf0804000
+[Wed Dec 17 13:14:42 2025] usb usb1: New USB device found, idVendor=1d6b, idProduct=0001, bcdDevice= 6.14
+[Wed Dec 17 13:14:42 2025] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[Wed Dec 17 13:14:42 2025] usb usb1: Product: OHCI PCI host controller
+[Wed Dec 17 13:14:42 2025] usb usb1: Manufacturer: Linux 6.14.0-37-generic ohci_hcd
+[Wed Dec 17 13:14:42 2025] usb usb1: SerialNumber: 0000:00:06.0
+[Wed Dec 17 13:14:42 2025] hub 1-0:1.0: USB hub found
+[Wed Dec 17 13:14:42 2025] hub 1-0:1.0: 12 ports detected
+[Wed Dec 17 13:14:42 2025] i8042: PNP: PS/2 Controller [PNP0303:PS2K,PNP0f03:PS2M] at 0x60,0x64 irq 1,12
+[Wed Dec 17 13:14:42 2025] serio: i8042 KBD port at 0x60,0x64 irq 1
+[Wed Dec 17 13:14:42 2025] serio: i8042 AUX port at 0x60,0x64 irq 12
+[Wed Dec 17 13:14:42 2025] mousedev: PS/2 mouse device common for all mice
+[Wed Dec 17 13:14:42 2025] rtc_cmos rtc_cmos: registered as rtc0
+[Wed Dec 17 13:14:42 2025] rtc_cmos rtc_cmos: setting system clock to 2025-12-17T12:14:41 UTC (1765973681)
+[Wed Dec 17 13:14:42 2025] rtc_cmos rtc_cmos: alarms up to one day, 114 bytes nvram
+[Wed Dec 17 13:14:42 2025] i2c_dev: i2c /dev entries driver
+[Wed Dec 17 13:14:42 2025] device-mapper: core: CONFIG_IMA_DISABLE_HTABLE is disabled. Duplicate IMA measurements will not be recorded in the IMA log.
+[Wed Dec 17 13:14:42 2025] device-mapper: uevent: version 1.0.3
+[Wed Dec 17 13:14:42 2025] device-mapper: ioctl: 4.49.0-ioctl (2025-01-17) initialised: dm-devel@lists.linux.dev
+[Wed Dec 17 13:14:42 2025] intel_pstate: CPU model not supported
+[Wed Dec 17 13:14:42 2025] Freeing initrd memory: 73608K
+[Wed Dec 17 13:14:42 2025] drop_monitor: Initializing network drop monitor service
+[Wed Dec 17 13:14:42 2025] NET: Registered PF_INET6 protocol family
+[Wed Dec 17 13:14:42 2025] ehci-pci 0000:00:0b.0: EHCI Host Controller
+[Wed Dec 17 13:14:42 2025] ehci-pci 0000:00:0b.0: new USB bus registered, assigned bus number 2
+[Wed Dec 17 13:14:42 2025] ata2.00: ATAPI: VBOX CD-ROM, 1.0, max UDMA/133
+[Wed Dec 17 13:14:42 2025] ehci-pci 0000:00:0b.0: irq 19, io mem 0xf0805000
+[Wed Dec 17 13:14:42 2025] input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input2
+[Wed Dec 17 13:14:42 2025] scsi 1:0:0:0: CD-ROM            VBOX     CD-ROM           1.0  PQ: 0 ANSI: 5
+[Wed Dec 17 13:14:42 2025] ehci-pci 0000:00:0b.0: USB 2.0 started, EHCI 1.00
+[Wed Dec 17 13:14:42 2025] usb usb2: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 6.14
+[Wed Dec 17 13:14:42 2025] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[Wed Dec 17 13:14:42 2025] usb usb2: Product: EHCI Host Controller
+[Wed Dec 17 13:14:42 2025] usb usb2: Manufacturer: Linux 6.14.0-37-generic ehci_hcd
+[Wed Dec 17 13:14:42 2025] usb usb2: SerialNumber: 0000:00:0b.0
+[Wed Dec 17 13:14:42 2025] hub 2-0:1.0: USB hub found
+[Wed Dec 17 13:14:42 2025] hub 2-0:1.0: 12 ports detected
+[Wed Dec 17 13:14:42 2025] sr 1:0:0:0: [sr0] scsi3-mmc drive: 32x/32x xa/form2 tray
+[Wed Dec 17 13:14:42 2025] cdrom: Uniform CD-ROM driver Revision: 3.20
+[Wed Dec 17 13:14:42 2025] Segment Routing with IPv6
+[Wed Dec 17 13:14:42 2025] In-situ OAM (IOAM) with IPv6
+[Wed Dec 17 13:14:42 2025] NET: Registered PF_PACKET protocol family
+[Wed Dec 17 13:14:42 2025] Key type dns_resolver registered
+[Wed Dec 17 13:14:42 2025] IPI shorthand broadcast: enabled
+[Wed Dec 17 13:14:42 2025] sched_clock: Marking stable (1838006340, 49369416)->(2164201763, -276826007)
+[Wed Dec 17 13:14:42 2025] registered taskstats version 1
+[Wed Dec 17 13:14:42 2025] Loading compiled-in X.509 certificates
+[Wed Dec 17 13:14:42 2025] Loaded X.509 cert 'Build time autogenerated kernel key: b878835a90265075bf75bb69cfcef4210fdf14ae'
+[Wed Dec 17 13:14:42 2025] Loaded X.509 cert 'Canonical Ltd. Live Patch Signing 2025 Kmod: d541cef61dc7e793b7eb7e899970a2eef0b5dc8c'
+[Wed Dec 17 13:14:42 2025] Loaded X.509 cert 'Canonical Ltd. Live Patch Signing: 14df34d1a87cf37625abec039ef2bf521249b969'
+[Wed Dec 17 13:14:42 2025] sr 1:0:0:0: Attached scsi CD-ROM sr0
+[Wed Dec 17 13:14:42 2025] Loaded X.509 cert 'Canonical Ltd. Kernel Module Signing: 88f752e560a1e0737e31163a466ad7b70a850c19'
+[Wed Dec 17 13:14:42 2025] blacklist: Loading compiled-in revocation X.509 certificates
+[Wed Dec 17 13:14:42 2025] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing: 61482aa2830d0ab2ad5af10b7250da9033ddcef0'
+[Wed Dec 17 13:14:42 2025] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2017): 242ade75ac4a15e50d50c84b0d45ff3eae707a03'
+[Wed Dec 17 13:14:42 2025] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (ESM 2018): 365188c1d374d6b07c3c8f240f8ef722433d6a8b'
+[Wed Dec 17 13:14:42 2025] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2019): c0746fd6c5da3ae827864651ad66ae47fe24b3e8'
+[Wed Dec 17 13:14:42 2025] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2021 v1): a8d54bbb3825cfb94fa13c9f8a594a195c107b8d'
+[Wed Dec 17 13:14:42 2025] sr 1:0:0:0: Attached scsi generic sg0 type 5
+[Wed Dec 17 13:14:42 2025] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2021 v2): 4cf046892d6fd3c9a5b03f98d845f90851dc6a8c'
+[Wed Dec 17 13:14:42 2025] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2021 v3): 100437bb6de6e469b581e61cd66bce3ef4ed53af'
+[Wed Dec 17 13:14:42 2025] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (Ubuntu Core 2019): c1d57b8f6b743f23ee41f4f7ee292f06eecadfb9'
+[Wed Dec 17 13:14:42 2025] Demotion targets for Node 0: null
+[Wed Dec 17 13:14:42 2025] Key type .fscrypt registered
+[Wed Dec 17 13:14:42 2025] Key type fscrypt-provisioning registered
+[Wed Dec 17 13:14:42 2025] Key type encrypted registered
+[Wed Dec 17 13:14:42 2025] AppArmor: AppArmor sha256 policy hashing enabled
+[Wed Dec 17 13:14:42 2025] ima: No TPM chip found, activating TPM-bypass!
+[Wed Dec 17 13:14:42 2025] Loading compiled-in module X.509 certificates
+[Wed Dec 17 13:14:42 2025] Loaded X.509 cert 'Build time autogenerated kernel key: b878835a90265075bf75bb69cfcef4210fdf14ae'
+[Wed Dec 17 13:14:42 2025] ima: Allocated hash algorithm: sha256
+[Wed Dec 17 13:14:42 2025] ima: No architecture policies found
+[Wed Dec 17 13:14:42 2025] evm: Initialising EVM extended attributes:
+[Wed Dec 17 13:14:42 2025] evm: security.selinux
+[Wed Dec 17 13:14:42 2025] evm: security.SMACK64
+[Wed Dec 17 13:14:42 2025] evm: security.SMACK64EXEC
+[Wed Dec 17 13:14:42 2025] evm: security.SMACK64TRANSMUTE
+[Wed Dec 17 13:14:42 2025] evm: security.SMACK64MMAP
+[Wed Dec 17 13:14:42 2025] evm: security.apparmor
+[Wed Dec 17 13:14:42 2025] evm: security.ima
+[Wed Dec 17 13:14:42 2025] evm: security.capability
+[Wed Dec 17 13:14:42 2025] evm: HMAC attrs: 0x1
+[Wed Dec 17 13:14:42 2025] PM:   Magic number: 5:754:228
+[Wed Dec 17 13:14:42 2025] vc vcsu: hash matches
+[Wed Dec 17 13:14:42 2025] RAS: Correctable Errors collector initialized.
+[Wed Dec 17 13:14:42 2025] clk: Disabling unused clocks
+[Wed Dec 17 13:14:42 2025] PM: genpd: Disabling unused power domains
+[Wed Dec 17 13:14:42 2025] Freeing unused decrypted memory: 2028K
+[Wed Dec 17 13:14:42 2025] Freeing unused kernel image (initmem) memory: 5140K
+[Wed Dec 17 13:14:42 2025] Write protecting the kernel read-only data: 38912k
+[Wed Dec 17 13:14:42 2025] Freeing unused kernel image (text/rodata gap) memory: 1052K
+[Wed Dec 17 13:14:42 2025] Freeing unused kernel image (rodata/data gap) memory: 1312K
+[Wed Dec 17 13:14:42 2025] x86/mm: Checked W+X mappings: passed, no W+X pages found.
+[Wed Dec 17 13:14:42 2025] Run /init as init process
+[Wed Dec 17 13:14:42 2025]   with arguments:
+[Wed Dec 17 13:14:42 2025]     /init
+[Wed Dec 17 13:14:42 2025]     splash
+[Wed Dec 17 13:14:42 2025]   with environment:
+[Wed Dec 17 13:14:42 2025]     HOME=/
+[Wed Dec 17 13:14:42 2025]     TERM=linux
+[Wed Dec 17 13:14:42 2025]     BOOT_IMAGE=/boot/vmlinuz-6.14.0-37-generic
+[Wed Dec 17 13:14:42 2025] usb 1-1: new full-speed USB device number 2 using ohci-pci
+[Wed Dec 17 13:14:43 2025] ACPI: video: Video Device [GFX0] (multi-head: yes  rom: no  post: no)
+[Wed Dec 17 13:14:43 2025] input: Video Bus as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/LNXVIDEO:00/input/input4
+[Wed Dec 17 13:14:43 2025] e1000: Intel(R) PRO/1000 Network Driver
+[Wed Dec 17 13:14:43 2025] e1000: Copyright (c) 1999-2006 Intel Corporation.
+[Wed Dec 17 13:14:43 2025] ahci 0000:00:0d.0: version 3.0
+[Wed Dec 17 13:14:43 2025] ahci 0000:00:0d.0: SSS flag set, parallel bus scan disabled
+[Wed Dec 17 13:14:43 2025] ahci 0000:00:0d.0: AHCI vers 0001.0100, 32 command slots, 3 Gbps, SATA mode
+[Wed Dec 17 13:14:43 2025] ahci 0000:00:0d.0: 1/1 ports implemented (port mask 0x1)
+[Wed Dec 17 13:14:43 2025] ahci 0000:00:0d.0: flags: 64bit ncq stag only ccc 
+[Wed Dec 17 13:14:43 2025] scsi host2: ahci
+[Wed Dec 17 13:14:43 2025] ata3: SATA max UDMA/133 abar m8192@0xf0806000 port 0xf0806100 irq 21 lpm-pol 0
+[Wed Dec 17 13:14:43 2025] input: ImExPS/2 Generic Explorer Mouse as /devices/platform/i8042/serio1/input/input5
+[Wed Dec 17 13:14:43 2025] usb 1-1: New USB device found, idVendor=80ee, idProduct=0021, bcdDevice= 1.00
+[Wed Dec 17 13:14:43 2025] usb 1-1: New USB device strings: Mfr=1, Product=3, SerialNumber=0
+[Wed Dec 17 13:14:43 2025] usb 1-1: Product: USB Tablet
+[Wed Dec 17 13:14:43 2025] usb 1-1: Manufacturer: VirtualBox
+[Wed Dec 17 13:14:43 2025] hid: raw HID events driver (C) Jiri Kosina
+[Wed Dec 17 13:14:43 2025] e1000 0000:00:03.0 eth0: (PCI:33MHz:32-bit) 08:00:27:16:a7:a7
+[Wed Dec 17 13:14:43 2025] e1000 0000:00:03.0 eth0: Intel(R) PRO/1000 Network Connection
+[Wed Dec 17 13:14:43 2025] ata3: SATA link up 3.0 Gbps (SStatus 123 SControl 300)
+[Wed Dec 17 13:14:43 2025] ata3.00: ATA-8: VBOX HARDDISK, 1.0, max UDMA/133
+[Wed Dec 17 13:14:43 2025] ata3.00: 536870912 sectors, multi 128: LBA48 NCQ (depth 32)
+[Wed Dec 17 13:14:43 2025] ata3.00: Read log 0x00 page 0x00 failed, Emask 0x1
+[Wed Dec 17 13:14:43 2025] ata3.00: Security Log not supported
+[Wed Dec 17 13:14:43 2025] ata3.00: Security Log not supported
+[Wed Dec 17 13:14:43 2025] ata3.00: configured for UDMA/133
+[Wed Dec 17 13:14:43 2025] scsi 2:0:0:0: Direct-Access     ATA      VBOX HARDDISK    1.0  PQ: 0 ANSI: 5
+[Wed Dec 17 13:14:43 2025] sd 2:0:0:0: [sda] 536870912 512-byte logical blocks: (275 GB/256 GiB)
+[Wed Dec 17 13:14:43 2025] sd 2:0:0:0: [sda] Write Protect is off
+[Wed Dec 17 13:14:43 2025] sd 2:0:0:0: [sda] Mode Sense: 00 3a 00 00
+[Wed Dec 17 13:14:43 2025] sd 2:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+[Wed Dec 17 13:14:43 2025] sd 2:0:0:0: [sda] Preferred minimum I/O size 512 bytes
+[Wed Dec 17 13:14:43 2025] sd 2:0:0:0: Attached scsi generic sg1 type 0
+[Wed Dec 17 13:14:43 2025] GPT:Primary header thinks Alt. header is not at the end of the disk.
+[Wed Dec 17 13:14:43 2025] GPT:236947327 != 536870911
+[Wed Dec 17 13:14:43 2025] GPT:Alternate GPT header not at the end of the disk.
+[Wed Dec 17 13:14:43 2025] GPT:236947327 != 536870911
+[Wed Dec 17 13:14:43 2025] GPT: Use GNU Parted to correct GPT errors.
+[Wed Dec 17 13:14:43 2025]  sda: sda1 sda2
+[Wed Dec 17 13:14:43 2025] sd 2:0:0:0: [sda] Attached SCSI disk
+[Wed Dec 17 13:14:43 2025] e1000 0000:00:03.0 enp0s3: renamed from eth0
+[Wed Dec 17 13:14:43 2025] usbcore: registered new interface driver usbhid
+[Wed Dec 17 13:14:43 2025] usbhid: USB HID core driver
+[Wed Dec 17 13:14:43 2025] input: VirtualBox USB Tablet as /devices/pci0000:00/0000:00:06.0/usb1/1-1/1-1:1.0/0003:80EE:0021.0001/input/input6
+[Wed Dec 17 13:14:43 2025] hid-generic 0003:80EE:0021.0001: input,hidraw0: USB HID v1.10 Mouse [VirtualBox USB Tablet] on usb-0000:00:06.0-1/input0
+[Wed Dec 17 13:14:45 2025] EXT4-fs (sda2): mounted filesystem 4c8b8c39-9698-4c53-9a4a-ba47e0769b1d ro with ordered data mode. Quota mode: none.
+[Wed Dec 17 13:14:46 2025] systemd[1]: Inserted module 'autofs4'
+[Wed Dec 17 13:14:46 2025] systemd[1]: systemd 255.4-1ubuntu8.11 running in system mode (+PAM +AUDIT +SELINUX +APPARMOR +IMA +SMACK +SECCOMP +GCRYPT -GNUTLS +OPENSSL +ACL +BLKID +CURL +ELFUTILS +FIDO2 +IDN2 -IDN +IPTC +KMOD +LIBCRYPTSETUP +LIBFDISK +PCRE2 -PWQUALITY +P11KIT +QRENCODE +TPM2 +BZIP2 +LZ4 +XZ +ZLIB +ZSTD -BPF_FRAMEWORK -XKBCOMMON +UTMP +SYSVINIT default-hierarchy=unified)
+[Wed Dec 17 13:14:46 2025] systemd[1]: Detected virtualization oracle.
+[Wed Dec 17 13:14:46 2025] systemd[1]: Detected architecture x86-64.
+[Wed Dec 17 13:14:46 2025] systemd[1]: Hostname set to <nikola-VirtualBox>.
+[Wed Dec 17 13:14:48 2025] systemd[1]: Queued start job for default target graphical.target.
+[Wed Dec 17 13:14:48 2025] systemd[1]: Created slice system-modprobe.slice - Slice /system/modprobe.
+[Wed Dec 17 13:14:48 2025] systemd[1]: Created slice user.slice - User and Session Slice.
+[Wed Dec 17 13:14:48 2025] systemd[1]: Started systemd-ask-password-wall.path - Forward Password Requests to Wall Directory Watch.
+[Wed Dec 17 13:14:48 2025] systemd[1]: Set up automount proc-sys-fs-binfmt_misc.automount - Arbitrary Executable File Formats File System Automount Point.
+[Wed Dec 17 13:14:48 2025] systemd[1]: Reached target integritysetup.target - Local Integrity Protected Volumes.
+[Wed Dec 17 13:14:48 2025] systemd[1]: Reached target remote-fs.target - Remote File Systems.
+[Wed Dec 17 13:14:48 2025] systemd[1]: Reached target slices.target - Slice Units.
+[Wed Dec 17 13:14:48 2025] systemd[1]: Reached target snapd.mounts-pre.target - Mounting snaps.
+[Wed Dec 17 13:14:48 2025] systemd[1]: Reached target veritysetup.target - Local Verity Protected Volumes.
+[Wed Dec 17 13:14:48 2025] systemd[1]: Listening on syslog.socket - Syslog Socket.
+[Wed Dec 17 13:14:48 2025] systemd[1]: Listening on systemd-fsckd.socket - fsck to fsckd communication Socket.
+[Wed Dec 17 13:14:48 2025] systemd[1]: Listening on systemd-initctl.socket - initctl Compatibility Named Pipe.
+[Wed Dec 17 13:14:48 2025] systemd[1]: Listening on systemd-journald-dev-log.socket - Journal Socket (/dev/log).
+[Wed Dec 17 13:14:48 2025] systemd[1]: Listening on systemd-journald.socket - Journal Socket.
+[Wed Dec 17 13:14:48 2025] systemd[1]: Listening on systemd-oomd.socket - Userspace Out-Of-Memory (OOM) Killer Socket.
+[Wed Dec 17 13:14:48 2025] systemd[1]: systemd-pcrextend.socket - TPM2 PCR Extension (Varlink) was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+[Wed Dec 17 13:14:48 2025] systemd[1]: Listening on systemd-udevd-control.socket - udev Control Socket.
+[Wed Dec 17 13:14:48 2025] systemd[1]: Listening on systemd-udevd-kernel.socket - udev Kernel Socket.
+[Wed Dec 17 13:14:48 2025] systemd[1]: Mounting dev-hugepages.mount - Huge Pages File System...
+[Wed Dec 17 13:14:48 2025] systemd[1]: Mounting dev-mqueue.mount - POSIX Message Queue File System...
+[Wed Dec 17 13:14:48 2025] systemd[1]: Mounting sys-kernel-debug.mount - Kernel Debug File System...
+[Wed Dec 17 13:14:48 2025] systemd[1]: Mounting sys-kernel-tracing.mount - Kernel Trace File System...
+[Wed Dec 17 13:14:48 2025] systemd[1]: Starting systemd-journald.service - Journal Service...
+[Wed Dec 17 13:14:48 2025] systemd[1]: Starting keyboard-setup.service - Set the console keyboard layout...
+[Wed Dec 17 13:14:48 2025] systemd[1]: Starting kmod-static-nodes.service - Create List of Static Device Nodes...
+[Wed Dec 17 13:14:48 2025] systemd[1]: Starting modprobe@configfs.service - Load Kernel Module configfs...
+[Wed Dec 17 13:14:48 2025] systemd[1]: Starting modprobe@dm_mod.service - Load Kernel Module dm_mod...
+[Wed Dec 17 13:14:48 2025] systemd[1]: Starting modprobe@drm.service - Load Kernel Module drm...
+[Wed Dec 17 13:14:48 2025] systemd[1]: Starting modprobe@efi_pstore.service - Load Kernel Module efi_pstore...
+[Wed Dec 17 13:14:48 2025] systemd[1]: Starting modprobe@fuse.service - Load Kernel Module fuse...
+[Wed Dec 17 13:14:48 2025] systemd[1]: Starting modprobe@loop.service - Load Kernel Module loop...
+[Wed Dec 17 13:14:48 2025] systemd[1]: systemd-fsck-root.service - File System Check on Root Device was skipped because of an unmet condition check (ConditionPathExists=!/run/initramfs/fsck-root).
+[Wed Dec 17 13:14:48 2025] systemd[1]: Starting systemd-modules-load.service - Load Kernel Modules...
+[Wed Dec 17 13:14:48 2025] systemd[1]: systemd-pcrmachine.service - TPM2 PCR Machine ID Measurement was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+[Wed Dec 17 13:14:48 2025] systemd-journald[291]: Collecting audit messages is disabled.
+[Wed Dec 17 13:14:48 2025] systemd[1]: Starting systemd-remount-fs.service - Remount Root and Kernel File Systems...
+[Wed Dec 17 13:14:48 2025] systemd[1]: systemd-tpm2-setup-early.service - TPM2 SRK Setup (Early) was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+[Wed Dec 17 13:14:48 2025] systemd[1]: Starting systemd-udev-trigger.service - Coldplug All udev Devices...
+[Wed Dec 17 13:14:48 2025] systemd[1]: Mounted dev-hugepages.mount - Huge Pages File System.
+[Wed Dec 17 13:14:48 2025] systemd[1]: Mounted dev-mqueue.mount - POSIX Message Queue File System.
+[Wed Dec 17 13:14:48 2025] systemd[1]: Mounted sys-kernel-debug.mount - Kernel Debug File System.
+[Wed Dec 17 13:14:48 2025] systemd[1]: Mounted sys-kernel-tracing.mount - Kernel Trace File System.
+[Wed Dec 17 13:14:48 2025] systemd[1]: Finished kmod-static-nodes.service - Create List of Static Device Nodes.
+[Wed Dec 17 13:14:48 2025] systemd[1]: modprobe@configfs.service: Deactivated successfully.
+[Wed Dec 17 13:14:48 2025] systemd[1]: Finished modprobe@configfs.service - Load Kernel Module configfs.
+[Wed Dec 17 13:14:48 2025] systemd[1]: modprobe@dm_mod.service: Deactivated successfully.
+[Wed Dec 17 13:14:48 2025] systemd[1]: Finished modprobe@dm_mod.service - Load Kernel Module dm_mod.
+[Wed Dec 17 13:14:48 2025] systemd[1]: modprobe@drm.service: Deactivated successfully.
+[Wed Dec 17 13:14:48 2025] systemd[1]: Finished modprobe@drm.service - Load Kernel Module drm.
+[Wed Dec 17 13:14:48 2025] systemd[1]: modprobe@fuse.service: Deactivated successfully.
+[Wed Dec 17 13:14:48 2025] systemd[1]: Finished modprobe@fuse.service - Load Kernel Module fuse.
+[Wed Dec 17 13:14:48 2025] systemd[1]: modprobe@loop.service: Deactivated successfully.
+[Wed Dec 17 13:14:48 2025] systemd[1]: Finished modprobe@loop.service - Load Kernel Module loop.
+[Wed Dec 17 13:14:48 2025] systemd[1]: Mounting sys-fs-fuse-connections.mount - FUSE Control File System...
+[Wed Dec 17 13:14:48 2025] systemd[1]: Mounting sys-kernel-config.mount - Kernel Configuration File System...
+[Wed Dec 17 13:14:48 2025] systemd[1]: systemd-repart.service - Repartition Root Disk was skipped because no trigger condition checks were met.
+[Wed Dec 17 13:14:48 2025] systemd[1]: Starting systemd-tmpfiles-setup-dev-early.service - Create Static Device Nodes in /dev gracefully...
+[Wed Dec 17 13:14:48 2025] systemd[1]: Mounted sys-fs-fuse-connections.mount - FUSE Control File System.
+[Wed Dec 17 13:14:48 2025] systemd[1]: run-vmblock\x2dfuse.mount - VMware vmblock fuse mount was skipped because of an unmet condition check (ConditionVirtualization=vmware).
+[Wed Dec 17 13:14:48 2025] systemd[1]: modprobe@efi_pstore.service: Deactivated successfully.
+[Wed Dec 17 13:14:48 2025] systemd[1]: Finished modprobe@efi_pstore.service - Load Kernel Module efi_pstore.
+[Wed Dec 17 13:14:48 2025] EXT4-fs (sda2): re-mounted 4c8b8c39-9698-4c53-9a4a-ba47e0769b1d r/w.
+[Wed Dec 17 13:14:48 2025] systemd[1]: Finished systemd-remount-fs.service - Remount Root and Kernel File Systems.
+[Wed Dec 17 13:14:48 2025] systemd[1]: Activating swap swap.img.swap - /swap.img...
+[Wed Dec 17 13:14:48 2025] systemd[1]: systemd-hwdb-update.service - Rebuild Hardware Database was skipped because of an unmet condition check (ConditionNeedsUpdate=/etc).
+[Wed Dec 17 13:14:48 2025] systemd[1]: systemd-pstore.service - Platform Persistent Storage Archival was skipped because of an unmet condition check (ConditionDirectoryNotEmpty=/sys/fs/pstore).
+[Wed Dec 17 13:14:49 2025] systemd[1]: Starting systemd-random-seed.service - Load/Save OS Random Seed...
+[Wed Dec 17 13:14:49 2025] systemd[1]: systemd-tpm2-setup.service - TPM2 SRK Setup was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+[Wed Dec 17 13:14:49 2025] systemd[1]: Started systemd-journald.service - Journal Service.
+[Wed Dec 17 13:14:49 2025] lp: driver loaded but no devices found
+[Wed Dec 17 13:14:49 2025] ppdev: user-space parallel port driver
+[Wed Dec 17 13:14:49 2025] Adding 4194300k swap on /swap.img.  Priority:-2 extents:3 across:4464636k SS
+[Wed Dec 17 13:14:49 2025] systemd-journald[291]: Received client request to flush runtime journal.
+[Wed Dec 17 13:14:49 2025] systemd-journald[291]: /var/log/journal/ce8853fc1af14743a045a36cd2ceda03/system.journal: Journal file uses a different sequence number ID, rotating.
+[Wed Dec 17 13:14:49 2025] systemd-journald[291]: Rotating system journal.
+[Wed Dec 17 13:14:49 2025] vmwgfx 0000:00:02.0: vgaarb: deactivate vga console
+[Wed Dec 17 13:14:49 2025] Console: switching to colour dummy device 80x25
+[Wed Dec 17 13:14:49 2025] vmwgfx 0000:00:02.0: [drm] FIFO at 0x00000000f0000000 size is 2048 KiB
+[Wed Dec 17 13:14:49 2025] vmwgfx 0000:00:02.0: [drm] VRAM at 0x00000000e0000000 size is 131072 KiB
+[Wed Dec 17 13:14:49 2025] vmwgfx 0000:00:02.0: [drm] Running on SVGA version 2.
+[Wed Dec 17 13:14:49 2025] vmwgfx 0000:00:02.0: [drm] Capabilities: rect copy, cursor, cursor bypass, cursor bypass 2, alpha cursor, extended fifo, pitchlock, irq mask, gmr, traces, gmr2, screen object 2, command buffers, command buffers 2, gbobject, 
+[Wed Dec 17 13:14:49 2025] vmwgfx 0000:00:02.0: [drm] *ERROR* vmwgfx seems to be running on an unsupported hypervisor.
+[Wed Dec 17 13:14:49 2025] vmwgfx 0000:00:02.0: [drm] *ERROR* This configuration is likely broken.
+[Wed Dec 17 13:14:49 2025] vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+[Wed Dec 17 13:14:49 2025] vmwgfx 0000:00:02.0: [drm] DMA map mode: Caching DMA mappings.
+[Wed Dec 17 13:14:49 2025] vmwgfx 0000:00:02.0: [drm] Legacy memory limits: VRAM = 131072 KiB, FIFO = 2048 KiB, surface = 393216 KiB
+[Wed Dec 17 13:14:49 2025] vmwgfx 0000:00:02.0: [drm] MOB limits: max mob size = 131072 KiB, max mob pages = 32768
+[Wed Dec 17 13:14:49 2025] vmwgfx 0000:00:02.0: [drm] Max GMR ids is 8192
+[Wed Dec 17 13:14:49 2025] vmwgfx 0000:00:02.0: [drm] Max number of GMR pages is 1048576
+[Wed Dec 17 13:14:49 2025] vmwgfx 0000:00:02.0: [drm] Maximum display memory size is 131072 KiB
+[Wed Dec 17 13:14:49 2025] vmwgfx 0000:00:02.0: [drm] Screen Target display unit initialized
+[Wed Dec 17 13:14:49 2025] vmwgfx 0000:00:02.0: [drm] Fifo max 0x00200000 min 0x00001000 cap 0x00000355
+[Wed Dec 17 13:14:49 2025] vmwgfx 0000:00:02.0: [drm] Using command buffers with DMA pool.
+[Wed Dec 17 13:14:49 2025] vmwgfx 0000:00:02.0: [drm] Available shader model: Legacy.
+[Wed Dec 17 13:14:49 2025] [drm] Initialized vmwgfx 2.20.0 for 0000:00:02.0 on minor 0
+[Wed Dec 17 13:14:49 2025] fbcon: vmwgfxdrmfb (fb0) is primary device
+[Wed Dec 17 13:14:49 2025] Console: switching to colour frame buffer device 160x50
+[Wed Dec 17 13:14:49 2025] vmwgfx 0000:00:02.0: [drm] fb0: vmwgfxdrmfb frame buffer device
+[Wed Dec 17 13:14:49 2025] loop0: detected capacity change from 0 to 8
+[Wed Dec 17 13:14:49 2025] loop1: detected capacity change from 0 to 151392
+[Wed Dec 17 13:14:49 2025] loop2: detected capacity change from 0 to 151456
+[Wed Dec 17 13:14:49 2025] loop3: detected capacity change from 0 to 512824
+[Wed Dec 17 13:14:49 2025] loop4: detected capacity change from 0 to 552192
+[Wed Dec 17 13:14:49 2025] loop5: detected capacity change from 0 to 22800
+[Wed Dec 17 13:14:49 2025] loop6: detected capacity change from 0 to 1034424
+[Wed Dec 17 13:14:49 2025] loop7: detected capacity change from 0 to 37864
+[Wed Dec 17 13:14:49 2025] loop8: detected capacity change from 0 to 187776
+[Wed Dec 17 13:14:49 2025] loop9: detected capacity change from 0 to 22176
+[Wed Dec 17 13:14:49 2025] loop10: detected capacity change from 0 to 104296
+[Wed Dec 17 13:14:49 2025] loop12: detected capacity change from 0 to 103976
+[Wed Dec 17 13:14:49 2025] loop11: detected capacity change from 0 to 952
+[Wed Dec 17 13:14:49 2025] loop14: detected capacity change from 0 to 1152
+[Wed Dec 17 13:14:49 2025] loop15: detected capacity change from 0 to 306752
+[Wed Dec 17 13:14:49 2025] loop13: detected capacity change from 0 to 24984
+[Wed Dec 17 13:14:49 2025] loop16: detected capacity change from 0 to 463496
+[Wed Dec 17 13:14:49 2025] audit: type=1400 audit(1765973688.821:2): apparmor="STATUS" operation="profile_load" profile="unconfined" name="balena-etcher" pid=424 comm="apparmor_parser"
+[Wed Dec 17 13:14:49 2025] audit: type=1400 audit(1765973688.822:3): apparmor="STATUS" operation="profile_load" profile="unconfined" name="Discord" pid=420 comm="apparmor_parser"
+[Wed Dec 17 13:14:49 2025] audit: type=1400 audit(1765973688.824:4): apparmor="STATUS" operation="profile_load" profile="unconfined" name="1password" pid=419 comm="apparmor_parser"
+[Wed Dec 17 13:14:49 2025] audit: type=1400 audit(1765973688.827:5): apparmor="STATUS" operation="profile_load" profile="unconfined" name="QtWebEngineProcess" pid=423 comm="apparmor_parser"
+[Wed Dec 17 13:14:49 2025] audit: type=1400 audit(1765973688.855:6): apparmor="STATUS" operation="profile_load" profile="unconfined" name="brave" pid=441 comm="apparmor_parser"
+[Wed Dec 17 13:14:49 2025] audit: type=1400 audit(1765973688.858:7): apparmor="STATUS" operation="profile_load" profile="unconfined" name=4D6F6E676F444220436F6D70617373 pid=422 comm="apparmor_parser"
+[Wed Dec 17 13:14:49 2025] audit: type=1400 audit(1765973688.874:8): apparmor="STATUS" operation="profile_load" profile="unconfined" name="busybox" pid=448 comm="apparmor_parser"
+[Wed Dec 17 13:14:49 2025] audit: type=1400 audit(1765973688.902:9): apparmor="STATUS" operation="profile_load" profile="unconfined" name="buildah" pid=447 comm="apparmor_parser"
+[Wed Dec 17 13:14:49 2025] audit: type=1400 audit(1765973688.903:10): apparmor="STATUS" operation="profile_load" profile="unconfined" name="ch-checkns" pid=450 comm="apparmor_parser"
+[Wed Dec 17 13:14:49 2025] audit: type=1400 audit(1765973688.904:11): apparmor="STATUS" operation="profile_load" profile="unconfined" name="cam" pid=449 comm="apparmor_parser"
+[Wed Dec 17 13:14:50 2025] vboxguest: host-version: 7.2.4r170995 0x8000000f
+[Wed Dec 17 13:14:50 2025] vbg_heartbeat_init: Setting up heartbeat to trigger every 2000 milliseconds
+[Wed Dec 17 13:14:50 2025] input: VirtualBox mouse integration as /devices/pci0000:00/0000:00:04.0/input/input7
+[Wed Dec 17 13:14:50 2025] piix4_smbus 0000:00:07.0: SMBus Host Controller at 0x4100, revision 0
+[Wed Dec 17 13:14:50 2025] RAPL PMU: API unit is 2^-32 Joules, 0 fixed counters, 335544320 ms ovfl timer
+[Wed Dec 17 13:14:51 2025] cryptd: max_cpu_qlen set to 1000
+[Wed Dec 17 13:14:51 2025] AES CTR mode by8 optimization enabled
+[Wed Dec 17 13:14:52 2025] intel_rapl_msr: PL4 support detected.
+[Wed Dec 17 13:14:52 2025] snd_intel8x0 0000:00:05.0: allow list rate for 1028:0177 is 48000
+[Wed Dec 17 13:14:55 2025] NET: Registered PF_QIPCRTR protocol family
+[Wed Dec 17 13:14:56 2025] loop17: detected capacity change from 0 to 8
+[Wed Dec 17 13:14:56 2025] kauditd_printk_skb: 156 callbacks suppressed
+[Wed Dec 17 13:14:56 2025] audit: type=1400 audit(1765973695.300:168): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/usr/lib/snapd/snap-confine" pid=1147 comm="apparmor_parser"
+[Wed Dec 17 13:14:56 2025] audit: type=1400 audit(1765973695.315:169): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/usr/lib/snapd/snap-confine//mount-namespace-capture-helper" pid=1147 comm="apparmor_parser"
+[Wed Dec 17 13:14:56 2025] e1000: enp0s3 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+[Wed Dec 17 13:14:57 2025] audit: type=1400 audit(1765973696.561:170): apparmor="DENIED" operation="capable" class="cap" profile="/usr/sbin/cupsd" pid=1225 comm="cupsd" capability=12  capname="net_admin"
+[Wed Dec 17 13:14:57 2025] hrtimer: interrupt took 6075673 ns
+[Wed Dec 17 13:14:58 2025] systemd-journald[291]: /var/log/journal/ce8853fc1af14743a045a36cd2ceda03/user-1000.journal: Journal file uses a different sequence number ID, rotating.
+[Wed Dec 17 13:15:02 2025] audit: type=1400 audit(1765973700.959:171): apparmor="STATUS" operation="profile_load" profile="unconfined" name="docker-default" pid=1565 comm="apparmor_parser"
+[Wed Dec 17 13:15:02 2025] evm: overlay not supported
+[Wed Dec 17 13:15:04 2025] Initializing XFRM netlink socket
+[Wed Dec 17 13:15:04 2025] bridge: filtering via arp/ip/ip6tables is no longer available by default. Update your scripts to load br_netfilter if you need this.
+[Wed Dec 17 13:15:05 2025] workqueue: blk_mq_run_work_fn hogged CPU for >10000us 4 times, consider switching to WQ_UNBOUND
+[Wed Dec 17 13:15:09 2025] workqueue: blk_mq_requeue_work hogged CPU for >10000us 4 times, consider switching to WQ_UNBOUND
+[Wed Dec 17 13:15:09 2025] rfkill: input handler disabled
+[Wed Dec 17 13:15:22 2025] clocksource: Long readout interval, skipping watchdog check: cs_nsec: 1390798720 wd_nsec: 1390797984
+[Wed Dec 17 13:15:52 2025] workqueue: blk_mq_run_work_fn hogged CPU for >10000us 5 times, consider switching to WQ_UNBOUND
+[Wed Dec 17 13:16:26 2025] workqueue: blk_mq_run_work_fn hogged CPU for >10000us 7 times, consider switching to WQ_UNBOUND
+[Wed Dec 17 13:17:57 2025] clocksource: Long readout interval, skipping watchdog check: cs_nsec: 4831986778 wd_nsec: 4831984250
+[Wed Dec 17 13:19:18 2025] audit: type=1400 audit(1765973958.808:172): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="firefox" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:19:26 2025] audit: type=1400 audit(1765973966.237:173): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:19:31 2025] audit: type=1400 audit(1765973971.317:174): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:19:36 2025] audit: type=1400 audit(1765973976.326:175): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:19:41 2025] audit: type=1400 audit(1765973981.330:176): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:19:44 2025] workqueue: blk_mq_requeue_work hogged CPU for >10000us 5 times, consider switching to WQ_UNBOUND
+[Wed Dec 17 13:19:44 2025] workqueue: blk_mq_run_work_fn hogged CPU for >10000us 11 times, consider switching to WQ_UNBOUND
+[Wed Dec 17 13:19:46 2025] audit: type=1400 audit(1765973986.330:177): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:19:51 2025] audit: type=1400 audit(1765973991.402:178): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:19:56 2025] audit: type=1400 audit(1765973996.521:179): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:20:01 2025] audit: type=1400 audit(1765974001.642:180): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:20:06 2025] audit: type=1400 audit(1765974006.740:181): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:20:11 2025] audit: type=1400 audit(1765974011.748:182): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:20:16 2025] audit: type=1400 audit(1765974016.753:183): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:20:21 2025] audit: type=1400 audit(1765974021.764:184): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:20:49 2025] workqueue: e1000_watchdog [e1000] hogged CPU for >10000us 4 times, consider switching to WQ_UNBOUND
+[Wed Dec 17 13:20:50 2025] audit: type=1400 audit(1765974050.571:185): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:20:55 2025] audit: type=1400 audit(1765974055.582:186): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:21:00 2025] audit: type=1400 audit(1765974060.611:187): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:21:05 2025] audit: type=1400 audit(1765974065.612:188): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:21:22 2025] audit: type=1400 audit(1765974082.144:189): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:21:27 2025] audit: type=1400 audit(1765974087.160:190): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:21:32 2025] audit: type=1400 audit(1765974092.166:191): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:21:43 2025] audit: type=1400 audit(1765974103.037:192): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:21:48 2025] audit: type=1400 audit(1765974108.047:193): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:21:53 2025] audit: type=1400 audit(1765974113.063:194): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:21:53 2025] workqueue: e1000_watchdog [e1000] hogged CPU for >10000us 5 times, consider switching to WQ_UNBOUND
+[Wed Dec 17 13:22:15 2025] workqueue: blk_mq_run_work_fn hogged CPU for >10000us 19 times, consider switching to WQ_UNBOUND
+[Wed Dec 17 13:22:28 2025] audit: type=1400 audit(1765974148.892:195): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:22:33 2025] audit: type=1400 audit(1765974153.916:196): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:22:38 2025] audit: type=1400 audit(1765974158.946:197): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:22:44 2025] audit: type=1400 audit(1765974164.378:198): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:23:18 2025] audit: type=1400 audit(1765974198.897:199): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:23:39 2025] audit: type=1400 audit(1765974219.253:200): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:23:44 2025] audit: type=1400 audit(1765974224.337:201): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:24:03 2025] audit: type=1400 audit(1765974243.981:202): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:24:09 2025] audit: type=1400 audit(1765974249.042:203): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:24:27 2025] audit: type=1400 audit(1765974267.439:204): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:24:32 2025] audit: type=1400 audit(1765974272.448:205): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:24:37 2025] audit: type=1400 audit(1765974277.454:206): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:24:46 2025] audit: type=1400 audit(1765974286.271:207): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:24:51 2025] audit: type=1400 audit(1765974291.280:208): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:24:56 2025] audit: type=1400 audit(1765974296.306:209): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:25:01 2025] audit: type=1400 audit(1765974301.307:210): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:25:06 2025] audit: type=1400 audit(1765974306.311:211): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:25:39 2025] audit: type=1400 audit(1765974339.086:212): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:25:44 2025] audit: type=1400 audit(1765974344.508:213): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:25:56 2025] audit: type=1400 audit(1765974356.387:214): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:26:01 2025] audit: type=1400 audit(1765974361.389:215): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:26:06 2025] audit: type=1400 audit(1765974366.396:216): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:27:07 2025] audit: type=1400 audit(1765974427.163:217): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:27:12 2025] audit: type=1400 audit(1765974432.198:218): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:27:17 2025] audit: type=1400 audit(1765974437.200:219): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:27:22 2025] audit: type=1400 audit(1765974442.227:220): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:27:32 2025] audit: type=1400 audit(1765974452.769:221): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:27:38 2025] audit: type=1400 audit(1765974458.296:222): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:27:43 2025] audit: type=1400 audit(1765974463.699:223): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:28:00 2025] audit: type=1400 audit(1765974480.472:224): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:28:05 2025] audit: type=1400 audit(1765974485.506:225): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:28:10 2025] audit: type=1400 audit(1765974490.513:226): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:28:15 2025] audit: type=1400 audit(1765974495.525:227): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:28:20 2025] audit: type=1400 audit(1765974500.610:228): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:28:25 2025] audit: type=1400 audit(1765974505.616:229): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:28:30 2025] audit: type=1400 audit(1765974510.617:230): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:28:35 2025] audit: type=1400 audit(1765974515.640:231): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:28:48 2025] audit: type=1400 audit(1765974528.503:232): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:28:53 2025] audit: type=1400 audit(1765974533.546:233): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:29:03 2025] audit: type=1400 audit(1765974543.667:234): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:29:28 2025] audit: type=1400 audit(1765974568.726:235): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:29:43 2025] audit: type=1400 audit(1765974583.062:236): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:29:48 2025] audit: type=1400 audit(1765974588.091:237): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:29:53 2025] audit: type=1400 audit(1765974593.147:238): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:29:58 2025] audit: type=1400 audit(1765974598.155:239): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:30:24 2025] audit: type=1400 audit(1765974624.899:240): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:30:41 2025] audit: type=1400 audit(1765974641.333:241): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:30:54 2025] audit: type=1400 audit(1765974654.474:242): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:30:59 2025] audit: type=1400 audit(1765974659.523:243): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:31:11 2025] audit: type=1400 audit(1765974671.546:244): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:31:27 2025] audit: type=1400 audit(1765974687.521:245): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:31:44 2025] audit: type=1400 audit(1765974704.984:246): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:32:08 2025] audit: type=1400 audit(1765974728.250:247): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:32:20 2025] audit: type=1400 audit(1765974740.785:248): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:32:25 2025] audit: type=1400 audit(1765974745.955:249): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:32:38 2025] audit: type=1400 audit(1765974758.290:250): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:32:43 2025] audit: type=1400 audit(1765974763.302:251): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:32:56 2025] audit: type=1400 audit(1765974776.117:252): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:33:01 2025] audit: type=1400 audit(1765974781.122:253): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:33:19 2025] audit: type=1400 audit(1765974799.609:254): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:34:55 2025] audit: type=1400 audit(1765974895.244:255): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:35:00 2025] audit: type=1400 audit(1765974900.316:256): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:35:05 2025] audit: type=1400 audit(1765974905.369:257): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:35:10 2025] audit: type=1400 audit(1765974910.375:258): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:35:11 2025] workqueue: blk_mq_run_work_fn hogged CPU for >10000us 35 times, consider switching to WQ_UNBOUND
+[Wed Dec 17 13:35:20 2025] audit: type=1400 audit(1765974920.435:259): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:35:25 2025] audit: type=1400 audit(1765974925.757:260): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:35:30 2025] audit: type=1400 audit(1765974930.804:261): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:35:35 2025] audit: type=1400 audit(1765974935.820:262): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:35:55 2025] audit: type=1400 audit(1765974954.987:263): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:36:00 2025] audit: type=1400 audit(1765974959.994:264): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:36:05 2025] audit: type=1400 audit(1765974965.053:265): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:36:10 2025] audit: type=1400 audit(1765974970.098:266): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:36:15 2025] audit: type=1400 audit(1765974975.113:267): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:36:20 2025] audit: type=1400 audit(1765974980.134:268): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:36:25 2025] audit: type=1400 audit(1765974985.157:269): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:36:30 2025] audit: type=1400 audit(1765974990.171:270): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:36:35 2025] audit: type=1400 audit(1765974995.173:271): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:36:40 2025] audit: type=1400 audit(1765975000.175:272): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:36:45 2025] audit: type=1400 audit(1765975005.244:273): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:36:50 2025] audit: type=1400 audit(1765975010.246:274): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:36:55 2025] audit: type=1400 audit(1765975015.267:275): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:37:00 2025] audit: type=1400 audit(1765975020.354:276): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:37:05 2025] audit: type=1400 audit(1765975025.355:277): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:37:10 2025] audit: type=1400 audit(1765975030.379:278): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:37:15 2025] audit: type=1400 audit(1765975035.383:279): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:37:29 2025] audit: type=1400 audit(1765975049.834:280): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:37:34 2025] audit: type=1400 audit(1765975054.924:281): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:37:40 2025] audit: type=1400 audit(1765975060.078:282): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:37:45 2025] audit: type=1400 audit(1765975065.085:283): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:37:50 2025] audit: type=1400 audit(1765975070.089:284): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:37:55 2025] audit: type=1400 audit(1765975075.463:285): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:38:00 2025] audit: type=1400 audit(1765975080.672:286): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:38:10 2025] audit: type=1400 audit(1765975090.779:287): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:38:15 2025] audit: type=1400 audit(1765975095.792:288): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:38:20 2025] audit: type=1400 audit(1765975100.883:289): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:38:26 2025] audit: type=1400 audit(1765975106.169:290): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:38:31 2025] audit: type=1400 audit(1765975111.211:291): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:38:42 2025] audit: type=1400 audit(1765975122.228:292): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:38:47 2025] audit: type=1400 audit(1765975127.390:293): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:38:52 2025] audit: type=1400 audit(1765975132.395:294): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:38:57 2025] audit: type=1400 audit(1765975137.396:295): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:39:02 2025] audit: type=1400 audit(1765975142.427:296): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:39:07 2025] audit: type=1400 audit(1765975147.921:297): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:39:30 2025] audit: type=1400 audit(1765975170.054:298): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:39:35 2025] audit: type=1400 audit(1765975175.669:299): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:39:40 2025] audit: type=1400 audit(1765975180.684:300): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:39:45 2025] audit: type=1400 audit(1765975185.733:301): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:39:50 2025] audit: type=1400 audit(1765975190.736:302): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:39:55 2025] audit: type=1400 audit(1765975195.740:303): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:40:00 2025] audit: type=1400 audit(1765975200.848:304): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:40:06 2025] audit: type=1400 audit(1765975206.013:305): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:40:11 2025] audit: type=1400 audit(1765975211.017:306): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:40:16 2025] audit: type=1400 audit(1765975216.121:307): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:40:21 2025] audit: type=1400 audit(1765975221.125:308): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:40:26 2025] audit: type=1400 audit(1765975226.256:309): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:40:39 2025] audit: type=1400 audit(1765975239.114:310): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:40:44 2025] audit: type=1400 audit(1765975244.193:311): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:40:49 2025] audit: type=1400 audit(1765975249.200:312): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:40:54 2025] audit: type=1400 audit(1765975254.206:313): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:40:59 2025] audit: type=1400 audit(1765975259.818:314): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:41:04 2025] audit: type=1400 audit(1765975264.819:315): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:41:36 2025] audit: type=1400 audit(1765975296.319:316): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:42:28 2025] clocksource: Long readout interval, skipping watchdog check: cs_nsec: 10005761873 wd_nsec: 10005756498
+[Wed Dec 17 13:48:56 2025] audit: type=1400 audit(1765975736.031:317): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:49:15 2025] audit: type=1400 audit(1765975755.313:318): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:49:20 2025] audit: type=1400 audit(1765975760.363:319): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:49:25 2025] audit: type=1400 audit(1765975765.380:320): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:49:30 2025] audit: type=1400 audit(1765975770.588:321): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:49:35 2025] audit: type=1400 audit(1765975775.655:322): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:49:40 2025] audit: type=1400 audit(1765975780.701:323): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:49:50 2025] audit: type=1400 audit(1765975790.851:324): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:49:55 2025] audit: type=1400 audit(1765975795.876:325): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:50:01 2025] audit: type=1400 audit(1765975801.127:326): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:50:13 2025] audit: type=1400 audit(1765975813.649:327): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:50:18 2025] audit: type=1400 audit(1765975818.710:328): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:50:23 2025] audit: type=1400 audit(1765975823.718:329): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:50:28 2025] audit: type=1400 audit(1765975828.719:330): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:50:33 2025] audit: type=1400 audit(1765975833.721:331): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:51:31 2025] audit: type=1400 audit(1765975891.476:332): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:51:36 2025] audit: type=1400 audit(1765975896.479:333): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:51:41 2025] audit: type=1400 audit(1765975901.957:334): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:51:47 2025] audit: type=1400 audit(1765975906.980:335): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:52:40 2025] audit: type=1400 audit(1765975960.774:336): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:52:52 2025] audit: type=1400 audit(1765975972.664:337): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:52:57 2025] audit: type=1400 audit(1765975977.665:338): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:53:09 2025] audit: type=1400 audit(1765975989.139:339): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:53:14 2025] audit: type=1400 audit(1765975994.148:340): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 13:53:19 2025] audit: type=1400 audit(1765975999.249:341): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:21:39 2025] audit: type=1400 audit(1765977699.671:342): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:22:05 2025] audit: type=1400 audit(1765977725.698:343): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:22:10 2025] audit: type=1400 audit(1765977730.703:344): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:22:15 2025] audit: type=1400 audit(1765977735.710:345): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:22:20 2025] audit: type=1400 audit(1765977740.713:346): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:22:25 2025] audit: type=1400 audit(1765977745.883:347): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:22:30 2025] audit: type=1400 audit(1765977750.886:348): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:22:35 2025] audit: type=1400 audit(1765977755.924:349): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:22:41 2025] audit: type=1400 audit(1765977761.346:350): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:22:46 2025] audit: type=1400 audit(1765977766.349:351): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:22:51 2025] audit: type=1400 audit(1765977771.437:352): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:22:56 2025] audit: type=1400 audit(1765977776.440:353): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:23:07 2025] audit: type=1400 audit(1765977787.297:354): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:23:35 2025] audit: type=1400 audit(1765977815.154:355): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:23:40 2025] audit: type=1400 audit(1765977820.161:356): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:23:45 2025] audit: type=1400 audit(1765977825.701:357): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:23:50 2025] audit: type=1400 audit(1765977830.704:358): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:23:55 2025] audit: type=1400 audit(1765977835.804:359): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:24:00 2025] audit: type=1400 audit(1765977840.839:360): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:24:05 2025] audit: type=1400 audit(1765977845.848:361): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:24:10 2025] audit: type=1400 audit(1765977851.001:362): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:24:15 2025] audit: type=1400 audit(1765977856.006:363): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:24:20 2025] audit: type=1400 audit(1765977861.009:364): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:24:32 2025] audit: type=1400 audit(1765977872.549:365): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:24:37 2025] audit: type=1400 audit(1765977877.594:366): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:24:42 2025] audit: type=1400 audit(1765977882.788:367): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:24:47 2025] audit: type=1400 audit(1765977887.797:368): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:24:52 2025] audit: type=1400 audit(1765977892.804:369): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:24:57 2025] audit: type=1400 audit(1765977897.811:370): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:25:02 2025] audit: type=1400 audit(1765977902.818:371): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:25:28 2025] audit: type=1400 audit(1765977928.025:372): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:25:33 2025] audit: type=1400 audit(1765977933.244:373): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:25:38 2025] audit: type=1400 audit(1765977938.288:374): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:25:43 2025] audit: type=1400 audit(1765977943.375:375): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:25:48 2025] audit: type=1400 audit(1765977948.429:376): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+[Wed Dec 17 14:26:33 2025] audit: type=1400 audit(1765977993.171:377): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=2719 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
