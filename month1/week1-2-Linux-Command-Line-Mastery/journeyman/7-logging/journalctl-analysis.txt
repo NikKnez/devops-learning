@@ -1,0 +1,21 @@
+=== journalctl Analysis ===
+
+Total journal size: 416.5M
+
+Recent entries (last 10):
+Dec 18 13:04:56 nikola-VirtualBox tracker-miner-fs-3[6021]: (tracker-extract-3:6021): GLib-GIO-WARNING **: 13:04:56.542: Error creating IO channel for /proc/self/mountinfo: Invalid argument (g-io-error-quark, 13)
+Dec 18 13:05:01 nikola-VirtualBox CRON[6030]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Dec 18 13:05:01 nikola-VirtualBox CRON[6031]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Dec 18 13:05:01 nikola-VirtualBox CRON[6030]: pam_unix(cron:session): session closed for user root
+Dec 18 13:05:02 nikola-VirtualBox kernel: audit: type=1400 audit(1766059502.468:277): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=3493 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+Dec 18 13:05:07 nikola-VirtualBox kernel: audit: type=1400 audit(1766059507.729:278): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=3493 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+Dec 18 13:05:10 nikola-VirtualBox tracker-miner-fs-3[6036]: (tracker-extract-3:6036): GLib-GIO-WARNING **: 13:05:10.079: Error creating IO channel for /proc/self/mountinfo: Invalid argument (g-io-error-quark, 13)
+Dec 18 13:05:12 nikola-VirtualBox kernel: audit: type=1400 audit(1766059512.732:279): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=3493 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+Dec 18 13:05:17 nikola-VirtualBox kernel: audit: type=1400 audit(1766059517.816:280): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=3493 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+Dec 18 13:05:22 nikola-VirtualBox kernel: audit: type=1400 audit(1766059522.863:281): apparmor="DENIED" operation="open" class="file" profile="snap.firefox.firefox" name="/proc/pressure/memory" pid=3493 comm="MemoryPoller" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
+
+Errors today:
+9 entries
+
+SSH service logs:
+-- No entries --
