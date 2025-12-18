@@ -1,0 +1,58 @@
+=== Log Rotation with logrotate ===
+
+Why Rotate Logs?
+- Logs grow forever
+- Fill up disk space
+- Old logs not needed
+- Compliance (keep N days)
+
+How logrotate Works:
+1. Runs daily (via cron)
+2. Checks log sizes/ages
+3. Rotates according to rules
+4. Compresses old logs
+5. Deletes very old logs
+
+Configuration:
+Main config: /etc/logrotate.conf
+App configs: /etc/logrotate.d/*
+
+logrotate Directives:
+daily, weekly, monthly    - Rotation frequency
+rotate N                  - Keep N old logs
+size 100M                 - Rotate when size reached
+compress                  - Compress old logs
+delaycompress            - Compress on next rotation
+missingok                - Don't error if log missing
+notifempty               - Don't rotate if empty
+create 0640 user group   - Permissions for new log
+postrotate...endscript   - Commands after rotation
+
+Example Config:
+/var/log/myapp/*.log {
+    daily
+    rotate 7
+    compress
+    delaycompress
+    missingok
+    notifempty
+    create 0640 www-data www-data
+    postrotate
+        systemctl reload myapp
+    endscript
+}
+
+This means:
+- Rotate daily
+- Keep 7 days of logs
+- Compress old logs
+- Don't compress yesterday's log
+- Ignore if log doesn't exist
+- Don't rotate empty logs
+- Create new log with specific permissions
+- Reload app after rotation
+
+Testing logrotate:
+sudo logrotate -d /etc/logrotate.conf      # Dry run
+sudo logrotate -f /etc/logrotate.conf      # Force rotation
+sudo logrotate -v /etc/logrotate.conf      # Verbose

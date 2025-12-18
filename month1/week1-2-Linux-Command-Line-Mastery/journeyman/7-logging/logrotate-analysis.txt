@@ -1,0 +1,59 @@
+=== logrotate Configuration Analysis ===
+
+Application configs:
+alternatives
+apport
+apt
+bootlog
+btmp
+cloud-init
+cups-daemon
+dpkg
+ppp
+rsyslog
+sane-utils
+speech-dispatcher
+sssd-common
+ubuntu-pro-client
+ufw
+unattended-upgrades
+wtmp
+
+Main config settings:
+weekly
+su root adm
+rotate 4
+create
+include /etc/logrotate.d
+
+rsyslog rotation config:
+/var/log/syslog
+/var/log/mail.log
+/var/log/kern.log
+/var/log/auth.log
+/var/log/user.log
+/var/log/cron.log
+{
+	rotate 4
+	weekly
+	missingok
+	notifempty
+	compress
+	delaycompress
+	sharedscripts
+	postrotate
+		/usr/lib/rsyslog/rsyslog-rotate
+	endscript
+}
+
+Last rotation times (sample):
+logrotate state -- version 2
+"/var/log/syslog" 2025-12-14-20:32:25
+"/var/log/dpkg.log" 2025-12-12-12:16:52
+"/var/log/unattended-upgrades/unattended-upgrades.log" 2025-12-12-12:16:52
+"/var/log/speech-dispatcher/debug-flite" 2025-9-27-0:0:0
+"/var/log/unattended-upgrades/unattended-upgrades-shutdown.log" 2025-12-13-0:0:27
+"/var/log/auth.log" 2025-12-14-20:32:25
+"/var/log/apt/term.log" 2025-12-12-12:16:52
+"/var/log/cloud-init.log" 2024-9-10-14:0:0
+"/var/log/ppp-connect-errors" 2025-9-27-0:0:0
