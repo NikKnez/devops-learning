@@ -7,3 +7,4 @@ Learning Git fundamentals for DevOps workflows.
 - Branching and merging
 - Collaboration workflows
 - CI/CD integration
+- check-disk-space.sh: Monitor disk usage
