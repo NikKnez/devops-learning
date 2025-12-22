@@ -8,3 +8,5 @@ Learning Git fundamentals for DevOps workflows.
 - Collaboration workflows
 - CI/CD integration
 - check-disk-space.sh: Monitor disk usage
+## Quick Start Guide
+Run ./server-setup.sh to configure server
