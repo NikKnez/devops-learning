@@ -1,0 +1,964 @@
+# Labs 16-30
+
+
+## Lab 16: Undoing Commited Changes
+
+## Goals
+
+    Learn how to revert changes that have been committed to a local repository.
+
+## Undoing Commits
+
+Sometimes you realized that a change that you have already committed was not correct and you wish to undo that commit. There are several ways of handling that issue, and the way we are going to use in this lab is always safe.
+
+Essentially we will undo the commit by creating a new commit that reverses the unwanted changes.
+
+## Change the file and commit it.
+
+Change the hello.rb file to the following.
+hello.rb
+
+# This is an unwanted but committed change
+name = ARGV.first || "World"
+
+puts "Hello, #{name}!"
+
+Execute:
+
+git add hello.rb
+
+git commit -m "Oops, we didn't want this commit"
+
+## Create a Reverting Commit
+
+To undo a committed change, we need to generate a commit that removes the changes introduced by our unwanted commit.
+Execute:
+
+git revert HEAD
+
+This will pop you into the editor. You can edit the default commit message or leave it as is. Save and close the file. You should see …
+Output:
+
+$ git revert HEAD --no-edit
+[main 8b71812] Revert "Oops, we didn't want this commit"
+ Date: Sat Jun 10 03:49:14 2023 -0400
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Since we were undoing the very last commit we made, we were able to use HEAD as the argument to revert. We can revert any arbitrary commit earlier in history by simply specifying its hash value.
+
+Note: The --no-edit in the output can be ignored. It was necessary to generate the output without opening the editor.
+
+## Check the log
+
+Checking the log shows both the unwanted and the reverting commits in our repository.
+Execute:
+
+git hist
+
+Output:
+
+$ git hist
+* 8b71812 2023-06-10 | Revert "Oops, we didn't want this commit" (HEAD -> main) [Jim Weirich]
+* 146fb71 2023-06-10 | Oops, we didn't want this commit [Jim Weirich]
+* e4e3645 2023-06-10 | Added a comment (tag: v1) [Jim Weirich]
+* a6b268e 2023-06-10 | Added a default value (tag: v1-beta) [Jim Weirich]
+* 174dfab 2023-06-10 | Using ARGV [Jim Weirich]
+* f7c41d3 2023-06-10 | First Commit [Jim Weirich]
+
+This technique will work with any commit (although you may have to resolve conflicts). It is safe to use even on branches that are publicly shared on remote repositories.
+
+## Up Next
+
+Next, let’s look at a technique that can be used to remove the most recent commits from the repository history.
+
+
+## Lab 17: Removing Commits from a Branch
+
+## Goals
+
+    Learn how to remove the most recent commits from a branch
+
+The revert command of the previous section is a powerful command that lets us undo the effects of any commit in the repository. However, both the original commit and the “undoing” commit are visible in the branch history (using the git log command).
+
+Often we make a commit and immediately realize that it was a mistake. It would be nice to have a “take back” command that would allow us to pretend that the incorrect commit never happened. The “take back” command would even prevent the bad commit from showing up the git log history. It would be as if the bad commit never happened.
+
+## The reset command
+
+We’ve already seen the reset command and have used it to set the staging area to be consistent with a given commit (we used the HEAD commit in our previous lab).
+
+When given a commit reference (i.e. a hash, branch or tag name), the reset command will …
+
+    Rewrite the current branch to point to the specified commit
+    Optionally reset the staging area to match the specified commit
+    Optionally reset the working directory to match the specified commit
+
+## Check Our History
+
+Let’s do a quick check of our commit history.
+Execute:
+
+git hist
+
+Output:
+
+$ git hist
+* 8b71812 2023-06-10 | Revert "Oops, we didn't want this commit" (HEAD -> main) [Jim Weirich]
+* 146fb71 2023-06-10 | Oops, we didn't want this commit [Jim Weirich]
+* e4e3645 2023-06-10 | Added a comment (tag: v1) [Jim Weirich]
+* a6b268e 2023-06-10 | Added a default value (tag: v1-beta) [Jim Weirich]
+* 174dfab 2023-06-10 | Using ARGV [Jim Weirich]
+* f7c41d3 2023-06-10 | First Commit [Jim Weirich]
+
+We see that we have an “Oops” commit and a “Revert Oops” commit as the last two commits made in this branch. Let’s remove them using reset.
+
+## First, Mark this Branch
+
+But before we remove the commits, let’s mark the latest commit with a tag so we can find it again.
+Execute:
+
+git tag oops
+
+## Reset to Before Oops
+
+Looking at the log history (above), we see that the commit tagged ‘v1’ is the commit right before the bad commit. Let’s reset the branch to that point. Since that branch is tagged, we can use the tag name in the reset command (if it wasn’t tagged, we could just use the hash value).
+Execute:
+
+git reset --hard v1
+
+git hist
+
+Output:
+
+$ git reset --hard v1
+HEAD is now at e4e3645 Added a comment
+$ git hist
+* e4e3645 2023-06-10 | Added a comment (HEAD -> main, tag: v1) [Jim Weirich]
+* a6b268e 2023-06-10 | Added a default value (tag: v1-beta) [Jim Weirich]
+* 174dfab 2023-06-10 | Using ARGV [Jim Weirich]
+* f7c41d3 2023-06-10 | First Commit [Jim Weirich]
+
+Our main branch now points to the v1 commit and the Oops commit and the Revert Oops commit are no longer in the branch. The --hard parameter indicates that the working directory should be updated to be consistent with the new branch head.
+
+## Nothing is Ever Lost
+
+But what happened to the bad commits? It turns out that the commits are still in the repository. In fact, we can still reference them. Remember that at the beginning of this lab we tagged the reverting commit with the tag “oops”. Let’s look at all the commits.
+Execute:
+
+git hist --all
+
+Output:
+
+$ git hist --all
+* 8b71812 2023-06-10 | Revert "Oops, we didn't want this commit" (tag: oops) [Jim Weirich]
+* 146fb71 2023-06-10 | Oops, we didn't want this commit [Jim Weirich]
+* e4e3645 2023-06-10 | Added a comment (HEAD -> main, tag: v1) [Jim Weirich]
+* a6b268e 2023-06-10 | Added a default value (tag: v1-beta) [Jim Weirich]
+* 174dfab 2023-06-10 | Using ARGV [Jim Weirich]
+* f7c41d3 2023-06-10 | First Commit [Jim Weirich]
+
+Here we see that the bad commits haven’t disappeared. They are still in the repository. It’s just that they are no longer listed in the main branch. If we hadn’t tagged them, they would still be in the repository, but there would be no way to reference them other than using their hash names. Commits that are unreferenced remain in the repository until the system runs the garbage collection software.
+
+## Dangers of Reset
+
+Resets on local branches are generally safe. Any “accidents” can usually be recovered from by just resetting again with the desired commit.
+
+However, if the branch is shared on remote repositories, resetting can confuse other users sharing the branch.
+
+
+## Lab 18: Remove the oops tag
+
+## Goals
+
+    Remove the oops tag (housekeeping)
+
+## Removing tag oops
+
+The oops tag has served its purpose. Let’s remove it and allow the commits it referenced to be garbage collected.
+Execute:
+
+git tag -d oops
+
+git hist --all
+
+Output:
+
+$ git tag -d oops
+Deleted tag 'oops' (was 8b71812)
+$ git hist --all
+* e4e3645 2023-06-10 | Added a comment (HEAD -> main, tag: v1) [Jim Weirich]
+* a6b268e 2023-06-10 | Added a default value (tag: v1-beta) [Jim Weirich]
+* 174dfab 2023-06-10 | Using ARGV [Jim Weirich]
+* f7c41d3 2023-06-10 | First Commit [Jim Weirich]
+
+The oops tag is no longer listed in the repository.
+
+
+## Lab 19: Amending Commits
+
+## Goals
+
+    Learn how to amend an existing commit
+
+## Change the program then commit
+
+Add an author comment to the program.
+hello.rb
+
+# Default is World
+# Author: Jim Weirich
+name = ARGV.first || "World"
+
+puts "Hello, #{name}!"
+
+Execute:
+
+git add hello.rb
+
+git commit -m "Add an author comment"
+
+## Oops, Should have an Email
+
+After you make the commit, you realize that any good author comment should have an email included. Update the hello program to include an email.
+hello.rb
+
+# Default is World
+# Author: Jim Weirich (jim@somewhere.com)
+name = ARGV.first || "World"
+
+puts "Hello, #{name}!"
+
+## Amend the Previous Commit
+
+We really don’t want a separate commit for just the email. Let’s amend the previous commit to include the email change.
+Execute:
+
+git add hello.rb
+
+git commit --amend -m "Add an author/email comment"
+
+Output:
+
+$ git add hello.rb
+$ git commit --amend -m "Add an author/email comment"
+[main 186488e] Add an author/email comment
+ Date: Sat Jun 10 03:49:14 2023 -0400
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+## Review the History
+Execute:
+
+git hist
+
+Output:
+
+$ git hist
+* 186488e 2023-06-10 | Add an author/email comment (HEAD -> main) [Jim Weirich]
+* e4e3645 2023-06-10 | Added a comment (tag: v1) [Jim Weirich]
+* a6b268e 2023-06-10 | Added a default value (tag: v1-beta) [Jim Weirich]
+* 174dfab 2023-06-10 | Using ARGV [Jim Weirich]
+* f7c41d3 2023-06-10 | First Commit [Jim Weirich]
+
+We can see the original “author” commit is now gone, and it is replaced by the “author/email” commit. You can achieve the same effect by resetting the branch back one commit and then recommitting the new changes.
+
+
+## Lab 20: Moving Files
+
+## Goals
+
+    Learn how to move a file within a repository.
+
+## Move the hello.rb file into a lib directory.
+
+We are now going to build up the structure of our little repository. Let’s move the program into a lib directory.
+Execute:
+
+mkdir lib
+
+git mv hello.rb lib
+
+git status
+
+Output:
+
+$ mkdir lib
+$ git mv hello.rb lib
+$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	renamed:    hello.rb -> lib/hello.rb
+
+By using git to do the move, we inform git of 2 things
+
+    That the file hello.rb has been deleted.
+    The file lib/hello.rb has been created.
+
+Both of these bits of information are immediately staged and ready to be committed. The git status command reports that the file has been moved.
+
+## Another way of moving files
+
+One of the nice things about git is that you can forget about source control until the point you are ready to start committing code. What would happen if we used the operating system command to move the file instead of the git command?
+
+It turns out the following set of commands is identical to what we just did. It’s a bit more work, but the result is the same.
+
+We could have done:
+
+mkdir lib
+
+mv hello.rb lib
+
+git add lib/hello.rb
+
+git rm hello.rb
+
+## Commit the new directory
+
+Let’s commit this move.
+Execute:
+
+git commit -m "Moved hello.rb to lib"
+
+
+## Lab 21: More Structure
+
+
+## Goals
+
+    Add another file to our repository
+
+## Now add a Rakefile
+
+This lab assumes you have installed rake. Please do that before continuing. Check for your specific Operating System. Otherwise execute:
+Execute:
+
+gem install rake
+
+Let’s add a Rakefile to our repository. The following one will do nicely.
+Rakefile
+
+#!/usr/bin/ruby -wKU
+
+task :default => :run
+
+task :run do
+  require './lib/hello'
+end
+
+Add and commit the change.
+Execute:
+
+git add Rakefile
+
+git commit -m "Added a Rakefile."
+
+You should be able to use Rake to run your hello program now.
+Execute:
+
+rake
+
+Output:
+
+$ rake
+Hello, World!
+
+
+## Lab 22: Git Internals: The .git directory
+
+## Goals
+
+    Learn about the structure of the .git directory
+
+## The .git Directory
+
+Time to do some exploring. First, from the root of your project directory…
+Execute:
+
+ls -C .git
+
+Output:
+
+$ ls -C .git
+COMMIT_EDITMSG	config		index		objects
+HEAD		description	info		packed-refs
+ORIG_HEAD	hooks		logs		refs
+
+This is the magic directory where all the git “stuff” is stored. Let’s peek in the objects directory.
+
+## The Object Store
+Execute:
+
+ls -C .git/objects
+
+Output:
+
+$ ls -C .git/objects
+09	17	24	43	6b	97	af	c4	e7	pack
+11	18	27	59	78	9c	b0	cd	f7
+14	22	28	69	8b	a6	b5	e4	info
+
+You should see a bunch of directories with 2 letter names. The directory names are the first two letters of the sha1 hash of the object stored in git.
+
+## Deeper into the Object Store
+Execute:
+
+ls -C .git/objects/<dir>
+
+Output:
+
+$ ls -C .git/objects/09
+6b74c56bfc6b40e754fc0725b8c70b2038b91e	9fb6f9d3a104feb32fcac22354c4d0e8a182c1
+
+Look in one of the two-letter directories. You should see some files with 38-character names. These are the files that contain the objects stored in git. These files are compressed and encoded, so looking at their contents directly won’t be very helpful, but we will take a closer look in a bit.
+
+## Config File
+Execute:
+
+cat .git/config
+
+Output:
+
+$ cat .git/config
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+[user]
+	name = Jim Weirich
+	email = jim (at) edgecase.com
+
+This is a project-specific configuration file. Config entries in here will override the config entries in the .gitconfig file in your home directory, at least for this project.
+
+## Branches and Tags
+Execute:
+
+ls .git/refs
+
+ls .git/refs/heads
+
+ls .git/refs/tags
+
+cat .git/refs/tags/v1
+
+Output:
+
+$ ls .git/refs
+heads
+tags
+$ ls .git/refs/heads
+main
+$ ls .git/refs/tags
+v1
+v1-beta
+$ cat .git/refs/tags/v1
+e4e3645637546103e72f0deb9abdd22dd256601e
+
+You should recognize the files in the tags subdirectory. Each file corresponds to a tag you created with the git tag command earlier. Its content is just the hash of the commit tied to the tag.
+
+The heads directory is similar, but is used for branches rather than tags. We only have one branch at the moment, so all you will see is main in this directory.
+
+## The HEAD File
+Execute:
+
+cat .git/HEAD
+
+Output:
+
+$ cat .git/HEAD
+ref: refs/heads/main
+
+The HEAD file contains a reference to the current branch. It should be a reference to main at this point.
+
+
+## Lab 23: Git Internals: Working directly with Git Objects
+
+## Goals
+
+    Explore the structure of the object store
+    Learn how to use the SHA1 hashes to find content in the repository
+
+Now let’s use some tools to probe git objects directly.
+
+## Finding the Latest Commit
+Execute:
+
+git hist --max-count=1
+
+This should show the latest commit made in the repository. The SHA1 hash on your system is probably different from what is on mine, but you should see something like this.
+Output:
+
+$ git hist --max-count=1
+* cdceefa 2023-06-10 | Added a Rakefile. (HEAD -> main) [Jim Weirich]
+
+## Dumping the Latest Commit
+
+Using the SHA1 hash from the commit listed above …
+Execute:
+
+git cat-file -t <hash>
+
+git cat-file -p <hash>
+
+Here’s my output …
+Output:
+
+$ git cat-file -t cdceefa
+commit
+$ git cat-file -p cdceefa
+tree 096b74c56bfc6b40e754fc0725b8c70b2038b91e
+parent 22273f2a02983d905df7b4154b00447934034338
+author Jim Weirich <jim (at) edgecase.com> 1686383357 -0400
+committer Jim Weirich <jim (at) edgecase.com> 1686383357 -0400
+
+Added a Rakefile.
+
+NOTE: If you defined the ‘type’ and ‘dump’ aliases from the aliases lab, then you can type git type and git dump rather than the longer cat-file commands (which I never remember).
+
+This is the dump of the commit object that is at the head of the main branch. It looks a lot like the commit object from the presentation earlier.
+
+## Finding the Tree
+
+We can dump the directory tree referenced in the commit. This should be a description of the (top level) files in our project (for that commit). Use the SHA1 hash from the “tree” line listed above.
+Execute:
+
+git cat-file -p <treehash>
+
+Here’s what my tree looks like…
+Output:
+
+$ git cat-file -p 096b74c
+100644 blob 28e0e9d6ea7e25f35ec64a43f569b550e8386f90	Rakefile
+040000 tree e46f374f5b36c6f02fb3e9e922b79044f754d795	lib
+
+Yep, I see the Rakefile and the lib directory.
+
+## Dumping the lib directory
+Execute:
+
+git cat-file -p <libhash>
+
+Output:
+
+$ git cat-file -p e46f374
+100644 blob c45f26b6fdc7db6ba779fc4c385d9d24fc12cf72	hello.rb
+
+There’s the hello.rb file.
+
+## Dumping the hello.rb file
+Execute:
+
+git cat-file -p <rbhash>
+
+Output:
+
+$ git cat-file -p c45f26b
+# Default is World
+# Author: Jim Weirich (jim@somewhere.com)
+name = ARGV.first || "World"
+
+puts "Hello, #{name}!"
+
+There you have it. We’ve dumped commit objects, tree objects and blob objects directly from the git repository. That’s all there is to it, blobs, trees and commits.
+
+## Explore On You Own
+
+Explore the git repo manually on your own. See if you can find the original hello.rb file from the very first commit by manually following the SHA1 hash references starting in the latest commit.
+
+
+## Lab 24: Creating a Branch
+
+## Goals
+
+    Learn how to create a local branch in a repository
+
+It’s time to do a major rewrite of the hello world functionality. Since this might take awhile, you’ll want to put these changes into a separate branch to isolate them from changes in main.
+
+## Create a Branch
+
+Let’s call our new branch ‘greet’.
+Execute:
+
+git checkout -b greet
+
+git status
+
+NOTE: git checkout -b <branchname> is a shortcut for git branch <branchname> followed by a git checkout <branchname>.
+
+Notice that the git status command reports that you are on the ‘greet’ branch.
+
+## Changes for Greet: Add a Greeter class.
+lib/greeter.rb
+
+class Greeter
+  def initialize(who)
+    @who = who
+  end
+  def greet
+    "Hello, #{@who}"
+  end
+end
+
+Execute:
+
+git add lib/greeter.rb
+
+git commit -m "Added greeter class"
+
+## Changes for Greet: Modify the main program
+
+Update the hello.rb file to use greeter
+lib/hello.rb
+
+require 'greeter'
+
+# Default is World
+name = ARGV.first || "World"
+
+greeter = Greeter.new(name)
+puts greeter.greet
+
+Execute:
+
+git add lib/hello.rb
+
+git commit -m "Hello uses Greeter"
+
+## Changes for Greet: Update the Rakefile
+
+Update the Rakefile to use an external ruby process
+Rakefile
+
+#!/usr/bin/ruby -wKU
+
+task :default => :run
+
+task :run do
+  ruby '-Ilib', 'lib/hello.rb'
+end
+
+Execute:
+
+git add Rakefile
+
+git commit -m "Updated Rakefile"
+
+## Up Next
+
+We now have a new branch called greet with 3 new commits on it. Next we will learn how to navigate and switch between branches.
+
+
+## Lab 25: Navigating Branches
+
+## Goals
+
+    Learn how to navigate between the branches of a repository
+
+You now have two branches in your project:
+Execute:
+
+git hist --all
+
+Output:
+
+$ git hist --all
+* c1a7120 2023-06-10 | Updated Rakefile (HEAD -> greet) [Jim Weirich]
+* 959a7cb 2023-06-10 | Hello uses Greeter [Jim Weirich]
+* cab1837 2023-06-10 | Added greeter class [Jim Weirich]
+* cdceefa 2023-06-10 | Added a Rakefile. (main) [Jim Weirich]
+* 22273f2 2023-06-10 | Moved hello.rb to lib [Jim Weirich]
+* 186488e 2023-06-10 | Add an author/email comment [Jim Weirich]
+* e4e3645 2023-06-10 | Added a comment (tag: v1) [Jim Weirich]
+* a6b268e 2023-06-10 | Added a default value (tag: v1-beta) [Jim Weirich]
+* 174dfab 2023-06-10 | Using ARGV [Jim Weirich]
+* f7c41d3 2023-06-10 | First Commit [Jim Weirich]
+
+## Switch to the Main Branch
+
+Just use the git checkout command to switch between branches.
+Execute:
+
+git checkout main
+
+cat lib/hello.rb
+
+Output:
+
+$ git checkout main
+Switched to branch 'main'
+$ cat lib/hello.rb
+# Default is World
+# Author: Jim Weirich (jim@somewhere.com)
+name = ARGV.first || "World"
+
+puts "Hello, #{name}!"
+
+You are now on the main branch. You can tell because the hello.rb file doesn’t use the Greeter class.
+
+## Switch Back to the Greet Branch.
+Execute:
+
+git checkout greet
+
+cat lib/hello.rb
+
+Output:
+
+$ git checkout greet
+Switched to branch 'greet'
+$ cat lib/hello.rb
+require 'greeter'
+
+# Default is World
+name = ARGV.first || "World"
+
+greeter = Greeter.new(name)
+puts greeter.greet
+
+The contents of the lib/hello.rb confirms we are back on the greet branch.
+
+
+## Lab 26: Changes in Main
+
+## Goals
+
+    Learning how to deal with multiple branches with different (and possibly conflicting) changes.
+
+While you were changing the greet branch, someone else decided to update the main branch. They added a README.
+
+## Switch to the main branch.
+Execute:
+
+git checkout main
+
+## Create the README.
+README
+
+This is the Hello World example from the git tutorial.
+
+## Commit the README to main.
+Execute:
+
+git add README
+
+git commit -m "Added README"
+
+
+## Lab 27: Viewing Diverging Branches
+
+## Goals
+
+    Learn how to view diverging branches in a repository.
+
+## View the Current Branches
+
+We now have two diverging branches in the repository. Use the following log command to view the branches and how they diverge.
+Execute:
+
+git hist --all
+
+Output:
+
+$ git hist --all
+* 976950b 2023-06-10 | Added README (HEAD -> main) [Jim Weirich]
+| * c1a7120 2023-06-10 | Updated Rakefile (greet) [Jim Weirich]
+| * 959a7cb 2023-06-10 | Hello uses Greeter [Jim Weirich]
+| * cab1837 2023-06-10 | Added greeter class [Jim Weirich]
+|/  
+* cdceefa 2023-06-10 | Added a Rakefile. [Jim Weirich]
+* 22273f2 2023-06-10 | Moved hello.rb to lib [Jim Weirich]
+* 186488e 2023-06-10 | Add an author/email comment [Jim Weirich]
+* e4e3645 2023-06-10 | Added a comment (tag: v1) [Jim Weirich]
+* a6b268e 2023-06-10 | Added a default value (tag: v1-beta) [Jim Weirich]
+* 174dfab 2023-06-10 | Using ARGV [Jim Weirich]
+* f7c41d3 2023-06-10 | First Commit [Jim Weirich]
+
+Here is our first chance to see the --graph option on git hist in action. Adding the --graph option to git log causes it to draw the commit tree using simple ASCII characters. We can see both branches (greet and main), and that the main branch is the current HEAD. The common ancestor to both branches is the “Added a Rakefile” branch.
+
+The --all flag makes sure that we see all the branches. The default is to show only the current branch.
+
+
+## Lab 28: Merging
+
+## Goals
+
+    Learn how to merge two diverging branches to bring the changes back into a single branch.
+
+## Merge the branches
+
+Merging brings the changes in two branches together. Let’s go back to the greet branch and merge main onto greet.
+Execute:
+
+git checkout greet
+
+git merge main
+
+git hist --all
+
+Output:
+
+$ git checkout greet
+Switched to branch 'greet'
+$ git merge main
+Merge made by the 'recursive' strategy.
+ README | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README
+$ git hist --all
+*   82a2988 2023-06-10 | Merge branch 'main' into greet (HEAD -> greet) [Jim Weirich]
+|\  
+| * 976950b 2023-06-10 | Added README (main) [Jim Weirich]
+* | c1a7120 2023-06-10 | Updated Rakefile [Jim Weirich]
+* | 959a7cb 2023-06-10 | Hello uses Greeter [Jim Weirich]
+* | cab1837 2023-06-10 | Added greeter class [Jim Weirich]
+|/  
+* cdceefa 2023-06-10 | Added a Rakefile. [Jim Weirich]
+* 22273f2 2023-06-10 | Moved hello.rb to lib [Jim Weirich]
+* 186488e 2023-06-10 | Add an author/email comment [Jim Weirich]
+* e4e3645 2023-06-10 | Added a comment (tag: v1) [Jim Weirich]
+* a6b268e 2023-06-10 | Added a default value (tag: v1-beta) [Jim Weirich]
+* 174dfab 2023-06-10 | Using ARGV [Jim Weirich]
+* f7c41d3 2023-06-10 | First Commit [Jim Weirich]
+
+By merging main into your greet branch periodically, you can pick up any changes to main and keep your changes in greet compatible with changes in the mainline.
+
+However, it does produce ugly commit graphs. Later we will look at the option of rebasing rather than merging.
+## Up Next
+
+But first, what if the changes in main conflict with the changes in greet?
+
+
+## Lab 29: Creating a Conflict
+
+## Goals
+
+    Create a conflicting change in the main branch.
+
+## Switch back to main and create a conflict
+
+Switch back to the main branch and make this change:
+Execute:
+
+git checkout main
+
+lib/hello.rb
+
+puts "What's your name"
+my_name = gets.strip
+
+puts "Hello, #{my_name}!"
+
+Execute:
+
+git add lib/hello.rb
+
+git commit -m "Made interactive"
+
+## View the Branches
+Execute:
+
+git hist --all
+
+Output:
+
+$ git hist --all
+*   82a2988 2023-06-10 | Merge branch 'main' into greet (greet) [Jim Weirich]
+|\  
+* | c1a7120 2023-06-10 | Updated Rakefile [Jim Weirich]
+* | 959a7cb 2023-06-10 | Hello uses Greeter [Jim Weirich]
+* | cab1837 2023-06-10 | Added greeter class [Jim Weirich]
+| | * 3787562 2023-06-10 | Made interactive (HEAD -> main) [Jim Weirich]
+| |/  
+| * 976950b 2023-06-10 | Added README [Jim Weirich]
+|/  
+* cdceefa 2023-06-10 | Added a Rakefile. [Jim Weirich]
+* 22273f2 2023-06-10 | Moved hello.rb to lib [Jim Weirich]
+* 186488e 2023-06-10 | Add an author/email comment [Jim Weirich]
+* e4e3645 2023-06-10 | Added a comment (tag: v1) [Jim Weirich]
+* a6b268e 2023-06-10 | Added a default value (tag: v1-beta) [Jim Weirich]
+* 174dfab 2023-06-10 | Using ARGV [Jim Weirich]
+* f7c41d3 2023-06-10 | First Commit [Jim Weirich]
+
+main at commit “Added README” has been merged to the greet branch, but there is now an additional commit on main that has not been merged back to greet.
+
+## Up Next
+
+The latest change in main conflicts with some existing changes in greet. Next we will resolve those changes.
+
+
+## Lab 30: Resolving Conflicts
+
+## Goals
+
+    Learn how to handle conflicts during a merge
+
+## Merge main to greet
+
+Now go back to the greet branch and try to merge the new main.
+Execute:
+
+git checkout greet
+
+git merge main
+
+Output:
+
+$ git checkout greet
+Switched to branch 'greet'
+$ git merge main
+Auto-merging lib/hello.rb
+CONFLICT (content): Merge conflict in lib/hello.rb
+Automatic merge failed; fix conflicts and then commit the result.
+
+If you open lib/hello.rb, you will see:
+lib/hello.rb
+
+<<<<<<< HEAD
+require 'greeter'
+
+# Default is World
+name = ARGV.first || "World"
+
+greeter = Greeter.new(name)
+puts greeter.greet
+=======
+# Default is World
+
+puts "What's your name"
+my_name = gets.strip
+
+puts "Hello, #{my_name}!"
+>>>>>>> main
+
+The first section is the version on the head of the current branch (greet). The second section is the version on the main branch.
+
+## Fix the Conflict
+
+You need to manually resolve the conflict. Modify lib/hello.rb to be the following.
+lib/hello.rb
+
+require 'greeter'
+
+puts "What's your name"
+my_name = gets.strip
+
+greeter = Greeter.new(my_name)
+puts greeter.greet
+
+## Commit the Conflict Resolution
+Execute:
+
+git add lib/hello.rb
+
+git commit -m "Merged main fixed conflict."
+
+Output:
+
+$ git add lib/hello.rb
+$ git commit -m "Merged main fixed conflict."
+[greet 73db54b] Merged main fixed conflict.
+
+## Advanced Merging
+
+git doesn’t provide any graphical merge tools, but it will gladly work with any third party merge tool you wish to use. See http://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#External-Merge-and-Diff-Tools for a description of using the Perforce merge tool with git.
