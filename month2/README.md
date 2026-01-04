@@ -4,14 +4,14 @@
 
 ### What to learn:
 
--       IP addresses (IPv4, IPv6), subnets, CIDR notation
--       DNS (how domain names work)
+- IP addresses (IPv4, IPv6), subnets, CIDR notation
+- DNS (how domain names work)
 -	Ports and protocols (HTTP/80, HTTPS/443, SSH/22, etc.)
 -	HTTP/HTTPS basics (requests, responses, headers, status codes)
 -	Firewalls and security groups concepts
 -	Load balancers (concept and purpose)
 -	SSH tunneling and port forwarding
--       Basic troubleshooting: ping, curl, wget, netstat, traceroute, nslookup, dig
+- Basic troubleshooting: ping, curl, wget, netstat, traceroute, nslookup, dig
 
 
 ### Free Resources:
@@ -38,7 +38,7 @@
 -	Working with JSON (common in APIs and configs)
 -	Making HTTP requests (requests library)
 -	Basic error handling (try/except)
--       Command-line arguments (sys.argv)
+- Command-line arguments (sys.argv)
 
 
 ### Free Resources:
@@ -53,8 +53,8 @@
 -	Backup files automatically
 -	Parse log files and extract errors
 -	Make API calls and process JSON responses
--       Automate file organization
--       Send email notifications (using smtplib)
+- Automate file organization
+- Send email notifications (using smtplib)
 
 
 ## MONTH 2 CHECKLIST:
