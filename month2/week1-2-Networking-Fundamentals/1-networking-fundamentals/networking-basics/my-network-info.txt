@@ -1,0 +1,50 @@
+===================================
+Network Information Report
+===================================
+
+1. IP Address Information:
+    inet 127.0.0.1/8 scope host lo
+    link/ether 08:00:27:16:a7:a7 brd ff:ff:ff:ff:ff:ff
+    inet 10.0.2.15/24 brd 10.0.2.255 scope global dynamic noprefixroute enp0s3
+    link/ether 92:cd:4f:50:71:29 brd ff:ff:ff:ff:ff:ff
+    inet 172.18.0.1/16 brd 172.18.255.255 scope global br-20902f1d827d
+    link/ether aa:16:26:59:44:c7 brd ff:ff:ff:ff:ff:ff
+    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
+    link/ether 96:c4:eb:c5:45:67 brd ff:ff:ff:ff:ff:ff
+    inet 172.19.0.1/16 brd 172.19.255.255 scope global br-4093538c5136
+
+2. Routing Table:
+default via 10.0.2.2 dev enp0s3 proto dhcp src 10.0.2.15 metric 100 
+10.0.2.0/24 dev enp0s3 proto kernel scope link src 10.0.2.15 metric 100 
+172.17.0.0/16 dev docker0 proto kernel scope link src 172.17.0.1 linkdown 
+172.18.0.0/16 dev br-20902f1d827d proto kernel scope link src 172.18.0.1 linkdown 
+172.19.0.0/16 dev br-4093538c5136 proto kernel scope link src 172.19.0.1 linkdown 
+
+3. Default Gateway:
+default via 10.0.2.2 dev enp0s3 proto dhcp src 10.0.2.15 metric 100 
+
+4. DNS Servers:
+nameserver 127.0.0.53
+
+5. Active Network Connections:
+Netid State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess
+udp   UNCONN 0      0            0.0.0.0:5353       0.0.0.0:*          
+udp   UNCONN 0      0         127.0.0.54:53         0.0.0.0:*          
+udp   UNCONN 0      0      127.0.0.53%lo:53         0.0.0.0:*          
+udp   UNCONN 0      0            0.0.0.0:33486      0.0.0.0:*          
+udp   UNCONN 0      0               [::]:45636         [::]:*          
+udp   UNCONN 0      0               [::]:5353          [::]:*          
+tcp   LISTEN 0      4096       127.0.0.1:631        0.0.0.0:*          
+tcp   LISTEN 0      4096   127.0.0.53%lo:53         0.0.0.0:*          
+tcp   LISTEN 0      4096      127.0.0.54:53         0.0.0.0:*          
+
+6. Network Interfaces:
+br-20902f1d827d
+br-4093538c5136
+docker0
+enp0s3
+lo
+
+===================================
+Report Complete
+===================================
