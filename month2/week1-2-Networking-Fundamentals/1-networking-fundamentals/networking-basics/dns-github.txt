@@ -1,0 +1,86 @@
+===================================
+DNS Lookup for: github.com
+===================================
+
+1. Simple DNS lookup (nslookup):
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+Name:	github.com
+Address: 140.82.121.4
+
+
+2. Detailed DNS info (dig):
+
+; <<>> DiG 9.18.39-0ubuntu0.24.04.2-Ubuntu <<>> github.com
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 8579
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 8, ADDITIONAL: 11
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;github.com.			IN	A
+
+;; ANSWER SECTION:
+github.com.		6	IN	A	140.82.121.4
+
+;; AUTHORITY SECTION:
+github.com.		6	IN	NS	dns2.p08.nsone.net.
+github.com.		6	IN	NS	ns-1707.awsdns-21.co.uk.
+github.com.		6	IN	NS	ns-520.awsdns-01.net.
+github.com.		6	IN	NS	dns1.p08.nsone.net.
+github.com.		6	IN	NS	dns3.p08.nsone.net.
+github.com.		6	IN	NS	ns-1283.awsdns-32.org.
+github.com.		6	IN	NS	ns-421.awsdns-52.com.
+github.com.		6	IN	NS	dns4.p08.nsone.net.
+
+;; ADDITIONAL SECTION:
+dns4.p08.nsone.net.	6	IN	A	198.51.45.72
+dns1.p08.nsone.net.	6	IN	A	198.51.44.8
+dns4.p08.nsone.net.	6	IN	AAAA	2a00:edc0:6259:7:8::4
+ns-421.awsdns-52.com.	6	IN	A	205.251.193.165
+dns3.p08.nsone.net.	6	IN	A	198.51.44.72
+ns-520.awsdns-01.net.	6	IN	A	205.251.194.8
+dns2.p08.nsone.net.	6	IN	AAAA	2a00:edc0:6259:7:8::2
+dns1.p08.nsone.net.	6	IN	AAAA	2620:4d:4000:6259:7:8:0:1
+dns2.p08.nsone.net.	6	IN	A	198.51.45.8
+dns3.p08.nsone.net.	6	IN	AAAA	2620:4d:4000:6259:7:8:0:3
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53) (UDP)
+;; WHEN: Mon Jan 05 17:31:56 CET 2026
+;; MSG SIZE  rcvd: 486
+
+
+3. Short answer only:
+140.82.121.4
+
+4. Query specific record type:
+A record:
+140.82.121.4
+MX record:
+1 aspmx.l.google.com.
+10 alt4.aspmx.l.google.com.
+5 alt1.aspmx.l.google.com.
+10 alt3.aspmx.l.google.com.
+5 alt2.aspmx.l.google.com.
+NS record:
+dns4.p08.nsone.net.
+dns3.p08.nsone.net.
+ns-421.awsdns-52.com.
+ns-1283.awsdns-32.org.
+ns-520.awsdns-01.net.
+ns-1707.awsdns-21.co.uk.
+dns1.p08.nsone.net.
+dns2.p08.nsone.net.
+
+5. Reverse DNS lookup:
+IP: 140.82.121.4
+lb-140-82-121-4-fra.github.com.
+
+6. Trace DNS path:
+
+===================================

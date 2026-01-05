@@ -1,0 +1,90 @@
+===================================
+DNS Lookup for: amazon.com
+===================================
+
+1. Simple DNS lookup (nslookup):
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+Name:	amazon.com
+Address: 98.82.161.185
+Name:	amazon.com
+Address: 98.87.170.74
+Name:	amazon.com
+Address: 98.87.170.71
+
+
+2. Detailed DNS info (dig):
+
+; <<>> DiG 9.18.39-0ubuntu0.24.04.2-Ubuntu <<>> amazon.com
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 15079
+;; flags: qr rd ra; QUERY: 1, ANSWER: 3, AUTHORITY: 8, ADDITIONAL: 9
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;amazon.com.			IN	A
+
+;; ANSWER SECTION:
+amazon.com.		250	IN	A	98.87.170.71
+amazon.com.		250	IN	A	98.87.170.74
+amazon.com.		250	IN	A	98.82.161.185
+
+;; AUTHORITY SECTION:
+amazon.com.		250	IN	NS	ns2.amzndns.com.
+amazon.com.		250	IN	NS	ns2.amzndns.net.
+amazon.com.		250	IN	NS	ns1.amzndns.net.
+amazon.com.		250	IN	NS	ns1.amzndns.co.uk.
+amazon.com.		250	IN	NS	ns1.amzndns.com.
+amazon.com.		250	IN	NS	ns2.amzndns.org.
+amazon.com.		250	IN	NS	ns2.amzndns.co.uk.
+amazon.com.		250	IN	NS	ns1.amzndns.org.
+
+;; ADDITIONAL SECTION:
+ns2.amzndns.org.	250	IN	AAAA	2610:a1:31d1::53
+ns1.amzndns.com.	250	IN	A	156.154.64.10
+ns1.amzndns.com.	250	IN	AAAA	2001:502:f3ff::10
+ns2.amzndns.com.	250	IN	AAAA	2610:a1:1016::10
+ns1.amzndns.org.	250	IN	AAAA	2610:a1:1015::10
+ns2.amzndns.com.	250	IN	A	156.154.68.10
+ns1.amzndns.org.	250	IN	A	156.154.66.10
+ns2.amzndns.org.	250	IN	A	156.154.150.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53) (UDP)
+;; WHEN: Mon Jan 05 17:32:02 CET 2026
+;; MSG SIZE  rcvd: 450
+
+
+3. Short answer only:
+98.87.170.74
+98.87.170.71
+98.82.161.185
+
+4. Query specific record type:
+A record:
+98.87.170.74
+98.87.170.71
+98.82.161.185
+MX record:
+5 amazon-smtp.amazon.com.
+NS record:
+ns1.amzndns.net.
+ns2.amzndns.net.
+ns1.amzndns.com.
+ns1.amzndns.org.
+ns2.amzndns.co.uk.
+ns2.amzndns.com.
+ns2.amzndns.org.
+ns1.amzndns.co.uk.
+
+5. Reverse DNS lookup:
+IP: 98.87.170.74
+ec2-98-87-170-74.compute-1.amazonaws.com.
+
+6. Trace DNS path:
+
+===================================
