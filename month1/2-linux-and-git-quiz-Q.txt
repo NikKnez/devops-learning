@@ -1,0 +1,47 @@
+# Linux & Git Quiz (40 Questions)
+
+
+## Linux Commands (20 questions)
+1. What command shows current directory?
+2. How do you make a script executable?
+3. What does `chmod 755` mean?
+4. How do you find all `.log` files in `/var/log`?
+5. What's the difference between `kill` and `kill -9`?
+6. How do you check which process is using port 3000?
+7. What command shows running processes?
+8. How do you search for "error" in a file?
+9. What does `df -h` show?
+10. How do you check if a service is running?
+11. What's the difference between `>` and `>>`?
+12. How do you find files modified today?
+13. What does `|` (pipe) do?
+14. How do you create a symbolic link?
+15. What's the difference between absolute and relative paths?
+16. How do you view last 20 lines of a file?
+17. What does `sudo` do?
+18. How do you check disk usage of a directory?
+19. What's the purpose of `/etc/hosts`?
+20. How do you add a user to a group?
+
+
+## Git Commands (20 questions)
+21. What's the difference between `git pull` and `git fetch`?
+22. How do you undo the last commit (keep changes)?
+23. What does `git stash` do?
+24. How do you create and switch to a new branch in one command?
+25. What's the difference between `merge` and `rebase`?
+26. How do you see commit history?
+27. What does `git cherry-pick` do?
+28. How do you delete a remote branch?
+29. What's the purpose of `.gitignore`?
+30. How do you see what changed in a commit?
+31. What does `git reset --hard HEAD~1` do?
+32. How do you rename a branch?
+33. What's the difference between staged and unstaged?
+34. How do you amend the last commit message?
+35. What does `origin` refer to?
+36. How do you revert a commit that's already pushed?
+37. What's a merge conflict and how do you resolve it?
+38. How do you see which files changed?
+39. What does `HEAD` mean in Git?
+40. How do you squash commits?

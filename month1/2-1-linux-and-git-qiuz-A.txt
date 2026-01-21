@@ -1,0 +1,44 @@
+# Linux & Git Answers
+
+
+1.  pwd
+2.  chmod +x script.sh
+3.  Owner: rwx (7), Group: r-x (5), Others: r-x (5)
+4.  find /var/log -name "*.log"
+5.  kill is graceful, kill -9 forces immediate termination
+6.  lsof -i :3000 or ss -tulpn | grep 3000
+7.  ps aux or top
+8.  grep "error" filename
+9.  Disk space usage in human-readable format
+10. systemctl status servicename
+11. overwrites, >> appends
+12. find /path -type f -mtime 0
+13. Passes output of one command as input to another
+14. ln -s /path/to/file linkname
+15. Absolute starts from /, relative from current directory
+16. tail -20 filename
+17. Execute command as superuser
+18. du -sh /directory
+19. Maps hostnames to IP addresses locally
+20. usermod -aG groupname username
+21. pull = fetch + merge, fetch only downloads
+22. git reset --soft HEAD~1
+23. Temporarily saves uncommitted changes
+24. git checkout -b branchname
+25. Merge creates merge commit, rebase replays commits
+26. git log
+27. Applies specific commit to current branch
+28. git push origin --delete branchname
+29. Specifies files Git should ignore
+30. git show commitid
+31. Deletes last commit and all changes (DANGEROUS)
+32. git branch -m oldname newname
+33. Staged = ready to commit, unstaged = modified but not added
+34. git commit --amend
+35. Default name for remote repository
+36. git revert commitid
+37. When two branches modify same lines; resolve manually
+38. git status or git diff
+39. Pointer to current commit/branch
+40. Combine multiple commits into one
+

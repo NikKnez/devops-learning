@@ -1,0 +1,242 @@
+# Month 1: Linux and Git - Practice Tasks & Quiz
+
+
+
+# Linux Fundamentals - Practice Tasks
+
+
+## Task 1: User & Permission Management
+
+# Scenario: New developer joining team, needs proper access
+
+# Create user
+sudo useradd -m -s /bin/bash developer
+
+# Create project directory
+sudo mkdir -p /var/www/project
+
+# Set ownership and perimissions
+sudo chown -R developer:www-data /var/www/project
+sudo chmod 775 /var/www/project
+
+# Add your user to www-data group
+sudo usermod -aG www-data $(whoami)
+
+# Verify
+ls -la /var/www/project
+groups developer
+
+
+## Task 2: Process Management  
+
+# Find process using high CPU
+top
+# Press 'P' to sort by CPU
+
+# Find which process is using port 8080
+sudo lsof -i :8080
+
+# Kill Process gracefully
+kill <PID>
+
+# Force kill if needed
+kill -9 <PID>
+
+# Find all python processes
+ps aux | grep python
+
+# Kill all python processes (CAREFUL!)
+pkill python
+
+
+## Task 3: Log Analysis
+
+# Find error logs from today
+sudo grep -i "error" /var/log/syslog | tail -50
+
+# Count how many errors
+sudo grep -i "error" /var/log/syslog | wc -l
+
+# Find failed login attempts
+sudo grep "Failed password" /var/log/auth.log
+
+# Watch logs in real-time
+sudo tail -f /var/log/syslog
+
+
+## Task 4: Disk & File Operations
+
+# Check disk space
+df -h
+
+# Find large files (over 100MB)
+sudo find / type f -size +100M 2>/dev/null
+
+# Find files modified in last 24 hours
+find /var/log -type f -mtime -1
+
+# Delete files older than 30 days
+find /tmp -type f -mtime +30 -delete
+
+
+## Task 5: Automation Script
+#!/bin/bash
+# backup-script.sh - Daily backup automation
+
+DATE=$(date +%Y%m%d)
+BACKUP_DIR="/backup"
+SOURCE="/var/www"
+
+# Create backup
+tar -czf $BACKUP_DIR/backup-$DATE.tar.gz $SOURCE
+
+# Keep only last 7 backups
+ls -t $BACKUP_DIR/backup-*.tar.gz | tail -n +8 | xargs rm -f
+
+echo "Backup completed: backup-$DATE.tar.gz"
+
+
+
+# Git Fundamentals - Practice Tasks
+
+
+## Task 1: Feature Branch Workflow
+
+# Adding new monitoring feature
+
+# Update main
+git checkout main
+git pull origin main
+
+# Create feature branch
+git checkout -b feature/add-prometheus-monitoring
+
+# Make changes
+echo "prometheus_config" > monitoring/prometheus.yml
+git add monitoring/prometheus.yml
+git commit -m "feat(monitoring): add Prometheus configuration"
+
+# Push feature branch
+git push -u origin feature/add-prometheus-monitoring
+
+# Create Pull Request on GitHub
+# After review and merge, cleanup
+git checkaout main
+git pull origin main
+git branch -d feature/add-prometheus-monitoring
+
+
+## Task 2: Hotfix Workflow
+
+# Production bug needs immediate fix
+
+# From main
+git checkout main
+git checkout -b hotfix/fix-api-timeout
+
+# Fix the bug
+vim app.py # Fix timeout issue
+git add app.py
+git commit -m "hotfix(api): increase timeout from 5s to 30s
+
+Fixes production issue where long-running queries timeout.
+Incident: INC-2025-042"
+
+# Push and deploy
+git push -u origin hotfix/fix-api-timeout
+
+# Mrege to main
+git checkout main
+git merge hotfix/fix-api-timeout
+git tag v1.2.1
+git push origin main --tags
+
+# Also merge to develop
+git checkout develop
+git merge hotfix/fix-api-timeout
+git push origin develop
+
+
+## Task 3: Resolve Merge Conflict
+
+# Branch conflicts with main
+
+git checkout feature/my-feature
+git fetch origin
+git merge origin/main
+
+# CONFLICT in config.yaml
+# Edit file, resolve conflicts manually
+vim config.yaml
+
+# After resolving
+git add config.yaml
+git commit -m "merge: resolve conflicts with main"
+git push origin feature/my-feature
+
+
+## Task 4: Interactive Rebase (Clean History)
+
+# Messy commits, clean before PR
+
+git log --oneline -5
+# abc123 Fix typo
+# def456 Add logging
+# ghi789 WIP
+# jkl012 Add feature
+# mno345 Fix formatting
+
+# Clen up last 5 commits
+git rebase -i HEAD~5
+
+# In editor, change to:
+# pick jkl012 Add feature
+# squash def456 Add logging
+# squash ghi789 WIP
+# squash abc123 Fix typo
+# squash mno345 Fix formatting
+
+# Result: One clean commit
+git push --force-with-lease origin feature/my-feature
+
+
+## Task 5: Git Bisect (Find Bug)
+
+# Something broke, find which commit
+
+git bisect start
+git bisect bad HEAD # Current is broken
+git bisect good v1.0.0 # v1.0.0 was good
+
+# Git checs out middle commit
+# Test if bug exists
+# If broken:
+git bisect bad
+# If works:
+git bisect good
+
+# Repeat until found
+# Git tells: "abc123 is the first bad commit"
+git bisect reset
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
