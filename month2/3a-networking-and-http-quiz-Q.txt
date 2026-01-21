@@ -1,0 +1,47 @@
+# Networking & HTTP Quiz (40 Questions)
+
+
+## Networking (20 questions)
+1.  What is CIDR notation /24 in subnet mask form?
+2.  How many usable hosts in a /26 network?
+3.  What port does SSH use by default?
+4.  What's the difference between TCP and UDP?
+5.  What does DNS translate?
+6.  What's the purpose of a subnet mask?
+7.  What port does HTTPS use?
+8.  What's a default gateway?
+9.  What does ping test?
+10. What's the difference between public and private IP?
+11. What are the private IP ranges?
+12. What port does MySQL use?
+13. What's the purpose of a load balancer?
+14. What's the difference between stateful and stateless firewalls?
+15. What does traceroute show?
+16. What's localhost IP address?
+17. What's a security group in cloud context?
+18. What port does PostgreSQL use?
+19. What's the purpose of NAT Gateway?
+20. What does mtr command do?
+
+
+## HTTP & APIs (20 questions)
+21. What HTTP method retrieves data?
+22. What does status code 404 mean?
+23. What's the difference between PUT and PATCH?
+24. What does status code 500 mean?
+25. What header specifies content type?
+26. What's the difference between HTTP and HTTPS?
+27. What does status code 200 mean?
+28. What's an API rate limit?
+29. What does curl -I show?
+30. What status code indicates redirect?
+31. What's the purpose of Authorization header?
+32. What does status code 401 mean?
+33. What's the difference between 401 and 403?
+34. What does -X in curl specify?
+35. What's pagination in APIs?
+36. What does Bearer token authentication mean?
+37. What's the purpose of API keys?
+38. What does status code 502 mean?
+39. What's the difference between query parameters and body?
+40. What does jq command do?

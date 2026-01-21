@@ -1,0 +1,143 @@
+# HTTP & API - Practice Tasks
+
+## Task 1: API Health Check Script
+
+#!/bin/bash
+# health-check.sh - Monitor API endpoints
+
+ENDPOINTS=(
+     "https://api.example.com/health"
+     "https://api.example.com/status"
+     "https://api.example.com/version"
+)
+
+for endpoint in "${ENDPOINTS[@]}"; do
+    http_code=$(curl -s -o /dev/null -w "%{http_code}" "$endpoint")
+    time=$(curl -s -o /dev/null -w "%{time_total}" "$endpoint")
+
+    if [ "$http_code" -eq 200 ]; then
+        echo "✓ $endpoint - ${time}s"
+    else
+        echo "✗ $endpoint - HTTP $http_code"
+        # Send alert here
+    fi
+done
+
+
+# Task 2: API with Authentication
+
+# Test authenticated API endpoints
+
+# GitHub API - get repos
+TOKEN="your_github_token"
+curl -H "Authorization: Bearer $TOKEN" \
+     https://api.github.com/user/repos
+
+# Create a gist
+curl -X POST https://api.github.com/gists \
+     -H "Authorization: Bearer $TOKEN" \
+     -H "Content-Type: application/json" \
+     -d '{
+       "description": "Test gist",
+       "public": false,
+       "files": {
+         "test.txt": {
+           "content": "Hello from API"
+         }
+       }
+     }'
+
+
+## Task 3: Error Handling & Retry
+
+#!/bin/bash
+# api-with-retry.sh
+
+MAX_RETRIES=3
+RETRY_DELAY=2
+URL="https://api.example.com/data"
+
+for i in $(seq 1 $MAX_RETRIES); do
+    echo "Attempt $i..."
+
+    if curl -f -s "$URL" > output.json; then
+        echo "Success!"
+        exit 0
+    fi
+
+    if [ $i -lt $MAX_RETRIES ]; then
+        echo "Failed, retrying in $RETRY_DELAY seconds..."
+        sleep $RETRY_DELAY
+        RETRY_DELAY=$((RETRY_DELAY * 2)) # Exponential backoff
+    fi
+done
+
+
+## Task 4: API Response Validation
+
+#!/bin/bash
+# validate-api.sh - Test API returns valid data
+
+response=$(curl -s https://api.github.com/users/torvalds)
+
+# Check if valid JSON
+if ! echo "$response" | jq '.' > /dev/null 2>&1; then
+    echo "Invalid JSON response"
+    exit 1
+fi
+
+# Check required fields exist
+name=$(echo "$response" | jq -r '.name')
+if [ "$name" = "null" ] || [ -z "$name" ]; then
+    echo "Missing required field: name"
+    exit 1
+fi
+
+echo "Validation passed: $name"
+
+
+## Task 5: Performance Monitoring
+
+#!/bin/bash
+# api-performance.sh - Monitor API response times
+
+URL="https://api.example.com/endpoint"
+THRESHOLD=2.0 # seconds
+
+while true; do
+    response_time=$(curl -s -o /dev/null -w "%{time_total}" "$URL")
+
+    if (( $(echo "$response_time > $THRESHOLD" | bc -l) )); then
+        echo "[$(date)] SLOW: ${response_time}s (threshold: ${THRESHOLD}s"
+        # Send alert
+    else
+        echo "[$(date)] OK: ${response_time}s"
+    fi
+    
+    sleep 60
+done
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

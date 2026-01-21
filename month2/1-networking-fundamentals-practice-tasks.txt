@@ -1,0 +1,110 @@
+# Networking Fundamentals - Practice Tasks
+
+## Task 1: Subnet Design
+
+# Scenario: Design network for company with 3 departments
+
+Given: 192.168.1.0/24
+
+Requirements:
+- Sales: 50 hosts
+- Engineering: 100 hosts
+- HR: 20 hosts
+
+Solutions:
+Sales:       192.168.1.0/26   (62 usable hosts)
+Engineering: 192.168.1.64/25  (126 usable hosts)
+HR:          192.168.1.192/27 (30 usable hosts)
+
+# Verify with subnet calculator
+
+
+## Task 2: DNS Troubleshooting
+
+# Website not loading, debug DNS
+
+# Check if domain resolves
+nslookup example.com
+
+# Get detailed DNS info
+dig example.com
+
+# Trace full DNS server
+dig example.com +trace
+
+# Check specific DNS server
+dig @8.8.8.8 example.com
+
+# Check reverse DNS
+dig -x 93.184.216.34
+
+# Compare different DNS servers
+dig @1.1.1.1 example.com
+dig @8.8.8.8 example.com
+
+
+## Task 3: Port & Service Investigation
+
+# Find what's listening on your system
+
+# All listening ports
+sudo ss -tuln
+
+# What process is on port 80?
+sudo lsof -i :80
+
+# Test if remote port is open
+nc -zv api.github.com 443
+
+# Scan common ports on a host
+for port in 22 80 443 3306 5432; do
+    nc -zv -w1 yourserver.com $port
+done
+
+# Find all established connections
+ss -tun | grep ESTAB
+
+
+## Task 4: Network Path Analysis
+
+# Application slow, investigate network
+
+# Check basic connectivity
+ping -c 4 api.example.com
+
+# See full network path
+traceroute api.example.com
+
+# Better traceroute with statistics
+mtr --report --report-cycles 10 api.example.com
+
+# Check DNS resolution time
+time dig api.example.com
+
+# Measure total connection time
+curl -w "DNS: %{time_namelookup}s\nConnect: %{time_connect}s\nTotal: %{time_total}s\n" -o /dev/null -s https://api.example.com
+
+
+## Task 5: Firewall Configuration
+
+# Secure a web server
+
+# Default deny
+sudo ufw default deny incoming
+sudo ufv default allow outgoing
+
+# Allow SSH (your IP only)
+sudo ufw allow from YOUR_IP to any port 22
+
+# Allow HTTP/HTTPS (public)
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+
+# Allow database (from app servers only)
+sudo ufw allow from 10.0.2.0/24 to any port 5432
+
+# Enable
+sudo ufw enable
+
+# Verify
+sudo ufw status numbered

@@ -1,0 +1,42 @@
+# Networking & HTTP Answers
+
+1.  255.255.255.0
+2.  62 hosts
+3.  Port 22
+4.  TCP reliable/connection-oriented, UDP fast/connectionless
+5.  Domain names to IP addresses
+6.  Determines network and host portions of IP
+7.  Port 443
+8.  Router that connects network to other networks
+9.  Network connectivity and latency
+10. Public: Internet-routable, Private: Internal only
+11. 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16
+12. Port 3306
+13. Distributes traffic across multiple servers
+14. Stateful tracks connections, stateless examines each packet
+15. Network path packets take to destination
+16. 127.0.0.1
+17. Virtual firewall for cloud instances
+18. Port 5432
+19. Allows private subnet resources to access internet
+20. Combined ping and traceroute with statistics
+21. GET
+22. Not Found
+23. PUT replaces entire resource, PATCH partial update
+24. Internal Server Error
+25. Content-Type
+26. HTTPS is encrypted, HTTP is plain text
+27. OK/Success
+28. Maximum requests allowed in time period
+29. Response headers only
+30. 3xx (301, 302, 307, 308)
+31. Sends authentication credentials
+32. Unauthorized (authentication required)
+33. 401 = not authenticated, 403 = authenticated but no permission
+34. HTTP method (GET, POST, PUT, DELETE)
+35. Breaking large results into pages/chunks
+36. Token sent in Authorization header
+37. Simple authentication via key in header/query
+38. Bad Gateway (upstream server error)
+39. Query params in URL, body in request payload
+40. JSON processor for parsing and formatting
