@@ -1,7 +1,10 @@
 # Linux & Git Answers
 
 
-1.  pwd
+1.  <details>
+      <summary>Click to reveal the answer</summary>
+       pwd
+      </details>
 2.  chmod +x script.sh
 3.  Owner: rwx (7), Group: r-x (5), Others: r-x (5)
 4.  find /var/log -name "*.log"
